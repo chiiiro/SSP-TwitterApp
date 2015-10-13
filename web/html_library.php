@@ -53,7 +53,7 @@ function begin_body($params) {
     $atributi = array_keys($params);
     echo "<body ";
     foreach($atributi as $atribut) {
-        echo $atribut . "=\"" . $params[$atribut] . " ";
+        echo $atribut . "=\"" . $params[$atribut] . "\" ";
     }
     echo ">";
 }
