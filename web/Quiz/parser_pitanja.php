@@ -37,6 +37,9 @@ function displayTheQuestions($questions) {
     //za sva učitana pitanja..
     foreach($questions as $key => $value) {
         $pitanje = $value[0];
+        $tmp = explode("{", $pitanje);
+        $pitanje = $tmp[0];
+        $tipPitanja = substr($tmp[1], 0, 1);  #govori nam da li je pitanje 1, 2 ili 3
         $odgovori = $value[1];
         $tmp = explode("=", $odgovori);
         $tocanOdgovor = $tmp[1];  #tocan odgovor
@@ -48,6 +51,10 @@ function displayTheQuestions($questions) {
 
         //kreira radio button za svaki odgovor
         foreach($choices as $choice) {
+            if($tipPitanja === "3") {
+                create_input(array("type" => "text", "name" => $key));
+                continue;
+            }
             create_input(array("type" => "radio", "name" => $key, "value" => $tocanOdgovor));
             echo $choice . "<br/>";
         }
