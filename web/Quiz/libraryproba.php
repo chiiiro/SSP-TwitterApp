@@ -6,7 +6,7 @@
  * Time: 16:29
  */
 
-include_once "html_library.php";
+include_once "lib/html_library.php";
 
 create_doctype();
 begin_html();
