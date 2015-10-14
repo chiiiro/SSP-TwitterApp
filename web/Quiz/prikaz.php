@@ -19,11 +19,8 @@ end_head();
 
 begin_body(array());
 
-
-
 $loadedQuestions = readQuestions("pitanja.txt");
 displayTheQuestions($loadedQuestions);
-
 
 end_body();
 

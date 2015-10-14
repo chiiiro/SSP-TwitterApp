@@ -46,10 +46,16 @@ function displayTheQuestions($questions) {
 
         $choices = explode(",", $odgovori);  #razdvaja odgovore po zarezima
 
+        //kreira radio button za svaki odgovor
         foreach($choices as $choice) {
-            create_input(array("type" => "radio", "name" => $key));
+            create_input(array("type" => "radio", "name" => $key, "value" => $tocanOdgovor));
             echo $choice . "<br/>";
         }
         echo "<br/>";
     }
 }
+
+
+####################
+#parsirati pitanje da se ne prikazuje {1} i da na temelju toga možemo odabrati tip pitanja
+####################
