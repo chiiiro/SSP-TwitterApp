@@ -7,7 +7,7 @@
  */
 
 /**
- * Uvijek ispisuje sadrzzaj "<!doctype html>" i koristi se kao prva naredba
+ * Uvijek ispisuje sadrzaj "<!doctype html>" i koristi se kao prva naredba
  * kod stvaranja dokumenta.
  */
 function create_doctype(){
@@ -42,6 +42,20 @@ function end_head() {
 }
 
 /**
+ * Ispisuje otvarajuci tag <p>
+ */
+function begin_paragraph() {
+    echo "<p>";
+}
+
+/**
+ * Ispisuje zatvarajuci tag </p>
+ */
+function end_paragraph() {
+    echo"</p>";
+}
+
+/**
  * Ispisuje otvarajuci tag <body> te mu pridruzuje parove (atribut, vrijednost) na
  * temelju polja predanih parametara. Parove (atribut, vrijednost) potrebno je umetnuti u
 1
@@ -51,9 +65,11 @@ function end_head() {
  */
 function begin_body($params) {
     $body = "<body ";
-    $atributi = array_keys($params);
-    foreach($atributi as $atribut) {
-        $body .= $atribut . "=\"" . $params[$atribut] . "\" ";
+    if(isset($params)) {
+        $atributi = array_keys($params);
+        foreach ($atributi as $atribut) {
+            $body .= $atribut . "=\"" . $params[$atribut] . "\" ";
+        }
     }
     $body .= ">";
     echo $body;
@@ -85,41 +101,186 @@ function end_form() {
 }
 
 /**
- * Stvara polje za unos teksta pri cemu su atributi i njihove vrijednosti odredjene predanim 2D
- * poljem parametara.
- * Struktura polja parametara:
- * array(’atribut’ => ’vrijednost1’, ’atribut2’ => ’vrijednost2’, ..., ’atributN’ => ’vrijednostN’).
+ * Stvara polje za unos teksta.
  *
  * @param {array} $params asocijativno polje parova oblika atribut=>vrijednost
  * @return niz znakova koji predstavlja generirani input tag
  */
-create_input($params);
+function create_input($params) {
+    $inputTag = "<input ";
+    foreach($params as $key=>$value) {
+        $inputTag .= $key . "=\"" . $value . "\" ";
+    }
+    $inputTag .= ">";
+    echo $inputTag;
+}
 /**
  * Generira padajuci izbornik odredjen elementom select. Predani parametri odredjuju atribute
  * izbornika (npr. name) te opcije koje izbornik treba sadrzavati, a one se predaju u preko
  * kljuca ’contents’.
- * Polje ima sljedeci format:
- * array(
- * ’kljuc1’ => ’vrijednost1’,
- * ...
- * ’kljucN’ => ’vrijednostN’
  * ’contents’ => array(’option1’, ’option2’, ..., ’optionM’)
- * )
- * Parametar contents odredjuje 1D polje i da je svaki element niz znakova. No, elementi
- * nisu vrijednosti koje treba ispisati kao opcije, nego <b>HTML k^od</b> koji definira svaku od
- * opcija, npr. ’<option>1</option>’
  *
  * @param {array} $params polje parametara koje odredjuje padajuci izbornik
  * @return niz znakova koji predstavlja generirani select tag
  */
-create_select($params);
+function create_select($params) {
+    $select = "<select ";
+    foreach($params as $key=>$value) {
+        if($key === 'contents') {
+            continue;
+        }
+        $select .= $key . "=\"" . $value . "\" ";
+    }
+    $select .= ">";
+
+    if(isset($params['contents'])) {
+        $contents = $params['contents'];
+        foreach($contents as $content) {
+            $select .= "<option>" . $content . "</option>";
+        }
+    }
+
+    $select .= "</select>";
+
+    echo $select;
+}
 /**
  * Stvara element button pomocu predanih parametara i vraca generirani niz tag. Sadrzaj
  * gumba odredjuje parametar contents. Ako je njegova vrijednost jednaka praznom nizu znakova
  * ili uopce nije poslan, sadrzaj treba biti prazan.
  *
-2
  * @params {array} $params polje parametara koje odredjuje dugme
  * @return niz znakova koji predstavlja generirani tag button
  */
-create_button($params);
+function create_button($params) {
+    $button = "<button";
+    foreach($params as $key=>$value) {
+        if($key === "contents") {
+            continue;
+        }
+        $button .= " " . $key . "=\"" . $value . "\"";
+    }
+    $button .= ">";
+
+    if(isset($params["contents"])) {
+        $button .= $params["contents"];
+    }
+
+    $button .= "</button>";
+
+    echo $button;
+}
+
+/**
+ * Ispisuje otvarajuci tag <table>. Polje parametara odredjuje atribute tablice i
+ * vrijednosti atributa.
+ *
+ * @param {array} $params polje parametara spremljenih po principu ’atribut’ => ’vrijednost’
+ */
+function create_table($params){
+    $table = "<table";
+    foreach($params as $key=>$value) {
+        $table .= " " . $key . "=\"" . $value . "\"";
+    }
+    $table .= ">";
+    echo $table;
+}
+/**
+ * Ispisuje zatvarajuci tag </table>
+ */
+function end_table() {
+    echo "</table>";
+}
+/**
+ * Generira HTML potreban za stvaranje jednog retka tablice. U polju parametara koje
+ * prima moraju biti definirane i celije tablice i to parametrom ’contents’.
+ *
+ * @param {array} $params polje parametara koje odredjuje jedan redak tablice
+ * @return niz znakova koji predstavlja HTML kod retka tablice
+ */
+function create_table_row($params) {
+    $row = "<tr";
+    foreach($params as $key=>$value) {
+        if($key === "contents") {
+            continue;
+        }
+        $row .= " " . $key . "=\"" . $value . "\"";
+    }
+    $row .= ">";
+
+    if(isset($params["contents"])) {
+        $contents = $params["contents"];
+        foreach($contents as $content) {
+            $row .= "<td>" . $content . "</td>";
+        }
+    }
+
+    $row .= "</tr>";
+
+    echo $row;
+}
+
+
+/**
+ * Na temelju predanih parametara koji odredjuju atribute i vrijednosti generira HTML kod
+ * celije.
+ * Sadrzaj celije odredjen je parametrom ’contents’. Ako tog parametra nema ili je jednak praznom
+ * nizu znakova, potrebno je generirati praznu celiju:
+ *
+ * @param {array} $params polje parametara koje odredjuje celiju
+ * @return niz znakova koji odredjuje HTML kod celije
+ */
+function create_table_cell($params) {
+    $cell = "<td";
+    foreach($params as $key=>$value) {
+        if($key === "contents") {
+            continue;
+        }
+        $cell .= " " . $key . "=\"" . $value . "\"";
+    }
+    $cell .= ">";
+
+    if(isset($params["contents"])) {
+        $cell .= $params["contents"];
+    }
+
+    $cell .= "</td>";
+
+    echo $cell;
+}
+/**
+ * Na temelju predanih parametara koji odredjuju atribute, naziv elementa i zastavice koja
+ * odredjuje ima li otvarajuci tag pripadajuci zatvarajuci tag generira HTML kod proizvoljnog
+ * elementa.
+ * Ako sadrzaj elementa treba biti prazan ili element uopce nije definirat tako da treba
+ * imati sadrzja, potrebno je ili postaviti parametar ’contents’ na prazan niz znakova ili
+ * ga uopce ne poslati.
+ *
+ * @param {String} $name naziv elementa
+ * @param {boolean} true ako ima zatvarajuci tag, false inace
+ * @param {array} $params polje parametara koje odredjuje celiju
+ * @return niz znakova jednak HTML kodu elementa
+ */
+function create_element($name, $closed = true, $params) {
+    $element = "<" . $name;
+
+    foreach($params as $key=>$value) {
+        if($key === "contents") {
+            continue;
+        }
+        $element .= " " . $key . "=\"" . $value . "\"";
+    }
+
+    $element .= ">";
+
+    if(isset($params["contents"])) {
+        $element .= $params["contents"];
+    }
+
+    if($closed === true) {
+        $element .= "</" . $name . ">";
+    }
+
+    echo $element;
+
+}
