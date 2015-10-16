@@ -73,11 +73,11 @@ function displayTheQuestions($questions)
                 create_input(array("type" => "checkbox", "name" => $key));
                 echo $choice . "<br/>";
             } else if ($tipPitanja === "3") {
-                create_input(array("type" => "text", "name" => $key));
+                create_input(array("type" => "text", "name" => $key, "value" => $choice));
             }
 
         }
-        echo "<br/>";
+        create_element("br", false, array());
     }
 
     fclose($answers);

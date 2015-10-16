@@ -37,9 +37,9 @@ if (isset($_POST['submitquiz'])) {
             create_element("br/", false, array());
         } else {
             if(isset($_POST[$key])) {
-                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Unijeli ste: " . $odgovor . ", a tocan odgovor je: " . $value . ".";
+                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Unijeli ste: " . $odgovor . ", a tocan odgovor je: " . trim($value) . ".";
             } else {
-                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Niste unijeli nista, a tocan odgovor je: " . $value . ".";
+                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Niste unijeli nista, a tocan odgovor je: " . trim($value) . ".";
             }
 
             create_element("br/", false, array());
