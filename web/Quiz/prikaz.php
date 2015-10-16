@@ -14,13 +14,21 @@ create_doctype();
 begin_html();
 
 begin_head();
-echo "<title>Online kviz</title>";
+create_element("title", true, array("contents" => "Online kviz"));
 end_head();
 
 begin_body(array());
 
+start_form("prikazOdgovora.php", "POST");
+
 $loadedQuestions = readQuestions("pitanja.txt");
 displayTheQuestions($loadedQuestions);
+
+begin_paragraph();
+create_input(array("type" => "submit", "name" => "submitquiz", "value" => "Posalji odgovore"));
+end_paragraph();
+
+end_form();
 
 end_body();
 
