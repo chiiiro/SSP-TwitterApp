@@ -6,7 +6,7 @@
  * Time: 14:27
  */
 
-include_once "lib/html_library.php";
+include_once "../lib/html_library.php";
 
 function readQuestions($fileName)
 {

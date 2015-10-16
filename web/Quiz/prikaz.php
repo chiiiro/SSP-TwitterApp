@@ -6,7 +6,7 @@
  * Time: 15:54
  */
 
-include_once "lib/html_library.php";
+include_once "../lib/html_library.php";
 include_once "parser_pitanja.php";
 
 create_doctype();
