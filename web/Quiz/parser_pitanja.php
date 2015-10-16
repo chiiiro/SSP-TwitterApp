@@ -70,7 +70,7 @@ function displayTheQuestions($questions)
                 create_input(array("type" => "radio", "name" => $key, "value" => $choice));
                 echo $choice . "<br/>";
             } else if ($tipPitanja === "2") {
-                create_input(array("type" => "checkbox", "name" => $key));
+                create_input(array("type" => "checkbox", "name" => $key . '[]', "value" => $choice));
                 echo $choice . "<br/>";
             } else if ($tipPitanja === "3") {
                 create_input(array("type" => "text", "name" => $key, "value" => $choice));

@@ -31,6 +31,10 @@ if (isset($_POST['submitquiz'])) {
             $odgovor = $_POST[$key];
         }
 
+        if(is_array($odgovor)) {
+            $odgovor = implode(',', $odgovor);
+        }
+
         if (strtolower(trim($value)) == strtolower($odgovor)) {
             echo "Odgovor na " . ($key + 1) . ". pitanje je tocan.";
             $correctCount++;
@@ -53,7 +57,7 @@ if (isset($_POST['submitquiz'])) {
     create_element("br", false, array());
     echo "Broj netocnih odgovora: " . ($answerCount - $correctCount);
     create_element("br", false, array());
-    echo "Postotak rjesenosti kviza: " . ($correctCount / $answerCount) . "%";
+    echo "Postotak rjesenosti kviza: " . ($correctCount / $answerCount) * 100 . "%";
     create_element("br", false, array());
 
 }
