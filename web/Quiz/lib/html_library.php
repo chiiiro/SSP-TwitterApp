@@ -42,6 +42,15 @@ function end_head() {
 }
 
 /**
+ * Postavlja željeni charset.
+ * @param $charset
+ */
+function set_charset($charset) {
+    $c = "<meta charset='" . $charset . "' />";
+    echo $c;
+}
+
+/**
  * Ispisuje otvarajuci tag <p>
  */
 function begin_paragraph() {
@@ -79,6 +88,13 @@ function begin_body($params) {
  */
 function end_body() {
     echo "</body>";
+}
+
+/**
+ * Ispisuje tag za odlazak u novi red.
+ */
+function break_line() {
+    echo "<br/>";
 }
 
 /*

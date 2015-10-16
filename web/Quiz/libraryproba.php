@@ -36,7 +36,7 @@ end_paragraph();
 begin_paragraph();
 create_table(array("border" => "1", "style" => "width:20%"));
 create_table_row(array("contents" => array("ivan", "ciric", "22")));
-create_table_cell(array("contents" => "marko"));
+create_table_cell(array("colspan" => "3", "contents" => "marko"));
 end_table();
 end_paragraph();
 

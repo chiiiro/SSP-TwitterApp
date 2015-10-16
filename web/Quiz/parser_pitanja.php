@@ -60,7 +60,9 @@ function displayTheQuestions($questions)
         fwrite($answers, $tocanOdgovor);
         $odgovori = $tmp[0]; #samo odgovori bez tocnog
 
-        echo "<b>$pitanje</b><br/><br/>";  #ispisuje pitanje
+        echo "<b>$pitanje</b>";  #ispisuje pitanje
+        break_line();
+        break_line();
 
         $choices = explode(",", $odgovori);  #razdvaja odgovore po zarezima
 
@@ -77,7 +79,7 @@ function displayTheQuestions($questions)
             }
 
         }
-        create_element("br", false, array());
+        break_line();
     }
 
     fclose($answers);

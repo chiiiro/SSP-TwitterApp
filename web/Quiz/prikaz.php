@@ -14,6 +14,7 @@ create_doctype();
 begin_html();
 
 begin_head();
+set_charset("utf-8");
 create_element("title", true, array("contents" => "Online kviz"));
 end_head();
 

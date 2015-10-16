@@ -14,6 +14,7 @@ create_doctype();
 begin_html();
 
 begin_head();
+set_charset("utf-8");
 create_element("title", true, array("contents" => "Odgovori"));
 end_head();
 
@@ -36,29 +37,29 @@ if (isset($_POST['submitquiz'])) {
         }
 
         if (strtolower(trim($value)) == strtolower($odgovor)) {
-            echo "Odgovor na " . ($key + 1) . ". pitanje je tocan.";
+            echo "Odgovor na " . ($key + 1) . ". pitanje je točan.";
             $correctCount++;
-            create_element("br/", false, array());
+            break_line();
         } else {
             if(isset($_POST[$key])) {
-                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Unijeli ste: " . $odgovor . ", a tocan odgovor je: " . trim($value) . ".";
+                echo "Odgovor na " . ($key + 1) . ". pitanje nije točan. Unijeli ste: " . $odgovor . ", a točan odgovor je: " . trim($value) . ".";
             } else {
-                echo "Odgovor na " . ($key + 1) . ". pitanje nije tocan. Niste unijeli nista, a tocan odgovor je: " . trim($value) . ".";
+                echo "Odgovor na " . ($key + 1) . ". pitanje nije točan. Niste unijeli ništa, a točan odgovor je: " . trim($value) . ".";
             }
 
-            create_element("br/", false, array());
+            break_line();
         }
     }
 
-    create_element("br/", false, array());
+    break_line();
     echo "Ukupan broj pitanja: " . $answerCount;
-    create_element("br", false, array());
-    echo "Broj tocnih odgovora: " . $correctCount;
-    create_element("br", false, array());
-    echo "Broj netocnih odgovora: " . ($answerCount - $correctCount);
-    create_element("br", false, array());
-    echo "Postotak rjesenosti kviza: " . ($correctCount / $answerCount) * 100 . "%";
-    create_element("br", false, array());
+    break_line();
+    echo "Broj točnih odgovora: " . $correctCount;
+    break_line();
+    echo "Broj netočnih odgovora: " . ($answerCount - $correctCount);
+    break_line();
+    echo "Postotak rješenosti kviza: " . ($correctCount / $answerCount) * 100 . "%";
+    break_line();
 
 }
 

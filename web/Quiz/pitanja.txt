@@ -1,15 +1,15 @@
 #pitanja s 1 točnim odgovorom
 Koji je glavni grad Hrvatske?{1}:Ljubljana,Zagreb,Sarajevo,Beograd=Zagreb
-Koje je godine zapoceo 2. svjetski rat?{1}:1939,1940,1941,1942=1939
+Koje je godine započeo 2. svjetski rat?{1}:1939,1940,1941,1942=1939
 Prvi glavni grad drevnog Egipta bio je{1}:Kairo,Aleksandrija,Memfis,Teba=Memfis
-Koja je najveca planina u zapadnoj Europi?{1}:Mont Blanc,Monte Rosa,Gran Sasso,Materrhorn=Mont Blanc
+Koja je najveća planina u zapadnoj Europi?{1}:Mont Blanc,Monte Rosa,Gran Sasso,Materrhorn=Mont Blanc
 
 #pitanja s 2 točna odgovora
 Koji od navedenih su francuski gradovi?{2}:Pariz,Munchen,Moskva,Lille=Pariz,Lille
 Koji od navedenih su slovenski gradovi?{2}:Ilok,Postojna,Graz,Celje=Postojna,Celje
-Koje zivotinje su domace zivotinje?{2}:pas,macka,tigar,lav=pas,macka
-Koje zivotinje su sisavci?{2}:galeb,patka,kit,sismis=kit,sismis
+Koje životinje su domaće životinje?{2}:pas,mačka,tigar,lav=pas,mačka
+Koje životinje su sisavci?{2}:galeb,patka,kit,šišmiš=kit,šišmiš
 
 #pitanja na nadopunjavanje
-Prvi hrvatski kralj bio je{3}:=kralj tomislav
-Najveca drzava na svijetu je{3}:=rusija
+Prvi hrvatski kralj bio je{3}:=tomislav
+Najveća država na svijetu je{3}:=rusija
