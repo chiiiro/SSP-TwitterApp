@@ -11,8 +11,9 @@ include_once "../lib/html_library.php";
 include_once "../Views/index_view.php";
 
 set_title("Prikaz komentara");
+set_charset("utf-8");
 
-foreach (glob("../*.txt") as $filename) {
+foreach (glob("../comments.txt") as $filename) {
     $file = fopen($filename, "r");
     while(!feof($file)) {
         echo fgets($file) . "<br>";

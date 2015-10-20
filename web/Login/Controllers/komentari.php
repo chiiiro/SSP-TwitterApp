@@ -34,6 +34,6 @@ if(!isset($_SESSION['username'])) {
 function write_comment() {
     if(isset($_POST['submit'])) {
         $comment = $_POST['comment'];
-        file_put_contents("../" . $_SESSION['username'] . ".txt" . $comment . "\n", FILE_APPEND);
+        file_put_contents("../comments.txt", $_SESSION['username'] . ": " . $comment . "\n", FILE_APPEND);
     }
 }
