@@ -6,10 +6,10 @@
  * Time: 09:22
  */
 
-session_name("test");
-session_start();
+include_once "../global.php";
 
 //logout korisnika
 unset($_SESSION['username']);
 session_destroy();
 header("Location: login.php");
+exit;

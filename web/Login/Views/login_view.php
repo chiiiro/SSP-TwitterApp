@@ -6,10 +6,12 @@
  * Time: 09:33
  */
 
-//prikaz login stranice
+include_once "../lib/html_library.php";
+
 function display_login_form() {
 
     create_doctype();
+
     begin_html();
 
     begin_head();
@@ -18,7 +20,6 @@ function display_login_form() {
     end_head();
 
     begin_body(array());
-
     start_form("", "post");
     begin_paragraph();
     echo "Username: ";
@@ -31,9 +32,7 @@ function display_login_form() {
     begin_paragraph();
     create_input(array("type" => "submit", "name" => "submit", "value" => "Login"));
     end_paragraph();
-
     end_form();
-
     end_body();
 
     end_html();
