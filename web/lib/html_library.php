@@ -65,6 +65,14 @@ function end_paragraph() {
 }
 
 /**
+ * Postavlja title stranice.
+ * @param $title
+ */
+function set_title($title) {
+    echo "<title>" . $title . "</title>";
+}
+
+/**
  * Ispisuje otvarajuci tag <body> te mu pridruzuje parove (atribut, vrijednost) na
  * temelju polja predanih parametara. Parove (atribut, vrijednost) potrebno je umetnuti u
 1
