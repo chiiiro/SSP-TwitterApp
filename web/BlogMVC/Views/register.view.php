@@ -4,7 +4,7 @@ require_once(VIEW_PATH . 'header.php');
 
 ?>
 
-    <body>
+    <body background="../clouds.jpg" style="background-size: cover">
     <div class="container">
          <h1>Register</h1><hr />
 

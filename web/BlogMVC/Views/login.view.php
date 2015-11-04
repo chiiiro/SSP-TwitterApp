@@ -4,9 +4,10 @@ require_once(VIEW_PATH . 'header.php');
 
 ?>
 
-    <body>
+    <body background="../clouds.jpg" style="background-size: cover">
     <div class="container">
-        <h1>Login</h1><hr />
+        <h1>Login</h1>
+        <hr />
 
     <form class="form-horizontal" role="form" action="login.php" method="post">
         <div class="form-group">
