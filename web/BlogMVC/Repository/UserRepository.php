@@ -28,8 +28,8 @@ class UserRepository {
 
     public static function register(User $user) {
         $db = Database::getInstance();
-        $query = $db->prepare("SELECT * FROM blog_members WHERE username='$user->username' AND password='$user->password'");
-        $query->execute();
+        $query = $db->prepare("SELECT * FROM blog_members WHERE username = ? AND password = ?");
+        $query->execute([$user->getUsername(), $user->getPassword()]);
         $result = $query->fetchAll();
         if(count($result) == 1) {
             echo "<script language='javascript'>
@@ -37,7 +37,7 @@ class UserRepository {
             </script>";
         } else {
             $query = $db->prepare('INSERT INTO blog_members (username,password,email) VALUES (?, ?, ?)');
-            $query->execute([$user->username, $user->password, $user->email]);
+            $query->execute([$user->getUsername(), $user->getPassword(), $user->getEmail()]);
             redirect("login.php");
         }
     }

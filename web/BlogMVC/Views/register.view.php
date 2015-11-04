@@ -33,6 +33,8 @@ require_once(VIEW_PATH . 'header.php');
             </div>
         </div>
 
+        <p id="display"></p>
+
         <input type="submit" class="btn btn-default" name="register" id="register" value="Register">
         <a href="../index.php" role="button" class="btn btn-link">Back</a>
     </form>

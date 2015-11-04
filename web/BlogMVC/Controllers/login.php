@@ -2,6 +2,9 @@
 
 include_once "../includes/config.php";
 
+$pageTitle = 'Login';
+require_once(VIEW_PATH . 'login.view.php');
+
 if (UserRepository::is_logged_in()) {
     redirect('user_index.php');
 }
@@ -32,7 +35,7 @@ if (isset($_POST['login'])) {
 
     if ($errorMessage != '') {
         echo "<script language='javascript'>
-        alert('$errorMessage');
+          document.getElementById('display').innerHTML = '$errorMessage';
         </script>";
     } else {
         if (UserRepository::login($username, $password)) {
@@ -41,7 +44,7 @@ if (isset($_POST['login'])) {
         } else {
             $errorMessage = 'Wrong username or password!';
             echo "<script language='javascript'>
-                alert('$errorMessage');
+                document.getElementById('display').innerHTML = '$errorMessage';
             </script>";
         }
     }
@@ -51,6 +54,3 @@ if (isset($_POST['login'])) {
 if (isset($message)) {
     echo $message;
 }
-
-$pageTitle = 'Login';
-require_once(VIEW_PATH . 'login.view.php');

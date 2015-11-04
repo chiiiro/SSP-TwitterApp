@@ -2,6 +2,9 @@
 
 include_once "../includes/config.php";
 
+$pageTitle = 'Register';
+require_once (VIEW_PATH.'register.view.php');
+
 if(isset($_POST['register'])) {
 
     $username = $_POST['username'];
@@ -24,18 +27,18 @@ if(isset($_POST['register'])) {
     }
 
     if (count($errors) != 0) {
-        $errorMessage = "Please enter missing data.";
+        $errorMessage = "Please enter the missing data.";
     }
 
     if ($errorMessage != '') {
         echo "<script language='javascript'>
-            alert('$errorMessage');
+            document.getElementById('display').innerHTML = '$errorMessage';
         </script>";
     } else {
         $user = new User();
-        $user->username = $username;
-        $user->password = $password;
-        $user->email = $email;
+        $user->$username = $username;
+        $user->$password = $password;
+        $user->$email = $email;
 
         try {
             UserRepository::register($user);
@@ -44,6 +47,3 @@ if(isset($_POST['register'])) {
         }
     }
 }
-
-$pageTitle = 'Register';
-require_once (VIEW_PATH.'register.view.php');

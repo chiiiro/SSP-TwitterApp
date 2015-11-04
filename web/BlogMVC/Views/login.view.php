@@ -24,6 +24,9 @@ require_once(VIEW_PATH . 'header.php');
                 <input type="password" class="form-control" name="password" placeholder="Enter password">
             </div>
         </div>
+
+        <p id="display"></p>
+
         <input type="submit" class="btn btn-default" name="login" id="login" value="Login">
         <a href="../index.php" role="button" class="btn btn-link">Back</a>
     </form>

@@ -13,13 +13,13 @@ if (isset($_GET['id']) && intval($_GET['id']) > 0) {
     $post = PostRepository::getById($id);
 
     if($post['username'] !== $username) {
-        throw new Exception('Unauthorized access.');
+        redirect("404.php");
     }
 
 } else {
 
     // Redirect to site root
-    redirect("../index.php");
+    redirect("user_index.php");
 }
 
 $pageTitle = 'Post';

@@ -31,14 +31,14 @@ class PostRepository
     {
         $db = Database::getInstance();
         $query = $db->prepare('INSERT INTO blog_posts (posttitle,postdesc,postcont,postdate, username) VALUES (?, ?, ?, ?, ?)');
-        $query->execute([$post->title, $post->description, $post->content, $post->created, $post->username]);
+        $query->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getCreated(), $post->getUsername()]);
     }
 
     public static function update(Post $post)
     {
         $db = Database::getInstance();
         $stmt = $db->prepare('UPDATE blog_posts SET posttitle = ?, postdesc = ?, postcont = ? WHERE postid = ?');
-        $stmt->execute([$post->title, $post->description, $post->content, $post->id]);
+        $stmt->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getId()]);
     }
 
     public static function delete($id)
@@ -48,12 +48,4 @@ class PostRepository
         $query->execute([$id]);
     }
 
-//    public function save()
-//    {
-//        if(isset($this->id)) {
-//            $this->update();
-//        } else {
-//            $this->insert();
-//        }
-//    }
 }
