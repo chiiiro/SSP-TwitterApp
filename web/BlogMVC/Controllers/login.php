@@ -1,9 +1,13 @@
 <?php
 
 include_once "../includes/config.php";
+include_once "../Template.php";
 
-$pageTitle = 'Login';
-require_once(VIEW_PATH . 'login.view.php');
+$loginTemplate = Template::create("login", array());
+echo Template::create("main", array(
+    "pageTitle" => "Login",
+    "body" => $loginTemplate->render()
+));
 
 if (UserRepository::is_logged_in()) {
     redirect('user_index.php');

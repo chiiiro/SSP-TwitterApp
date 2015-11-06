@@ -37,8 +37,8 @@ class PostRepository
     public static function update(Post $post)
     {
         $db = Database::getInstance();
-        $stmt = $db->prepare('UPDATE blog_posts SET posttitle = ?, postdesc = ?, postcont = ? WHERE postid = ?');
-        $stmt->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getId()]);
+        $stmt = $db->prepare('UPDATE blog_posts SET posttitle = ?, postdesc = ?, postcont = ?, postdate = ? WHERE postid = ?');
+        $stmt->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getCreated(), $post->getId()]);
     }
 
     public static function delete($id)

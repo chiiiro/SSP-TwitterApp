@@ -1,9 +1,14 @@
 <?php
 
 include_once "../includes/config.php";
+include_once "../Template.php";
 
-$pageTitle = 'Register';
-require_once (VIEW_PATH.'register.view.php');
+
+$registerTemplate = Template::create("register", array());
+echo Template::create("main", array(
+    "pageTitle" => "Register",
+    "body" => $registerTemplate->render()
+));
 
 if(isset($_POST['register'])) {
 

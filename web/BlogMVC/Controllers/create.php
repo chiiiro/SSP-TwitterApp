@@ -1,6 +1,7 @@
 <?php
 
 include_once "../includes/config.php";
+include_once "../Template.php";
 
 // Initialize form values
 $title = NULL;
@@ -38,16 +39,16 @@ if (isset($_POST['add'])) {
 
     if ($errorMessage != '') {
         echo "<script language='javascript'>
-            document.getElementById('display').innerHTML = '$errorMessage';
+            alert('$errorMessage');
         </script>";
     } else {
         try {
             $post = new Post();
-            $post->$title = $title;
-            $post->$description = $description;
-            $post->$content = $content;
-            $post->$created = $date;
-            $post->$username = $username;
+            $post->setTitle($title);
+            $post->setDescription($description);
+            $post->setContent($content);
+            $post->setCreated($date);
+            $post->setUsername($username);
             PostRepository::insert($post);
             redirect("user_index.php");
         } catch (PDOException $e) {
@@ -56,6 +57,14 @@ if (isset($_POST['add'])) {
     }
 }
 
-$pageTitle = 'Add post';
+$createTemplate = Template::create("createupdate", array(
+    "pageTitle" => "Add post",
+    "title" => $title,
+    "description" => $description,
+    "content" => $content
+));
 
-require_once (VIEW_PATH.'createupdate.view.php');
+echo Template::create("main", array(
+    "pageTitle" => "Add post",
+    "body" => $createTemplate->render()
+));

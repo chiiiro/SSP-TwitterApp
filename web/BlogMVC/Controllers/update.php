@@ -1,6 +1,7 @@
 <?php
 
 include_once "../includes/config.php";
+include_once "../Template.php";
 
 // Check the querystring for a numeric id
 if (isset($_GET['id']) && intval($_GET['id']) > 0) {
@@ -28,6 +29,7 @@ if (isset($_GET['id']) && intval($_GET['id']) > 0) {
         $title = $_POST['title'];
         $description = $_POST['description'];
         $content = $_POST['content'];
+        $date = date('Y-m-d');
 
         $errors = null;
         $errorMessage = '';
@@ -55,10 +57,11 @@ if (isset($_GET['id']) && intval($_GET['id']) > 0) {
         } else {
             try {
                 $post = new Post();
-                $post->id = $id;
-                $post->title = $title;
-                $post->description = $description;
-                $post->content = $content;
+                $post->setId($id);
+                $post->setTitle($title);
+                $post->setDescription($description);
+                $post->setContent($content);
+                $post->setCreated($date);
                 PostRepository::update($post);
                 redirect("user_index.php");
             } catch (PDOException $e) {
@@ -74,6 +77,14 @@ else {
     redirect("../index.php");
 }
 
-$pageTitle = 'Update post';
+$updateTemplate = Template::create("createupdate", array(
+    "pageTitle" => "Update post",
+    "title" => $title,
+    "description" => $description,
+    "content" => $content
+));
 
-require_once(VIEW_PATH . 'createupdate.view.php');
+echo Template::create("main", array(
+    "pageTitle" => "Update post",
+    "body" => $updateTemplate->render()
+));

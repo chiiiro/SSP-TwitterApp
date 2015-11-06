@@ -1,10 +1,17 @@
 <?php
 
 include_once "../includes/config.php";
+include_once "../Template.php";
 
-$pageTitle = 'Blog';
 $username = $_SESSION['username'];
 
 $posts = PostRepository::getAllByUsername($username);
 
-require_once (VIEW_PATH.'user_index.view.php');
+$userIndexTemplate = Template::create("user_index", array(
+    "posts" => $posts
+));
+
+echo Template::create("main", array(
+    "pageTitle" => "User posts",
+    "body" => $userIndexTemplate->render()
+));
