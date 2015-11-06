@@ -1,1 +1,0 @@
-<body background="../clouds.jpg" style="background-size: cover">

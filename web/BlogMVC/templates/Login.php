@@ -1,15 +1,20 @@
 <?php
 
-require_once(VIEW_PATH . 'header.php');
-require_once(VIEW_PATH . 'body_image.view.php');
+namespace templates;
 
-?>
+use Views\AbstractView;
 
-    <div class="container">
-        <h1>Login</h1>
-        <hr />
+class Login extends AbstractView {
 
-    <form class="form-horizontal" role="form" action="login.php" method="post">
+    protected function outputHTML()
+    {
+        ?>
+
+<div class="container">
+    <h1>Login</h1>
+    <hr />
+
+    <form class="form-horizontal" role="form" action="Login.php" method="post">
         <div class="form-group">
             <label class="control-label col-sm-1" for="username">Username:</label>
 
@@ -31,5 +36,7 @@ require_once(VIEW_PATH . 'body_image.view.php');
         <a href="../index.php" role="button" class="btn btn-link">Back</a>
     </form>
 
-<?php
-require_once(VIEW_PATH . 'footer.php');
+    <?php
+    }
+
+}

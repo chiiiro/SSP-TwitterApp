@@ -21,11 +21,8 @@ if (isset($_GET['id']) && intval($_GET['id']) > 0) {
     redirect("../index.php");
 }
 
-$viewPostTemplate = Template::create("viewpost", array(
-        "post" => $post
-    ));
-
-echo Template::create("main", array(
-        "pageTitle" => "Post",
-        "body" => $viewPostTemplate->render()
-    ));
+$mainView = new \templates\Main();
+$viewPostTemplate = new \templates\Viewpost();
+$viewPostTemplate->setPost($post);
+$mainView->setPageTitle('Post')->setBody((string) $viewPostTemplate);
+echo $mainView;

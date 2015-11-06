@@ -38,7 +38,7 @@ class UserRepository {
         } else {
             $query = $db->prepare('INSERT INTO blog_members (username,password,email) VALUES (?, ?, ?)');
             $query->execute([$user->getUsername(), $user->getPassword(), $user->getEmail()]);
-            redirect("login.php");
+            redirect("Login.php");
         }
     }
 }

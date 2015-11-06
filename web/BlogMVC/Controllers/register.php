@@ -3,12 +3,11 @@
 include_once "../includes/config.php";
 include_once "../Template.php";
 
+$mainView = new \templates\Main();
+$registerView = new \templates\Register();
+$mainView->setPageTitle('Register')->setBody((string) $registerView);
 
-$registerTemplate = Template::create("register", array());
-echo Template::create("main", array(
-    "pageTitle" => "Register",
-    "body" => $registerTemplate->render()
-));
+echo $mainView;
 
 if(isset($_POST['register'])) {
 

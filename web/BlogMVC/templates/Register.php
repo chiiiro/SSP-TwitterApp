@@ -1,3 +1,15 @@
+<?php
+
+namespace templates;
+
+use Views\AbstractView;
+
+class Register extends AbstractView {
+
+    protected function outputHTML()
+    {
+        ?>
+
 <div class="container">
     <h1>Register</h1><hr />
 
@@ -31,3 +43,11 @@
         <input type="submit" class="btn btn-default" name="register" id="register" value="Register">
         <a href="../index.php" role="button" class="btn btn-link">Back</a>
     </form>
+
+        <?php
+    }
+
+}
+
+?>
+

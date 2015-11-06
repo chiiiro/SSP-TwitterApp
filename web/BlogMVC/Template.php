@@ -20,7 +20,7 @@ class Template {
 
         ob_start();
 
-        require "templates/" . $this->location . '.template.php';
+        require "templates/" . $this->location . '.php';
 
         return ob_get_clean();
     }

@@ -23,11 +23,8 @@ if (isset($_GET['id']) && intval($_GET['id']) > 0) {
     redirect("user_index.php");
 }
 
-$readTemplate = Template::create("read", array(
-    "post" => $post
-));
-
-echo Template::create("main", array(
-    "pageTitle" => "User post",
-    "body" => $readTemplate->render()
-));
+$mainView = new \templates\Main();
+$readTemplate = new \templates\Read();
+$readTemplate->setPost($post);
+$mainView->setPageTitle('User post')->setBody((string) $readTemplate);
+echo $mainView;

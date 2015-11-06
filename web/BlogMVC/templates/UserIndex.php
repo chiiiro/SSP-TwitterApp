@@ -1,3 +1,17 @@
+<?php
+
+namespace templates;
+
+use Views\AbstractView;
+
+class UserIndex extends AbstractView {
+
+private $posts;
+
+    protected function outputHTML()
+    {
+        ?>
+
 <div class="container">
     <h1>User posts</h1>
     <hr/>
@@ -13,7 +27,7 @@
 
     <?php
 
-    foreach ($posts as $post) {
+    foreach ($this->posts as $post) {
         ?>
 
 
@@ -36,3 +50,15 @@
     <hr/>
     <a href="logout.php" role="button" class="btn btn-link">Logout</a>
     <hr/>
+
+    <?php
+    }
+
+    /**
+     * @param mixed $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+}

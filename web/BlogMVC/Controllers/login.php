@@ -3,11 +3,11 @@
 include_once "../includes/config.php";
 include_once "../Template.php";
 
-$loginTemplate = Template::create("login", array());
-echo Template::create("main", array(
-    "pageTitle" => "Login",
-    "body" => $loginTemplate->render()
-));
+$mainView = new \templates\Main();
+$loginView = new \templates\Login();
+$mainView->setPageTitle('Login')->setBody((string) $loginView);
+
+echo $mainView;
 
 if (UserRepository::is_logged_in()) {
     redirect('user_index.php');
