@@ -38,16 +38,16 @@ if (isset($_POST['add'])) {
 
     if ($errorMessage != '') {
         echo "<script language='javascript'>
-            alert('$errorMessage');
+            document.getElementById('display').innerHTML = '$errorMessage';
         </script>";
     } else {
         try {
             $post = new Post();
-            $post->title = $title;
-            $post->description = $description;
-            $post->content = $content;
-            $post->created = $date;
-            $post->username = $username;
+            $post->$title = $title;
+            $post->$description = $description;
+            $post->$content = $content;
+            $post->$created = $date;
+            $post->$username = $username;
             PostRepository::insert($post);
             redirect("user_index.php");
         } catch (PDOException $e) {

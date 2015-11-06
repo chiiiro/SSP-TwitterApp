@@ -1,10 +1,10 @@
 <?php
 
 require_once(VIEW_PATH . 'header.php');
+require_once(VIEW_PATH . 'body_image.view.php');
 
 ?>
 
-    <body background="../clouds.jpg" style="background-size: cover">
     <div class="container">
     <h1><?php echo $pageTitle ?></h1><hr />
 
@@ -35,6 +35,8 @@ require_once(VIEW_PATH . 'header.php');
                     echo sanitize_output($content); ?></textarea>
             </div>
         </div>
+
+        <p id="display"></p>
 
         <input type="submit" class="btn btn-default" name="add" id="add" value="<?php
         echo sanitize_output($pageTitle); ?>">

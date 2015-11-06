@@ -17,4 +17,3 @@ if(isset($_POST['login'])) {
 }
 
 require_once (VIEW_PATH.'index.view.php');
-

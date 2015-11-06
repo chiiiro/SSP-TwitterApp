@@ -1,9 +1,9 @@
 <?php
 
 require_once(VIEW_PATH . 'header.php');
+require_once(VIEW_PATH . 'body_image.view.php');
 ?>
 
-    <body background="../clouds.jpg" style="background-size: cover">
     <div class="container">
         <h1>Post</h1><hr />
 
