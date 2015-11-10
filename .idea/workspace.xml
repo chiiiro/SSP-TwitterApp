@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="376e61c4-692c-45e4-b020-2504facfcd4f" name="Default" comment="Commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/AbstractDBModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/DBModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/NotFoundException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Person.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/api.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/DB/connection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/func.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/global.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/lib/html_library.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/index_view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/komentari_view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/login_view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vagrant/provision.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/register.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/register_view.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/polja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sesije.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/slika.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/tablicamnozenja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/test.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/Login/Controllers/komentari.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/comments.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogTutorial/classes/class.user.php" afterPath="$PROJECT_DIR$/web/BlogTutorial/classes/class.user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/index.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/login.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/logout.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="376e61c4-692c-45e4-b020-2504facfcd4f" name="Default" comment="Commit" />
     <list id="2c0bc368-6032-4517-ba30-6ebe323ad8be" name="Failed commit: Default" comment="blog s kontrolerima i templatima" />
     <list id="03200250-a1da-47af-ba68-4209bdb80761" name="Failed commit: Failed commit: Default" comment="temp commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php" />
@@ -92,8 +55,8 @@
       <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1923077">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.33653846">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="e#30#62#0#PHP" expanded="true" />
                 <marker date="1447154633000" expanded="true" signature="390:468" placeholder="SELECT * FRO..blog_members..." />
@@ -169,9 +132,9 @@
         <option value="$PROJECT_DIR$/web/BlogMVC/templates/Error404.php" />
         <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/web/BlogMVC/Models/User.php" />
-        <option value="$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php" />
       </list>
     </option>
   </component>
@@ -687,7 +650,19 @@
       <option name="project" value="LOCAL" />
       <updated>1447155206879</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Commit">
+      <created>1447155280153</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1447155280153</updated>
+    </task>
+    <task id="LOCAL-00039" summary="temp commit">
+      <created>1447155382362</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1447155382363</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -754,9 +729,9 @@
     <MESSAGE value="Blog prije modela&#10;" />
     <MESSAGE value="blog s kontorlemeia" />
     <MESSAGE value="blog s kontrolerima i templatima" />
-    <MESSAGE value="temp commit" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="temp commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1198,8 +1173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.33653846">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="e#30#62#0#PHP" expanded="true" />
             <marker date="1447154633000" expanded="true" signature="390:468" placeholder="SELECT * FRO..blog_members..." />
