@@ -56,7 +56,7 @@ class AddPost implements Controller
                     $post->setCreated($date);
                     $post->setUsername($username);
                     PostRepository::insert($post);
-                    redirect("user_index.php");
+                    redirect(\route\Route::get("userIndex")->generate());
                 } catch (PDOException $e) {
                     echo $e->getMessage();
                 }

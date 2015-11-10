@@ -15,7 +15,7 @@ class Login implements Controller {
         echo $mainView;
 
         if (UserRepository::is_logged_in()) {
-            redirect('user_index.php');
+            redirect(\route\Route::get("userIndex")->generate());
         }
 
         if (isset($_POST['login'])) {
@@ -48,7 +48,7 @@ class Login implements Controller {
         </script>";
             } else {
                 if (UserRepository::login($username, $password)) {
-                    redirect('user_index.php');
+                    redirect(\route\Route::get("userIndex")->generate());
                     exit;
                 } else {
                     $errorMessage = 'Wrong username or password!';

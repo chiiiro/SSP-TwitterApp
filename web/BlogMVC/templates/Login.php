@@ -14,7 +14,7 @@ class Login extends AbstractView {
     <h1>Login</h1>
     <hr />
 
-    <form class="form-horizontal" role="form" action="Login.php" method="post">
+    <form class="form-horizontal" role="form" action="<?php echo \route\Route::get("login")->generate(); ?>" method="post">
         <div class="form-group">
             <label class="control-label col-sm-1" for="username">Username:</label>
 
@@ -33,7 +33,7 @@ class Login extends AbstractView {
         <p id="display"></p>
 
         <input type="submit" class="btn btn-default" name="login" id="login" value="Login">
-        <a href="index.php" role="button" class="btn btn-link">Back</a>
+        <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
     </form>
 
     <?php

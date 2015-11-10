@@ -8,7 +8,7 @@ class Logout implements Controller {
     public function action()
     {
         UserRepository::logout();
-        redirect("index.php");
+        redirect(\route\Route::get("index")->generate());
     }
 
 }

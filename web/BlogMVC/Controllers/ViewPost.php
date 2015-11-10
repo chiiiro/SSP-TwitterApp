@@ -8,22 +8,21 @@ class ViewPost implements Controller {
 
     public function action()
     {
-        // Check the querystring for a numeric id
-        if (isset($_GET['id']) && intval($_GET['id']) > 0) {
 
-            // Get id from querystring
-            $id = $_GET['id'];
+        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
 
-            $post = PostRepository::getById($id);
+        if(null === $id) {
+            redirect(\route\Route::get("error404")->generate());
+        }
 
-            if($post == null) {
-                redirect("404.php");
-            }
+        if(intval($id) < 1) {
+            redirect(\route\Route::get("error404")->generate());
+        }
 
-        } else {
+        $post = PostRepository::getById($id);
 
-            // Redirect to site root
-            redirect("../index.php");
+        if($post == null) {
+            redirect(\route\Route::get("error404")->generate());
         }
 
         $mainView = new \templates\Main();

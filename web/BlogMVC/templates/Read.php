@@ -18,10 +18,10 @@ class Read extends AbstractView {
 
         ?>
 
-        <a href="update.php?id=<?php echo $this->post['postid']; ?>" role="button" class="btn btn-link">Update</a>
-        <a href="delete.php?id=<?php echo $this->post['postid']; ?>" role="button" class="btn btn-link" onclick="javascript: return confirm
+        <a href="<?php echo \route\Route::get("editPost")->generate(array("id"=>$this->post['postid'])); ?>" role="button" class="btn btn-link">Edit</a>
+        <a href="<?php echo \route\Route::get("delete")->generate(array("id"=>$this->post['postid'])); ?>" role="button" class="btn btn-link" onclick="javascript: return confirm
 				('Are you sure you want to delete?');">Delete</a>
-        <a href="user_index.php" role="button" class="btn btn-link">Back</a>
+        <a href="<?php echo \route\Route::get("userIndex")->generate(); ?>" role="button" class="btn btn-link">Back</a>
 
     <?php
     }

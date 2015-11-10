@@ -16,7 +16,7 @@ class Viewpost extends AbstractView {
         $postView->setPost($this->post);
         echo $postView;
         ?>
-        <a href="index.php" role="button" class="btn btn-link">Back</a>
+        <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
 <?php
     }
 

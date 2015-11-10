@@ -50,7 +50,7 @@ protected function outputHTML()
 
         <input type="submit" class="btn btn-default" name="add" id="add" value="<?php
         echo sanitize_output($this->pageTitle); ?>">
-        <a href="user_index.php" role="button" class="btn btn-link">Back</a>
+        <a href="<?php echo \route\Route::get("userIndex")->generate(); ?>" role="button" class="btn btn-link">Back</a>
     </form>
 
     <?php
@@ -96,4 +96,3 @@ protected function outputHTML()
     }
 
     ?>
-

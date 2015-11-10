@@ -16,7 +16,7 @@ class Error404 extends \Views\AbstractView {
 
              <p>Unauthorized acces.</p>
 
-            <a href="index.php" role="button" class="btn btn-link">Back</a>
+            <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
 
         <?php
     }

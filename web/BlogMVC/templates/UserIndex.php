@@ -19,7 +19,7 @@ private $posts;
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title"><a
-                    href="create.php">Add post</a></h3>
+                    href="<?php echo \route\Route::get("addPost")->generate(); ?>">Add post</a></h3>
         </div>
     </div>
 
@@ -34,7 +34,7 @@ private $posts;
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"><a
-                        href="read.php?id=<?php echo $post['postid'] ?>"><?php echo $post['posttitle'] ?></a></h3>
+                        href="<?php echo \route\Route::get("readPost")->generate(array("id"=>$post['postid'])); ?>"><?php echo $post['posttitle'] ?></a></h3>
             </div>
             <div class="panel-body">
                 <?php echo $post['postdesc']; ?>
@@ -48,7 +48,7 @@ private $posts;
     <?php } ?>
 
     <hr/>
-    <a href="logout.php" role="button" class="btn btn-link">Logout</a>
+    <a href="<?php echo \route\Route::get("logout")->generate(); ?>" role="button" class="btn btn-link">Logout</a>
     <hr/>
 
     <?php

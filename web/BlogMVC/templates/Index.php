@@ -21,9 +21,9 @@ class Index extends AbstractView {
         <div style="background: transparent" class="jumbotron">
 
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="index.php">Home</a></li>
-                <li role="presentation"><a href="login.php">Login</a></li>
-                <li role="presentation"><a href="register.php">Register</a></li>
+                <li role="presentation" class="active"><a href="<?php echo \route\Route::get("index")->generate(); ?>">Home</a></li>
+                <li role="presentation"><a href="<?php echo \route\Route::get("login")->generate(); ?>">Login</a></li>
+                <li role="presentation"><a href="<?php echo \route\Route::get("register")->generate(); ?>">Register</a></li>
             </ul>
 
             <h1>Home page</h1>
@@ -39,7 +39,8 @@ class Index extends AbstractView {
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><a
-                                href="viewpost.php?id=<?php echo $post['postid'] ?>"><?php echo $post['posttitle'] ?></a>
+                                href="<?php echo \route\Route::get("viewPost")->generate(array("id"=>$post['postid'])); ?>"><?php echo $post['posttitle'] ?></a>
+
                         </h3>
                     </div>
                     <div class="panel-body">

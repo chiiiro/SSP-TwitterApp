@@ -12,7 +12,7 @@ class Index implements Controller {
         $posts = PostRepository::getAll();
 
         if(UserRepository::is_logged_in()) {
-            redirect("user_index.php");
+            redirect(\route\Route::get("userIndex")->generate());
         }
 
         $mainView = new \templates\Main();

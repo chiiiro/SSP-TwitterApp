@@ -7,24 +7,29 @@ use Repository\PostRepository;
 class ReadPost implements Controller {
 
     public function action() {
-        if (isset($_GET['id']) && intval($_GET['id']) > 0) {
 
-            // Get id from querystring
-            $id = $_GET['id'];
+        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
 
-            $username = $_SESSION['username'];
-
-            $post = PostRepository::getById($id);
-
-            if($post['username'] !== $username) {
-                redirect("404.php");
-            }
-
-        } else {
-
-            // Redirect to site root
-            redirect("user_index.php");
+        if(null === $id) {
+            redirect(\route\Route::get("error404")->generate());
         }
+
+        if(intval($id) < 1) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+
+        $username = $_SESSION['username'];
+
+        $post = PostRepository::getById($id);
+
+        if($post == null) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+
+        if($post['username'] !== $username) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+
 
         $mainView = new \templates\Main();
         $readTemplate = new \templates\Read();
