@@ -45,7 +45,7 @@ class Post extends AbstractView {
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Created</h3>
+                <h3 class="panel-title">Last edit</h3>
             </div>
             <div class="panel-body">
                 <?php echo $this->post['postdate']; ?>

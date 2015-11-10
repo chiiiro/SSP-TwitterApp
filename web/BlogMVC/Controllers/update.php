@@ -77,14 +77,8 @@ else {
     redirect("../index.php");
 }
 
-$updateTemplate = Template::create("createupdate", array(
-    "pageTitle" => "Update post",
-    "title" => $title,
-    "description" => $description,
-    "content" => $content
-));
-
-echo Template::create("main", array(
-    "pageTitle" => "Update post",
-    "body" => $updateTemplate->render()
-));
+$mainView = new \templates\Main();
+$updateView = new \templates\AddUpdate();
+$updateView->setPageTitle('Update post')->setTitle($title)->setDescription($description)->setContent($content);
+$mainView->setPageTitle('Update post')->setBody((string) $updateView);
+echo $mainView;

@@ -57,14 +57,8 @@ if (isset($_POST['add'])) {
     }
 }
 
-$createTemplate = Template::create("createupdate", array(
-    "pageTitle" => "Add post",
-    "title" => $title,
-    "description" => $description,
-    "content" => $content
-));
-
-echo Template::create("main", array(
-    "pageTitle" => "Add post",
-    "body" => $createTemplate->render()
-));
+$mainView = new \templates\Main();
+$createView = new \templates\AddUpdate();
+$createView->setPageTitle('Add post')->setTitle($title)->setDescription($description)->setContent($content);
+$mainView->setPageTitle('Add post')->setBody((string) $createView);
+echo $mainView;
