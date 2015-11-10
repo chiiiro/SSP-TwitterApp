@@ -22,8 +22,8 @@ class Index extends AbstractView {
 
             <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a href="index.php">Home</a></li>
-                <li role="presentation"><a href="Controllers/login.php">Login</a></li>
-                <li role="presentation"><a href="Controllers/register.php">Register</a></li>
+                <li role="presentation"><a href="login.php">Login</a></li>
+                <li role="presentation"><a href="register.php">Register</a></li>
             </ul>
 
             <h1>Home page</h1>
@@ -39,7 +39,7 @@ class Index extends AbstractView {
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><a
-                                href="Controllers/viewpost.php?id=<?php echo $post['postid'] ?>"><?php echo $post['posttitle'] ?></a>
+                                href="viewpost.php?id=<?php echo $post['postid'] ?>"><?php echo $post['posttitle'] ?></a>
                         </h3>
                     </div>
                     <div class="panel-body">
@@ -68,4 +68,3 @@ class Index extends AbstractView {
         }
 }
 ?>
-

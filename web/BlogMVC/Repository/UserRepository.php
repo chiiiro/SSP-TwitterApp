@@ -1,5 +1,10 @@
 <?php
 
+namespace Repository;
+
+use includes\libraries\Database;
+use Models\User;
+
 class UserRepository {
 
     public static function is_logged_in(){

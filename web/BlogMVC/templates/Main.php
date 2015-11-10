@@ -26,11 +26,7 @@ class Main extends AbstractView {
 
         <head/>
 
-        <body background="<?php if ($this->pageTitle == 'Home page') {
-            echo 'clouds.jpg';
-        } else {
-            echo '../clouds.jpg';
-        } ?>" style="background-size: cover; repeat: no-repeat">
+        <body background="includes/pictures/clouds.jpg" style="background-size: cover; repeat: no-repeat">
         <div>
 
             <?php echo $this->body; ?>

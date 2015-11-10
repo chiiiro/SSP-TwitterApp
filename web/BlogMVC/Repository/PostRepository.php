@@ -1,5 +1,9 @@
 <?php
 
+namespace Repository;
+
+use includes\libraries\Database;
+use Models\Post;
 
 class PostRepository
 {

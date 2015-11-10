@@ -1,5 +1,7 @@
 <?php
 
+namespace includes\libraries;
+
 class Database
 {
 

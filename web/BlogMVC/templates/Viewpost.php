@@ -15,6 +15,9 @@ class Viewpost extends AbstractView {
         $postView->setPageTitle('Post');
         $postView->setPost($this->post);
         echo $postView;
+        ?>
+        <a href="index.php" role="button" class="btn btn-link">Back</a>
+<?php
     }
 
     /**

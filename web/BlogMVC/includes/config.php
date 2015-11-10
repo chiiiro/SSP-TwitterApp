@@ -22,13 +22,13 @@ defined('REP_PATH') ? NULL : define('REP_PATH', SITE_ROOT.'Repository'.DS);
 ////////////////////////////////////////////////////////////////////////////////
 require_once(FUNCTION_PATH.'functions.php');
 require_once(LIB_PATH.'database.class.php');
-require_once(MODEL_PATH.'post.model.php');
-require_once(MODEL_PATH.'user.model.php');
+require_once(MODEL_PATH.'Post.php');
+require_once(MODEL_PATH.'User.php');
 require_once(REP_PATH.'PostRepository.php');
 require_once(REP_PATH.'UserRepository.php');
 
 spl_autoload_register(function($className) {
-    $fileName = "../" . str_replace("\\", "/", $className) . ".php";
+    $fileName = "./" . str_replace("\\", "/", $className) . ".php";
     if(!is_readable($fileName)) {
         return false;
     }
