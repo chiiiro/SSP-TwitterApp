@@ -94,8 +94,8 @@ class EditPost implements Controller {
 
         $mainView = new \templates\Main();
         $updateView = new \templates\AddUpdate();
-        $updateView->setPageTitle('Update post')->setTitle($title)->setDescription($description)->setContent($content);
-        $mainView->setPageTitle('Update post')->setBody((string) $updateView);
+        $updateView->setPageTitle('Edit post')->setTitle($title)->setDescription($description)->setContent($content);
+        $mainView->setPageTitle('Edit post')->setBody((string) $updateView);
         echo $mainView;
     }
 
