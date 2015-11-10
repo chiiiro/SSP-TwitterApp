@@ -2,21 +2,9 @@
 require_once('../includes/config.php');
 
 //if not logged in redirect to login page
-if(!$user->is_logged_in()){ header('Location: login.php'); }
-?>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Admin - Edit User</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-</head>
-<body>
-
-<div id="wrapper">
-
-	<?php include('menu.php');?>
+if(!$user->is_logged_in()){ header('Location: Login.php'); }
+include_once "../Views/EditUserHeader.html";
+include('menu.php');?>
 	<p><a href="users.php">User Admin Index</a></p>
 
 	<h2>Edit User</h2>
@@ -62,8 +50,6 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 				if(isset($password)){
 
-//					$hashedpassword = $user->password_hash($password, PASSWORD_BCRYPT);
-
 					//update into database
 					$stmt = $db->prepare('UPDATE blog_members SET username = ?, password = ?, email = ? WHERE memberid = ?') ;
 					$stmt->execute([$username, $password, $email, $memberid]);
@@ -105,34 +91,10 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 			$memberID = $_GET['id'];
 			$stmt = $db->prepare('SELECT memberID, username, email FROM blog_members WHERE memberID = ?') ;
 			$stmt->execute([$memberID]);
-			$row = $stmt->fetch(); 
+			$post = $stmt->fetch();
 
 		} catch(PDOException $e) {
 		    echo $e->getMessage();
 		}
 
-	?>
-
-	<form action='' method='post'>
-		<input type='hidden' name='memberID' value='<?php echo $row['memberID'];?>'>
-
-		<p><label>Username</label><br />
-		<input type='text' name='username' value='<?php echo $row['username'];?>'></p>
-
-		<p><label>Password (only to change)</label><br />
-		<input type='password' name='password' value=''></p>
-
-		<p><label>Confirm Password</label><br />
-		<input type='password' name='passwordConfirm' value=''></p>
-
-		<p><label>Email</label><br />
-		<input type='text' name='email' value='<?php echo $row['email'];?>'></p>
-
-		<p><input type='submit' name='submit' value='Update User'></p>
-
-	</form>
-
-</div>
-
-</body>
-</html>	
+include_once "../Views/EditUserFooter.html";

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog - <?php echo $row['posttitle'];?></title>
+    <title>Blog - <?php echo $post['posttitle'];?></title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
 </head>
@@ -17,9 +17,9 @@
 
     <?php
     echo '<div>';
-    echo '<h1>'.$row['posttitle'].'</h1>';
-    echo '<p>Posted on '.date('jS M Y', strtotime($row['postdate'])).'</p>';
-    echo '<p>'.$row['postcont'].'</p>';
+    echo '<h1>'.$post['posttitle'].'</h1>';
+    echo '<p>Posted on '.date('jS M Y', strtotime($post['postdate'])).'</p>';
+    echo '<p>'.$post['postcont'].'</p>';
     echo '</div>';
     ?>
 

@@ -3,7 +3,7 @@ require_once('../includes/config.php');
 
 //if not logged in redirect to login page
 if (!$user->is_logged_in()) {
-    header('Location: login.php');
+    header('Location: Login.php');
 }
 
 include_once "../Views/AddPostHeader.html";
@@ -41,8 +41,7 @@ if (isset($_POST['submit'])) {
         try {
 
             //insert into database
-            $stmt = $db->prepare('INSERT INTO blog_posts (posttitle,postdesc,postcont,postdate) VALUES (?, ?, ?, ?)');
-            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s')]);
+            insertPost($postTitle, $postDesc, $postCont);
 
             //redirect to index page
             header('Location: index.php?action=added');

@@ -19,14 +19,14 @@
 		<?php
 			try {
 
-				$stmt = $db->query('SELECT postid, posttitle, postdesc, postdate, postslug FROM blog_posts');
+				$stmt = $db->query('SELECT postid, posttitle, postdesc, postdate FROM blog_posts');
 				while($row = $stmt->fetch()){
 					
 					echo '<div>';
-						echo '<h1><a href="viewpost.php?id='.$row['postslug'].'">'.$row['posttitle'].'</a></h1>';
+						echo '<h1><a href="viewpost.php?id='.$row['postid'].'">'.$row['posttitle'].'</a></h1>';
 						echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['postdate'])).'</p>';
 						echo '<p>'.$row['postdesc'].'</p>';
-						echo '<p><a href="viewpost.php?id='.$row['postslug'].'">Read More</a></p>';
+						echo '<p><a href="viewpost.php?id='.$row['postid'].'">Read More</a></p>';
 					echo '</div>';
 
 				}
