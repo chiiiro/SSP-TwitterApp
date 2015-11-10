@@ -17,14 +17,14 @@ $userinfo = array(
 );
 
 if(isset($_SESSION['username'])) {
-    header("Location: komentari.php");
+    header("Location: comments.php");
 } else if(isset($_POST['submit'])) {
     if(array_key_exists($_POST['username'], $userinfo) && $userinfo[$_POST['username']] == $_POST['password']) {
         $_SESSION['username'] = $_POST['username'];
-        header("Location: komentari.php");
+        header("Location: comments.php");
         exit;
     } else {
-        header("Location: index.php");
+        header("Location: homepage.php");
         exit;
     }
 } else {

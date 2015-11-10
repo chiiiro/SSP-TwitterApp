@@ -6,7 +6,7 @@
  * Time: 09:22
  */
 
-include_once "../global.php";
+include_once "../inc/global.php";
 
 //logout korisnika
 unset($_SESSION['username']);

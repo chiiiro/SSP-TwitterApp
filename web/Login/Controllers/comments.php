@@ -13,7 +13,7 @@ include_once "../Views/komentari_view.php";
 set_title("Komentari");
 
 if(!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: Login.php");
     exit;
 } else {
     begin_paragraph();

@@ -1,19 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="376e61c4-692c-45e4-b020-2504facfcd4f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/polja.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/files/dot/.bash_aliases" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/files/mount.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/files/nginx/default" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/files/pgbouncer/pgbouncer.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/playbook.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vagrant/provision.sh" afterPath="" />
+    <list default="true" id="376e61c4-692c-45e4-b020-2504facfcd4f" name="Default" comment="Commit">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/AbstractDBModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Comment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/DBModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/NotFoundException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Model/Person.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/api.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/comments.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/DB/connection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/func.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/inc/global.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/lib/html_library.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/index_view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/komentari_view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/login.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/login_view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/logout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vagrant/provision.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Controllers/register.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/LoginWithDB/Views/register_view.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/polja.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sesije.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/slika.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/tablicamnozenja.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/test.txt" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/Login/Controllers/komentari.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogTutorial/classes/class.user.php" afterPath="$PROJECT_DIR$/web/BlogTutorial/classes/class.user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/index.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/login.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Login/Controllers/logout.php" afterPath="$PROJECT_DIR$/web/Login/Controllers/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <list id="2c0bc368-6032-4517-ba30-6ebe323ad8be" name="Failed commit: Default" comment="blog s kontrolerima i templatima" />
+    <list id="03200250-a1da-47af-ba68-4209bdb80761" name="Failed commit: Failed commit: Default" comment="temp commit">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Logout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ReadPost.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/UserIndex.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ViewPost.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/404.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/create.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/read.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/update.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/user_index.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/delete.php" afterPath="$PROJECT_DIR$/web/BlogMVC/delete.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/login.php" afterPath="$PROJECT_DIR$/web/BlogMVC/login.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/logout.php" afterPath="$PROJECT_DIR$/web/BlogMVC/logout.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/register.php" afterPath="$PROJECT_DIR$/web/BlogMVC/register.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/viewpost.php" afterPath="$PROJECT_DIR$/web/BlogMVC/viewpost.php" />
     </list>
     <ignored path="ucenje.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" ignored="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,19 +77,29 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ucenje" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.php">
+      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57539684">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.1923077">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding>
-                <marker date="1444224362000" expanded="true" signature="224:233" placeholder="..." />
+                <element signature="e#30#62#0#PHP" expanded="true" />
+                <marker date="1447154633000" expanded="true" signature="390:468" placeholder="SELECT * FRO..blog_members..." />
+                <marker date="1447154633000" expanded="true" signature="936:998" placeholder="SELECT * FRO..blog_members..." />
+                <marker date="1447154633000" expanded="true" signature="1192:1261" placeholder="..." />
+                <marker date="1447154633000" expanded="true" signature="1317:1384" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -47,6 +110,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Html5" />
       </list>
     </option>
@@ -57,10 +121,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/src/test.php" />
-        <option value="$PROJECT_DIR$/web/index.php" />
-        <option value="$PROJECT_DIR$/src/polja.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/createupdate.template.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/404.template.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Error404404.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/Model.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/DBModel.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/includes/libraries/database.class.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/NotFoundException.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/Post.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/components/Post.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/AbstractDBModel.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/read.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/UserIndex.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/user_index.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/404.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/create.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/update.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/ReadPost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/includes/config.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/user_index.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/create.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/update.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/read.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/404.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Login.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/logout.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/login.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/register.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Logout.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/logout.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Register.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Login.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/viewpost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/ViewPost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Index.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Viewpost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/post.model.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Repository/PostRepository.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/delete.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Index.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/index.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Main.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/templates/Error404.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Models/User.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -71,11 +182,15 @@
   <component name="NamedScopeManager">
     <order />
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1436" />
-    <option name="height" value="877" />
+    <option name="x" value="703" />
+    <option name="y" value="-1057" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -100,6 +215,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -142,27 +258,172 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogTutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogTutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogTutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogTutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogMVC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogMVC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ucenje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogMVC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/simple-blog-part-1-build-master" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="sett&#9;ACTION&#9;Database.Settings" />
+    <property name="SearchEverywhereHistoryKey" value="format&#9;ACTION&#9;ReformatCode&#10;sett&#9;ACTION&#9;Database.Settings" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/BlogMVC" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC/Controllers" />
+      <recent name="$PROJECT_DIR$/web/BlogTutorial" />
+      <recent name="$PROJECT_DIR$/web/Blog/Style" />
+      <recent name="$PROJECT_DIR$/web/Blog" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC/includes/pictures" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC/Controllers" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC/Views" />
+      <recent name="$PROJECT_DIR$/web/BlogMVC/Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,33 +489,248 @@
       <option name="project" value="LOCAL" />
       <updated>1444224376801</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test program&#10;">
+      <created>1444744862033</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1444744862033</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Test program&#10;">
+      <created>1444745043915</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1444745043915</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Test program&#10;">
+      <created>1444746241176</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1444746241176</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test program&#10;">
+      <created>1444746316201</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1444746316201</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Test program&#10;">
+      <created>1444747622118</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1444747622118</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Test program&#10;">
+      <created>1444825025821</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1444825025821</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Test program&#10;">
+      <created>1444828596163</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1444828596163</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Test program&#10;">
+      <created>1444829645520</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1444829645520</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Test program&#10;">
+      <created>1444830994581</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1444830994581</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Test program&#10;">
+      <created>1444831329151</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1444831329151</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Test program&#10;">
+      <created>1444831671345</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1444831671345</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Test program&#10;">
+      <created>1444983651928</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1444983651928</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Test program&#10;">
+      <created>1444984403180</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1444984403180</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Kviz u kojem sve radi&#10;">
+      <created>1444986632199</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1444986632199</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Kviz u kojem sve radi&#10;">
+      <created>1444992041158</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1444992041158</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Kviz u kojem sve radi&#10;">
+      <created>1445002470796</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1445002470796</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Kviz u kojem sve radi&#10;">
+      <created>1445003673105</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1445003673105</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Login korisnika&#10;">
+      <created>1445326815851</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1445326815851</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Login s komentarima gotov&#10;">
+      <created>1445331199481</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1445331199481</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Login projekt gotov&#10;">
+      <created>1445332048499</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1445332048499</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Blog bez ruta&#10;">
+      <created>1446198664766</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1446198664766</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Blog">
+      <created>1446631710587</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1446631710587</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Blog">
+      <created>1446636020327</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1446636020327</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Blog&#10;">
+      <created>1446637459862</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1446637459862</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Blog s prepravkama&#10;">
+      <created>1446646105029</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1446646105029</updated>
+    </task>
+    <task id="LOCAL-00030" summary="blog update&#10;">
+      <created>1446798835408</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1446798835408</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Templates riješini">
+      <created>1446810513376</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1446810513376</updated>
+    </task>
+    <task id="LOCAL-00032" summary="templates dovršeni">
+      <created>1446812472986</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1446812472986</updated>
+    </task>
+    <task id="LOCAL-00033" summary="abstraktni viewi&#10;">
+      <created>1446822146137</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1446822146137</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Blog prije modela&#10;">
+      <created>1447142752891</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1447142752891</updated>
+    </task>
+    <task id="LOCAL-00035" summary="blog s kontorlemeia">
+      <created>1447154898733</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1447154898733</updated>
+    </task>
+    <task id="LOCAL-00036" summary="temp commit">
+      <created>1447155116546</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1447155116546</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Commit">
+      <created>1447155206879</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1447155206879</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1436" height="877" extended-state="6" />
-    <editor active="false" />
+    <frame x="703" y="-1057" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24721448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920793" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17604166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32793522" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -263,61 +739,473 @@
     <MESSAGE value="Test program" />
     <MESSAGE value="&#10;" />
     <MESSAGE value="Test program&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test program&#10;" />
+    <MESSAGE value="Login korisnika&#10;" />
+    <MESSAGE value="Login s komentarima gotov&#10;" />
+    <MESSAGE value="Login projekt gotov&#10;" />
+    <MESSAGE value="Blog bez ruta&#10;" />
+    <MESSAGE value="Blog" />
+    <MESSAGE value="Blog&#10;" />
+    <MESSAGE value="Kviz u kojem sve radi&#10;" />
+    <MESSAGE value="Blog s prepravkama&#10;" />
+    <MESSAGE value="blog update&#10;" />
+    <MESSAGE value="Templates riješini" />
+    <MESSAGE value="templates dovršeni" />
+    <MESSAGE value="abstraktni viewi&#10;" />
+    <MESSAGE value="Blog prije modela&#10;" />
+    <MESSAGE value="blog s kontorlemeia" />
+    <MESSAGE value="blog s kontrolerima i templatima" />
+    <MESSAGE value="temp commit" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/polja.php">
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Views/AbstractView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Views/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/includes/libraries/database.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Blog/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1446036012000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..korisnici..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.php">
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Model/Person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Controllers/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1923077">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Controllers/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Model/AbstractDBModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.875">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="65" selection-end-column="40" />
+          <folding>
+            <marker date="1445952903000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1445952903000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1445952903000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/components/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Model/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/LoginWithDB/Controllers/comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51282054">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/AddUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.448718">
+          <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/includes/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48076922">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/UserIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8974359">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09615385">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/ViewPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.90384614">
+          <caret line="69" column="2" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/viewpost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11217949">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/user_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048076924">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5608974">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/includes/pictures/clouds.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Error404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28846154">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Viewpost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28846154">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#29#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36858973">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="76" />
+          <folding>
+            <element signature="e#29#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6891026">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22435898">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="e#31#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/templates/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60897434">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08012821">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#31#61#0#PHP" expanded="true" />
+            <marker date="1447150973000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20833333">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12820514">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/ReadPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048076924">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/UserIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20833333">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#31#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5229508">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding>
+            <marker date="1447150973000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447150973000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Repository/PostRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_posts..." />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_posts..." />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_posts..." />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="UPDATE blog_..." />
+            <marker date="1447150512000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2786885">
+          <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+          <folding>
+            <element signature="e#31#61#0#PHP" expanded="true" />
+            <marker date="1447154849000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.19672132">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding>
+            <element signature="e#31#61#0#PHP" expanded="true" />
+            <marker date="1447150973000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.12861736">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.php">
+    <entry file="file://$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/polja.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56349206">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57539684">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.1923077">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
-            <marker date="1444224362000" expanded="true" signature="224:233" placeholder="..." />
+            <element signature="e#30#62#0#PHP" expanded="true" />
+            <marker date="1447154633000" expanded="true" signature="390:468" placeholder="SELECT * FRO..blog_members..." />
+            <marker date="1447154633000" expanded="true" signature="936:998" placeholder="SELECT * FRO..blog_members..." />
+            <marker date="1447154633000" expanded="true" signature="1192:1261" placeholder="..." />
+            <marker date="1447154633000" expanded="true" signature="1317:1384" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
