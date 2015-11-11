@@ -19,11 +19,21 @@ window.onload = function () {
 
         flag = true;
 
+        var odlomci = document.getElementsByTagName('p');
+
+        var i = 0;
+
         for(var v in values) {
             if(!samples[v].test(values[v])) {
                 flag = false;
-                alert(messages[v]);
 
+                if(i == 0 && !samples[v].test(values[v])) {
+                    odlomci[i].innerHTML = messages[v];
+                }
+                if(i == 1 && !samples[v].test(values[v])) {
+                    odlomci[i].innerHTML = messages[v];
+                }
+                i++;
             }
         }
 

@@ -16,6 +16,7 @@ class Viewpost extends AbstractView {
         $postView->setPost($this->post);
         echo $postView;
         ?>
+        <a href="<?php echo \route\Route::get("viewComments")->generate(array("id"=>$this->post['postid'])); ?>" role="button" class="btn btn-link">Comments</a>
         <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
 <?php
     }

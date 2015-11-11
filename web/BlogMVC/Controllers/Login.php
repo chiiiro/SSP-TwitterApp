@@ -27,7 +27,7 @@ class Login implements Controller {
                 redirect(\route\Route::get("userIndex")->generate());
                 exit;
             } else {
-                $errorMessage = 'Wrong username or password!';
+                $errorMessage = 'Wrong username or password. User does not exists!';
                 echo "<script language='javascript'>
                      document.getElementById('display').innerHTML = '$errorMessage';
                 </script>";

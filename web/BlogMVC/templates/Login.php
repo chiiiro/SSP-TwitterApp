@@ -30,6 +30,8 @@ class Login extends AbstractView {
             </div>
         </div>
 
+        <p id="user"></p>
+        <p id="pass"></p>
         <p id="display"></p>
 
         <input type="submit" class="btn btn-default" name="login" id="login" value="Login">

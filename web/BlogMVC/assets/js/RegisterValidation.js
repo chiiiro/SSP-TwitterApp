@@ -17,7 +17,7 @@ window.onload = function () {
         var messages = [
             'Username must have at least 4 characters and contain only letters and numbers!',
             'Password must have at least 4 characters and contain only letters and numbers!',
-            'Provided e-mail address is not valid.'
+            'Provided e-mail address is incorrect.'
         ];
 
         flag = true;

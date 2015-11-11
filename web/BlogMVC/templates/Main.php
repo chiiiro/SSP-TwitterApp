@@ -25,7 +25,7 @@ class Main extends AbstractView {
                   crossorigin="anonymous">
         <head/>
 
-        <body background="<?php if($this->pageTitle == 'User post' || $this->pageTitle == 'Post' || $this->pageTitle == 'Edit post' || $this->pageTitle == 'Error 404')
+        <body background="<?php if($this->pageTitle == 'User post' || $this->pageTitle == 'Post' || $this->pageTitle == 'Edit post' || $this->pageTitle == 'Comments' || $this->pageTitle == 'Add comment' || $this->pageTitle == 'Error 404')
             {echo '../includes/pictures/clouds.jpg';} else {echo 'includes/pictures/clouds.jpg';}?>" style="background-size: cover; repeat: no-repeat">
         <div>
 

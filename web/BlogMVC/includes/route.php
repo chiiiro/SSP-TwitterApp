@@ -63,6 +63,30 @@ Route::register("delete", new DefaultRoute("delete-post/<id>", array(
     ))
 );
 
+Route::register("viewComments", new DefaultRoute("view-comments/<id>", array(
+        "controller" => "viewComments",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("readComments", new DefaultRoute("read-comments/<id>", array(
+        "controller" => "readComments",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("addComment", new DefaultRoute("add-comment/<id>", array(
+        "controller" => "addComment",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
 Route::register("error404", new DefaultRoute("error/404", array(
         "controller" => "error404",
         "action" => "action"
