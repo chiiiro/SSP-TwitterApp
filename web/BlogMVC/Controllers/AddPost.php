@@ -45,7 +45,7 @@ class AddPost implements Controller
 
             if ($errorMessage != '') {
                 echo "<script language='javascript'>
-            alert('$errorMessage');
+                alert('$errorMessage');
         </script>";
             } else {
                 try {

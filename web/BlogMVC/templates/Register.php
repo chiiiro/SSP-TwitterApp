@@ -13,7 +13,7 @@ class Register extends AbstractView {
 <div class="container">
     <h1>Register</h1><hr />
 
-    <form class="form-horizontal" role="form" action="<?php echo \route\Route::get("register")->generate(); ?>" method="post">
+    <form class="form-horizontal" role="form" id="registerform" action="<?php echo \route\Route::get("register")->generate(); ?>" method="post">
         <div class="form-group">
             <label class="control-label col-sm-1" for="username">Username:</label>
 
@@ -38,11 +38,11 @@ class Register extends AbstractView {
             </div>
         </div>
 
-        <p id="display"></p>
-
         <input type="submit" class="btn btn-default" name="register" id="register" value="Register">
         <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
     </form>
+
+    <script src="assets/js/RegisterValidation.js"></script>
 
         <?php
     }
