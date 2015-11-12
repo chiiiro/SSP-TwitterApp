@@ -68,7 +68,7 @@ class Main extends AbstractView {
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#" role="button" class="btn btn-link""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Change password</a></li>
+                                <li><a href="<?php echo \route\Route::get("changePwd")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Change password</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">

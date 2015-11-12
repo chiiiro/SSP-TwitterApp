@@ -58,4 +58,10 @@ class UserRepository {
         $query->execute([$username]);
         return $query->fetch()['memberid'];
     }
+
+    public static function changePassword(User $user) {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE blog_members SET password = ? WHERE username = ?');
+        $query->execute([$user->getPassword(), $user->getUsername()]);
+    }
 }

@@ -63,6 +63,12 @@ Route::register("delete", new DefaultRoute("delete-post/<id>", array(
     ))
 );
 
+Route::register("changePwd", new DefaultRoute("change-pwd", array(
+        "controller" => "changePwd",
+        "action" => "action"
+    ))
+);
+
 Route::register("error404", new DefaultRoute("error/404", array(
         "controller" => "error404",
         "action" => "action"
