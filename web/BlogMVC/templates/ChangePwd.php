@@ -28,7 +28,7 @@ class ChangePwd extends AbstractView {
                 <label class="control-label col-sm-1" for="pwd1">Confirm password:</label>
 
                 <div class="col-sm-2">
-                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Enter new password">
+                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm new password">
                 </div>
             </div>
 

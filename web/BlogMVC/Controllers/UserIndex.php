@@ -12,7 +12,6 @@ class UserIndex implements Controller {
         $username = $_SESSION['username'];
         $id = UserRepository::getIdByUsername($username);
 
-//        $posts = PostRepository::getAllByUsername($username);
         $posts = PostRepository::getAllById($id);
 
         $mainView = new \templates\Main();

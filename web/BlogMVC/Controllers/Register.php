@@ -50,7 +50,7 @@ class Register implements Controller {
 
                 try {
                     UserRepository::register($user);
-                } catch (PDOException $e) {
+                } catch (\PDOException $e) {
                     $e->getMessage();
                 }
             } else {

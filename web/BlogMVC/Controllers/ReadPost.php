@@ -44,11 +44,25 @@ class ReadPost implements Controller {
         $mainView->setPageTitle('User post')->setBody((string) $readTemplate);
         echo $mainView;
 
-        $error = '';
+    }
 
+    public function postCommentAction() {
+        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
+
+        if(null === $id) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+
+        if(intval($id) < 1) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+
+        $username = $_SESSION['username'];
+
+        $error = '';
         if (isset($_POST['comment'])) {
 
-            $content = trim($_POST['comm']);
+            $content = trim($_POST['comment']);
 
             if($content === '') {
                 $error = "Empty comment!";
@@ -60,7 +74,7 @@ class ReadPost implements Controller {
                     $comment->setPostid($id);
                     $comment->setContent(htmlentities($content));
                     CommentRepository::insertComment($comment);
-                    redirect(\route\Route::get("readPost")->generate(array("id"=>$id)));
+                    echo json_encode(['message' => 'success', 'comment' => $comment->getContent(), 'user' => $username]);
                 } catch (\PDOException $e) {
                     echo $e->getMessage();
                 }
@@ -70,5 +84,4 @@ class ReadPost implements Controller {
 
         }
     }
-
 }

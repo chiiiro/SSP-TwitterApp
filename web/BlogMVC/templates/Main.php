@@ -72,6 +72,10 @@ class Main extends AbstractView {
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a href="<?php echo \route\Route::get("changeUser")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Change username</a></li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
                                 <li><a type="button" id="txt" role="button" class="btn btn-link""></a></li>
                             </ul>
 

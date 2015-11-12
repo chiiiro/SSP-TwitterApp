@@ -65,6 +65,27 @@ class Read extends AbstractView {
 				('Are you sure you want to delete?');">Delete post</a>
         <a href="<?php echo \route\Route::get("userIndex")->generate(); ?>" role="button" class="btn btn-link">Back</a>
 
+
+        <script type="text/javascript" >
+            $(document).ready(function() {
+                $('#comment').on('click', function(e) {
+                    e.preventDefault();
+                    var comment = $('#comm').val();
+                    var url = "<?php echo \route\Route::get("addComment")->generate(array("id"=>$this->post['postid'])); ?>";
+                    //provjera da li je prazan
+                    $.post(url, {'comment' : comment})
+                    .done(function(data) {
+                            a = JSON.parse(data);
+                            $('#comments').append('<div class="panel-body"><p>' + a.comment + '</p><p>Created by: ' + a.user + '</p></div>');
+                            $("#comm").replaceWith($("#comm").clone());
+                            $('#comm').val('');
+                    })
+                    .fail(function(jqXHR) {
+                        alert( "error" );
+                    });
+                });
+            });
+        </script>
     <?php
     }
 

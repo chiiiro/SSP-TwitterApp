@@ -47,6 +47,7 @@ Route::register("viewPost", new DefaultRoute("view-post/<id>", array(
         "id" => "\\d+"
     ))
 );
+
 Route::register("readPost", new DefaultRoute("read-post/<id>", array(
         "controller" => "readPost",
         "action" => "action"
@@ -54,6 +55,15 @@ Route::register("readPost", new DefaultRoute("read-post/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("addComment", new DefaultRoute("post/<id>/comment", array(
+        "controller" => "readPost",
+        "action" => "postCommentAction"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
 
 Route::register("delete", new DefaultRoute("delete-post/<id>", array(
         "controller" => "delete",
@@ -65,6 +75,12 @@ Route::register("delete", new DefaultRoute("delete-post/<id>", array(
 
 Route::register("changePwd", new DefaultRoute("change-pwd", array(
         "controller" => "changePwd",
+        "action" => "action"
+    ))
+);
+
+Route::register("changeUser", new DefaultRoute("change-user", array(
+        "controller" => "changeUser",
         "action" => "action"
     ))
 );

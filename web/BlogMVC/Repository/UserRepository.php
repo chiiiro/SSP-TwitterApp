@@ -64,4 +64,11 @@ class UserRepository {
         $query = $db->prepare('UPDATE blog_members SET password = ? WHERE username = ?');
         $query->execute([$user->getPassword(), $user->getUsername()]);
     }
+
+    public static function changeUsername(User $user)
+    {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE blog_members SET username = ? WHERE memberid = ?');
+        $query->execute([$user->getUsername(), $user->getId()]);
+    }
 }
