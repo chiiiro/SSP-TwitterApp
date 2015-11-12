@@ -23,19 +23,19 @@ class PostRepository
         return $query;
     }
 
-    public static function getAllByUsername($username)
+    public static function getAllById($id)
     {
         $db = Database::getInstance();
-        $query = $db->prepare("SELECT * FROM blog_posts WHERE username = ?");
-        $query->execute([$username]);
+        $query = $db->prepare("SELECT * FROM blog_posts WHERE userid = ?");
+        $query->execute([$id]);
         return $query;
     }
 
     public static function insert(Post $post)
     {
         $db = Database::getInstance();
-        $query = $db->prepare('INSERT INTO blog_posts (posttitle,postdesc,postcont,postdate, username) VALUES (?, ?, ?, ?, ?)');
-        $query->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getCreated(), $post->getUsername()]);
+        $query = $db->prepare('INSERT INTO blog_posts (posttitle,postdesc,postcont,postdate,userid) VALUES (?, ?, ?, ?, ?)');
+        $query->execute([$post->getTitle(), $post->getDescription(), $post->getContent(), $post->getCreated(), $post->getUserid()]);
     }
 
     public static function update(Post $post)

@@ -9,7 +9,7 @@ class Post {
     private $description;
     private $content;
     private $created;
-    private $username;
+    private $userid;
 
     /**
      * @return mixed
@@ -94,17 +94,17 @@ class Post {
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getUserid()
     {
-        return $this->username;
+        return $this->userid;
     }
 
     /**
-     * @param mixed $username
+     * @param mixed $userid
      */
-    public function setUsername($username)
+    public function setUserid($userid)
     {
-        $this->username = $username;
+        $this->userid = $userid;
     }
 
 }

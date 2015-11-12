@@ -2,6 +2,7 @@
 
 namespace templates;
 
+use Repository\UserRepository;
 use Views\AbstractView;
 use templates\components\Post;
 
@@ -28,11 +29,12 @@ class Read extends AbstractView {
                 <?php
 
                 foreach ($this->comments as $comment) {
+                    $username = UserRepository::getUsernameById($this->post['userid']);
                     ?>
 
                         <div class="panel-body">
                             <p><?php echo $comment['content']; ?></p>
-                            <p><?php echo 'Created by: ' . $comment['username']; ?></p>
+                            <p><?php echo 'Created by: ' . $username;?></p>
                         </div>
 
                     <?php
@@ -53,7 +55,7 @@ class Read extends AbstractView {
 
                 <p id="error"></p>
 
-                <input onclick="addComment()" type="submit" class="btn btn-default" name="comment" id="comment" value="Add comment">
+                <input type="submit" class="btn btn-default" name="comment" id="comment" value="Add comment">
             </form>
 
         </div>
@@ -62,14 +64,6 @@ class Read extends AbstractView {
         <a href="<?php echo \route\Route::get("delete")->generate(array("id"=>$this->post['postid'])); ?>" role="button" class="btn btn-link" onclick="javascript: return confirm
 				('Are you sure you want to delete?');">Delete post</a>
         <a href="<?php echo \route\Route::get("userIndex")->generate(); ?>" role="button" class="btn btn-link">Back</a>
-
-        <script>
-
-            function addComment() {
-                $('#comments').append('ivan');
-            }
-
-        </script>
 
     <?php
     }

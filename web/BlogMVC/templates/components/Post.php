@@ -1,6 +1,7 @@
 <?php
 
 namespace templates\components;
+use Repository\UserRepository;
 use Views\AbstractView;
 
 class Post extends AbstractView {
@@ -10,6 +11,9 @@ class Post extends AbstractView {
 
     protected function outputHTML()
     {
+
+        $username = UserRepository::getUsernameById($this->post['userid']);
+
         ?>
 
         <div class="container">
@@ -41,7 +45,7 @@ class Post extends AbstractView {
 
             <div class="panel-body">
                 <p><?php echo 'Description: ' . $this->post['postdesc']; ?></p>
-                <p><?php echo 'Created by: ' . $this->post['username'];?></p>
+                <p><?php echo 'Created by: ' . $username;?></p>
                 <p><?php echo 'Last edit: ' . $this->post['postdate'];?></p>
             </div>
         </div>

@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Repository\PostRepository;
 use Models\Post;
+use Repository\UserRepository;
 
 class AddPost implements Controller
 {
@@ -23,6 +24,7 @@ class AddPost implements Controller
             $content = $_POST['content'];
             $date = date('Y-m-d H:i:s');
             $username = $_SESSION['username'];
+            $userid = UserRepository::getIdByUsername($username);
 
             $errors = null;
             $errorMessage = '';
@@ -54,7 +56,7 @@ class AddPost implements Controller
                     $post->setDescription(htmlentities($description));
                     $post->setContent(htmlentities($content));
                     $post->setCreated($date);
-                    $post->setUsername($username);
+                    $post->setUserid($userid);
                     PostRepository::insert($post);
                     redirect(\route\Route::get("userIndex")->generate());
                 } catch (PDOException $e) {

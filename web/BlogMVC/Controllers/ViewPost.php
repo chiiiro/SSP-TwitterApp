@@ -26,12 +26,6 @@ class ViewPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $checkId = CommentRepository::checkId($id);
-
-        if($checkId == null) {
-            redirect(\route\Route::get("readPost")->generate(array("id"=>$id)));
-        }
-
         $comments = CommentRepository::getAll($id);
 
         $mainView = new \templates\Main2();

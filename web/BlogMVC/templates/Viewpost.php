@@ -2,6 +2,7 @@
 
 namespace templates;
 
+use Repository\UserRepository;
 use Views\AbstractView;
 use templates\components\Post;
 
@@ -27,11 +28,12 @@ class Viewpost extends AbstractView {
                 <?php
 
                 foreach ($this->comments as $comment) {
+                    $username = UserRepository::getUsernameById($this->post['postid']);
                     ?>
 
                     <div class="panel-body">
                         <p><?php echo $comment['content']; ?></p>
-                        <p><?php echo 'Created by: ' . $comment['username']; ?></p>
+                        <p><?php echo 'Created by: ' . $username; ?></p>
                     </div>
 
                     <?php

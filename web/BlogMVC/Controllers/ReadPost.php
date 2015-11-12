@@ -5,6 +5,7 @@ namespace Controllers;
 use Repository\CommentRepository;
 use Repository\PostRepository;
 use Models\Comment;
+use Repository\UserRepository;
 
 class ReadPost implements Controller {
 
@@ -28,14 +29,11 @@ class ReadPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        if($post['username'] !== $username) {
+        $userid = $post['userid'];
+        $user = UserRepository::getUsernameById($userid);
+
+        if($user !== $username) {
             redirect(\route\Route::get("error404")->generate());
-        }
-
-        $checkId = CommentRepository::checkId($id);
-
-        if($checkId == null) {
-            redirect(\route\Route::get("readPost")->generate(array("id"=>$id)));
         }
 
         $comments = CommentRepository::getAll($id);
@@ -56,14 +54,11 @@ class ReadPost implements Controller {
                 $error = "Empty comment!";
             }
 
-            $username = $_SESSION['username'];
-
-            if($error == '') {
+            if($error === '') {
                 try {
                     $comment = new Comment();
                     $comment->setPostid($id);
                     $comment->setContent(htmlentities($content));
-                    $comment->setUsername($username);
                     CommentRepository::insertComment($comment);
                     redirect(\route\Route::get("readPost")->generate(array("id"=>$id)));
                 } catch (\PDOException $e) {

@@ -2,7 +2,7 @@
 
 namespace templates;
 
-use Views\AbstractView;
+use Repository\UserRepository;use Views\AbstractView;
 
 class UserIndex extends AbstractView {
 
@@ -19,6 +19,7 @@ private $posts;
     <?php
 
     foreach ($this->posts as $post) {
+        $username = UserRepository::getUsernameById($post['userid']);
         ?>
 
 
@@ -31,7 +32,7 @@ private $posts;
                 <?php echo $post['postdesc']; ?>
             </div>
             <div class="panel-footer">
-                <?php echo 'Created by: ' . $post['username']; ?>
+                <?php echo 'Created by: ' . $username; ?>
             </div>
         </div>
 

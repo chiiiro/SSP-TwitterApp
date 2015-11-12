@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Repository\PostRepository;
 use Models\Post;
+use Repository\UserRepository;
 
 class EditPost implements Controller {
 
@@ -28,7 +29,10 @@ class EditPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        if ($post['username'] !== $username) {
+        $userid = $post['userid'];
+        $user = UserRepository::getUsernameById($userid);
+
+        if ($user !== $username) {
             redirect(\route\Route::get("error404")->generate());
         }
 

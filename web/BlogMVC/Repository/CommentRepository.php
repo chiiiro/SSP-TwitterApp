@@ -25,8 +25,8 @@ class CommentRepository {
     public static function insertComment(Comment $comment)
     {
         $db = Database::getInstance();
-        $query = $db->prepare('INSERT INTO blog_comments (postid,content,username) VALUES (?, ?, ?)');
-        $query->execute([$comment->getPostid(), $comment->getContent(), $comment->getUsername()]);
+        $query = $db->prepare('INSERT INTO blog_comments (postid,content) VALUES (?, ?)');
+        $query->execute([$comment->getPostid(), $comment->getContent()]);
     }
 
 }

@@ -44,4 +44,18 @@ class UserRepository {
             </script>";
         }
     }
+
+    public static function getUsernameById($id) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT username FROM blog_members WHERE memberid = ?');
+        $query->execute([$id]);
+        return $query->fetch()['username'];
+    }
+
+    public static function getIdByUsername($username) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT memberid FROM blog_members WHERE username = ?');
+        $query->execute([$username]);
+        return $query->fetch()['memberid'];
+    }
 }

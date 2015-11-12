@@ -12,7 +12,9 @@ private $description;
 private $content;
 
 protected function outputHTML()
-{ ?>
+{
+
+    ?>
 
 <div class="container">
     <h1><?php echo $this->pageTitle ?></h1>
