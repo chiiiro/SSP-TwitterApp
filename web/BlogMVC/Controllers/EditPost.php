@@ -42,7 +42,6 @@ class EditPost implements Controller {
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-//            $post = PostRepository::getById($id);
 
             // Set form values
             $title = $post['posttitle'];
