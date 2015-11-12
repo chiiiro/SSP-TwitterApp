@@ -8,6 +8,7 @@ use templates\components\Post;
 class Viewpost extends AbstractView {
 
     private $post;
+    private $comments;
 
     protected function outputHTML()
     {
@@ -16,8 +17,30 @@ class Viewpost extends AbstractView {
         $postView->setPost($this->post);
         echo $postView;
         ?>
-        <a href="<?php echo \route\Route::get("viewComments")->generate(array("id"=>$this->post['postid'])); ?>" role="button" class="btn btn-link">Comments</a>
-        <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
+
+        <div>
+
+            <div class="panel panel-info" id="comments">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Comments</h3>
+                </div>
+                <?php
+
+                foreach ($this->comments as $comment) {
+                    ?>
+
+                    <div class="panel-body">
+                        <p><?php echo $comment['content']; ?></p>
+                        <p><?php echo 'Created by: ' . $comment['username']; ?></p>
+                    </div>
+
+                    <?php
+                }
+                ?>
+            </div>
+
+        </div>
+
 <?php
     }
 
@@ -28,6 +51,14 @@ class Viewpost extends AbstractView {
     {
         $this->post = $post;
         return $this;
+    }
+
+    /**
+     * @param mixed $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
     }
 
 }

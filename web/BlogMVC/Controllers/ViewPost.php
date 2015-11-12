@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Repository\CommentRepository;
 use Repository\PostRepository;
 
 class ViewPost implements Controller {
@@ -25,9 +26,17 @@ class ViewPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $mainView = new \templates\Main();
+        $checkId = CommentRepository::checkId($id);
+
+        if($checkId == null) {
+            redirect(\route\Route::get("readPost")->generate(array("id"=>$id)));
+        }
+
+        $comments = CommentRepository::getAll($id);
+
+        $mainView = new \templates\Main2();
         $viewPostTemplate = new \templates\Viewpost();
-        $viewPostTemplate->setPost($post);
+        $viewPostTemplate->setPost($post)->setComments($comments);
         $mainView->setPageTitle('Post')->setBody((string) $viewPostTemplate);
         echo $mainView;
     }

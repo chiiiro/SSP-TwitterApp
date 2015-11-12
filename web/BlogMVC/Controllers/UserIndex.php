@@ -2,7 +2,6 @@
 
 namespace Controllers;
 
-use Controllers\Controller;
 use Repository\PostRepository;
 
 class UserIndex implements Controller {

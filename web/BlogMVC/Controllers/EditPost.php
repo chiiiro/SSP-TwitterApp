@@ -80,9 +80,9 @@ class EditPost implements Controller {
                 try {
                     $post = new Post();
                     $post->setId($id);
-                    $post->setTitle($title);
-                    $post->setDescription($description);
-                    $post->setContent($content);
+                    $post->setTitle(htmlentities($title));
+                    $post->setDescription(htmlentities($description));
+                    $post->setContent(htmlentities($content));
                     $post->setCreated($date);
                     PostRepository::update($post);
                     redirect(\route\Route::get("userIndex")->generate());;

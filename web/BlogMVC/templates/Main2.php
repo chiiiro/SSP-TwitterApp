@@ -4,14 +4,13 @@ namespace templates;
 
 use Views\AbstractView;
 
-class Main extends AbstractView {
+class Main2 extends AbstractView {
 
     private $pageTitle;
     private $body;
 
-    public function outputHTML()
+    protected function outputHTML()
     {
-
         ?>
 
         <!DOCTYPE HTML>
@@ -23,7 +22,7 @@ class Main extends AbstractView {
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
                   integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
                   crossorigin="anonymous">
-            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
             <script>
                 function startTime() {
                     var today = new Date();
@@ -44,9 +43,8 @@ class Main extends AbstractView {
 
         <head/>
 
-        <body onload="startTime()" background="<?php if($this->pageTitle == 'User post' || $this->pageTitle == 'Post' || $this->pageTitle == 'Edit post' || $this->pageTitle == 'Comments' || $this->pageTitle == 'Add comment' || $this->pageTitle == 'Error 404')
-            {echo '../includes/pictures/clouds.jpg';} else {echo 'includes/pictures/clouds.jpg';}?>" style="background-size: cover; repeat: no-repeat">
-
+        <body onload="startTime()" background="<?php if($this->pageTitle == 'Post' || $this->pageTitle == 'Error 404')
+        {echo '../includes/pictures/clouds.jpg';} else {echo 'includes/pictures/clouds.jpg';}?>" style="background-size: cover; repeat: no-repeat">
         <div>
 
             <div class="container">
@@ -55,29 +53,28 @@ class Main extends AbstractView {
                     <div class="container-fluid">
 
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="<?php echo \route\Route::get("userIndex")->generate();?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+                            <a class="navbar-brand" href="<?php echo \route\Route::get("index")->generate();?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
                         </div>
 
+
                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="<?php echo \route\Route::get("addPost")->generate();?>">Add post</a></li>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="<?php echo \route\Route::get("register")->generate(); ?>" role="button" class="btn btn-link"">Register</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="<?php echo \route\Route::get("logout")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+                                <li><a href="<?php echo \route\Route::get("login")->generate(); ?>" role="button" class="btn btn-link"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a type="button" id="txt" role="button" class="btn btn-link""></a></li>
                             </ul>
-
-
                         </div>
 
                     </div>
                 </nav>
 
-                </div>
+            </div>
 
             <?php echo $this->body; ?>
 
@@ -88,7 +85,6 @@ class Main extends AbstractView {
         </html>
 
         <?php
-
     }
 
     /**
@@ -110,5 +106,3 @@ class Main extends AbstractView {
     }
 
 }
-
-?>

@@ -50,9 +50,9 @@ class AddPost implements Controller
             } else {
                 try {
                     $post = new Post();
-                    $post->setTitle($title);
-                    $post->setDescription($description);
-                    $post->setContent($content);
+                    $post->setTitle(htmlentities($title));
+                    $post->setDescription(htmlentities($description));
+                    $post->setContent(htmlentities($content));
                     $post->setCreated($date);
                     $post->setUsername($username);
                     PostRepository::insert($post);

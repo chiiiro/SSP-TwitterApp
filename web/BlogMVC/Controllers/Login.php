@@ -8,7 +8,7 @@ class Login implements Controller {
 
     public function action()
     {
-        $mainView = new \templates\Main();
+        $mainView = new \templates\Main2();
         $loginView = new \templates\Login();
         $mainView->setPageTitle('Login')->setBody((string) $loginView);
 
@@ -23,7 +23,9 @@ class Login implements Controller {
             $username = trim($_POST['username']);
             $password = trim($_POST['password']);
 
-            if (UserRepository::login($username, $password)) {
+            $hash = hash_password($password);
+
+            if (UserRepository::login($username, $hash)) {
                 redirect(\route\Route::get("userIndex")->generate());
                 exit;
             } else {

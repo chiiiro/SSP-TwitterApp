@@ -45,7 +45,7 @@ class DefaultDispatcher implements Dispatcher
             $this->matched = $route;
             break;
         }
-//var_dump($matched);die();
+
         if (null === $this->matched) {
             throw new \Exception();
         }

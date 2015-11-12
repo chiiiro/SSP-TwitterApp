@@ -4,6 +4,8 @@ namespace Controllers;
 
 use Repository\PostRepository;
 use Repository\UserRepository;
+use templates\Main;
+use templates\Main2;
 
 class Index implements Controller {
 
@@ -15,7 +17,7 @@ class Index implements Controller {
             redirect(\route\Route::get("userIndex")->generate());
         }
 
-        $mainView = new \templates\Main();
+        $mainView = new Main2();
         $indexView = new \templates\Index();
         $indexView->setPosts($posts);
         $mainView->setPageTitle('Home page')->setBody((string) $indexView);

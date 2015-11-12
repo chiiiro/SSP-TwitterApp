@@ -27,15 +27,6 @@ class Post extends AbstractView {
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Description</h3>
-            </div>
-            <div class="panel-body">
-                <?php echo $this->post['postdesc']; ?>
-            </div>
-        </div>
-
-        <div class="panel panel-info">
-            <div class="panel-heading">
                 <h3 class="panel-title">Content</h3>
             </div>
             <div class="panel-body">
@@ -45,19 +36,13 @@ class Post extends AbstractView {
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Last edit</h3>
+                <h3 class="panel-title">Informations about post</h3>
             </div>
-            <div class="panel-body">
-                <?php echo $this->post['postdate']; ?>
-            </div>
-        </div>
 
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">User</h3>
-            </div>
             <div class="panel-body">
-                <?php echo $this->post['username']; ?>
+                <p><?php echo 'Description: ' . $this->post['postdesc']; ?></p>
+                <p><?php echo 'Created by: ' . $this->post['username'];?></p>
+                <p><?php echo 'Last edit: ' . $this->post['postdate'];?></p>
             </div>
         </div>
 

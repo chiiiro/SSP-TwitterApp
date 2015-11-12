@@ -15,8 +15,8 @@ class UserRepository {
 
     public static function login($username,$password){
         $db = Database::getInstance();
-        $query = $db->prepare("SELECT * FROM blog_members WHERE username='$username' AND password='$password'");
-        $query->execute();
+        $query = $db->prepare("SELECT * FROM blog_members WHERE username = ? AND password = ?");
+        $query->execute([$username, $password]);
         $result = $query->fetchAll();
         if(count($result) == 1) {
             $_SESSION['loggedin'] = true;
@@ -33,17 +33,15 @@ class UserRepository {
 
     public static function register(User $user) {
         $db = Database::getInstance();
-        $query = $db->prepare("SELECT * FROM blog_members WHERE username = ? AND password = ?");
-        $query->execute([$user->getUsername(), $user->getPassword()]);
-        $result = $query->fetchAll();
-        if(count($result) == 1) {
+        $query = $db->prepare('INSERT INTO blog_members (username,password,email) VALUES (?, ?, ?)');
+        $query->execute([$user->getUsername(), $user->getPassword(), $user->getEmail()]);
+        $affected = $query->rowCount();
+        if($affected == 1) {
+            redirect(\route\Route::get("login")->generate());
+        } else {
             echo "<script language='javascript'>
                 alert('User already exists!');
             </script>";
-        } else {
-            $query = $db->prepare('INSERT INTO blog_members (username,password,email) VALUES (?, ?, ?)');
-            $query->execute([$user->getUsername(), $user->getPassword(), $user->getEmail()]);
-            redirect(\route\Route::get("login")->generate());
         }
     }
 }

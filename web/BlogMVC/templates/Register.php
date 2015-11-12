@@ -38,6 +38,8 @@ class Register extends AbstractView {
             </div>
         </div>
 
+        <p id="error"></p>
+
         <input type="submit" class="btn btn-default" name="register" id="register" value="Register">
         <a href="<?php echo \route\Route::get("index")->generate(); ?>" role="button" class="btn btn-link">Back</a>
     </form>

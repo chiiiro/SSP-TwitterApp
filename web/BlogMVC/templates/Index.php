@@ -13,23 +13,13 @@ class Index extends AbstractView {
     ?>
 
     <div class="container">
-        <h1></h1>
-
-        <h1></h1>
-
 
         <div style="background: transparent" class="jumbotron">
-
-            <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="<?php echo \route\Route::get("index")->generate(); ?>">Home</a></li>
-                <li role="presentation"><a href="<?php echo \route\Route::get("login")->generate(); ?>">Login</a></li>
-                <li role="presentation"><a href="<?php echo \route\Route::get("register")->generate(); ?>">Register</a></li>
-            </ul>
-
+            
             <h1>Home page</h1>
 
             <p>This is a simple blog created for learning purposes. New user can register, login and then add, update
-                or delete posts. Unregistered users can only view posts stored in database.
+                or delete posts. User can also comment every post. Unregistered users can only view posts stored in database.
             </p>
 
             <?php

@@ -16,15 +16,6 @@ private $posts;
     <h1>User posts</h1>
     <hr/>
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title"><a
-                    href="<?php echo \route\Route::get("addPost")->generate(); ?>">Add post</a></h3>
-        </div>
-    </div>
-
-    <hr/>
-
     <?php
 
     foreach ($this->posts as $post) {
@@ -45,13 +36,7 @@ private $posts;
         </div>
 
 
-    <?php } ?>
-
-    <hr/>
-    <a href="<?php echo \route\Route::get("logout")->generate(); ?>" role="button" class="btn btn-link">Logout</a>
-    <hr/>
-
-    <?php
+    <?php }
     }
 
     /**
