@@ -16,7 +16,7 @@ class ChangeUser implements Controller {
         $mainView->setPageTitle('Change username')->setBody((string)$userView);
         echo $mainView;
 
-        $username = $_SESSION['username'];
+        $username = getUsername();
         $userid = UserRepository::getIdByUsername($username);
 
         if(isset($_POST['change'])) {
