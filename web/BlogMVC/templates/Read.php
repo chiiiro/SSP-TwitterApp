@@ -71,8 +71,8 @@ class Read extends AbstractView {
                 $('#comment').on('click', function(e) {
                     e.preventDefault();
                     var comment = $('#comm').val();
-                    var url = "<?php echo \route\Route::get("addComment")->generate(array("id"=>$this->post['postid'])); ?>";
                     //provjera da li je prazan
+                    var url = "<?php echo \route\Route::get("addComment")->generate(array("id"=>$this->post['postid'])); ?>";
                     $.post(url, {'comment' : comment})
                     .done(function(data) {
                             a = JSON.parse(data);
