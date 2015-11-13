@@ -44,7 +44,7 @@ class ChangePwd extends AbstractView {
             <script>
                 function addCheck(id, location) {
                     var x = document.getElementById(id);
-                    if(x.value.length > 4 && x.value.length < 20) {
+                    if(x.value.length > 4 && x.value.length < 15) {
                         if(id == 'password2') {
                             var u1 = document.getElementById('password1');
                             var u2 = document.getElementById('password2');
