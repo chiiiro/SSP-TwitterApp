@@ -23,6 +23,15 @@ class Main2 extends AbstractView {
                   integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
                   crossorigin="anonymous">
 
+            <style>
+                body {
+                    /*background-color: aliceblue;*/
+                    background-image: url("includes/pictures/clouds.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            </style>
+
             <script>
                 function startTime() {
                     var today = new Date();
@@ -43,8 +52,7 @@ class Main2 extends AbstractView {
 
         <head/>
 
-        <body onload="startTime()" background="<?php if($this->pageTitle == 'Post' || $this->pageTitle == 'Error 404')
-        {echo '../includes/pictures/clouds.jpg';} else {echo 'includes/pictures/clouds.jpg';}?>" style="background-size: cover; repeat: no-repeat">
+        <body onload="startTime()" >
         <div>
 
             <div class="container">

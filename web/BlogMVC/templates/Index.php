@@ -31,7 +31,7 @@ class Index extends AbstractView {
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><a
-                                href="<?php echo \route\Route::get("viewPost")->generate(array("id"=>$post['postid'])); ?>"><?php echo $post['posttitle'] ?></a>
+                                href="<?php echo \route\Route::get("readPost")->generate(array("id"=>$post['postid'])); ?>"><?php echo $post['posttitle'] ?></a>
 
                         </h3>
                     </div>

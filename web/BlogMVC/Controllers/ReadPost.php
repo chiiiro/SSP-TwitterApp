@@ -21,7 +21,14 @@ class ReadPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $username = $_SESSION['username'];
+
+
+        $username = null;
+
+        if(isset($_SESSION['loggedin'])) {
+            $username = $_SESSION['username'];
+        }
+
 
         $post = PostRepository::getById($id);
 
@@ -29,20 +36,29 @@ class ReadPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
+
+
         $userid = $post['userid'];
         $user = UserRepository::getUsernameById($userid);
 
-        if($user !== $username) {
+        if($username !== null && $user !== $username) {
             redirect(\route\Route::get("error404")->generate());
         }
-
         $comments = CommentRepository::getAll($id);
 
-        $mainView = new \templates\Main();
-        $readTemplate = new \templates\Read();
-        $readTemplate->setPost($post)->setComments($comments);
-        $mainView->setPageTitle('User post')->setBody((string) $readTemplate);
-        echo $mainView;
+        if(null === $username) {
+            $mainView = new \templates\Main2();
+            $viewPostTemplate = new \templates\Viewpost();
+            $viewPostTemplate->setPost($post)->setComments($comments);
+            $mainView->setPageTitle('Post')->setBody((string) $viewPostTemplate);
+            echo $mainView;
+        } else {
+            $mainView = new \templates\Main();
+            $readTemplate = new \templates\Read();
+            $readTemplate->setPost($post)->setComments($comments);
+            $mainView->setPageTitle('User post')->setBody((string) $readTemplate);
+            echo $mainView;
+        }
 
     }
 

@@ -23,6 +23,16 @@ class Main extends AbstractView {
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
                   integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
                   crossorigin="anonymous">
+
+            <style>
+                body {
+                    background-color: aliceblue;
+                    /*background-image: url("includes/pictures/clouds.jpg");*/
+                    /*background-size: cover;*/
+                    /*background-repeat: no-repeat;*/
+                }
+            </style>
+
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
             <script>
                 function startTime() {
@@ -44,8 +54,7 @@ class Main extends AbstractView {
 
         <head/>
 
-        <body onload="startTime()" background="<?php if($this->pageTitle == 'User post' || $this->pageTitle == 'Post' || $this->pageTitle == 'Edit post' || $this->pageTitle == 'Comments' || $this->pageTitle == 'Add comment' || $this->pageTitle == 'Error 404')
-            {echo '../includes/pictures/clouds.jpg';} else {echo 'includes/pictures/clouds.jpg';}?>" style="background-size: cover; repeat: no-repeat">
+        <body onload="startTime()">
 
         <div>
 

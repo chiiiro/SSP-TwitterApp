@@ -28,27 +28,20 @@ Route::register("register", new DefaultRoute("register", array(
     ))
 );
 
-Route::register("addPost", new DefaultRoute("add-post", array(
+Route::register("addPost", new DefaultRoute("post/add", array(
         "controller" => "addPost",
         "action" => "action"
     ))
 );
-Route::register("editPost", new DefaultRoute("edit-post/<id>", array(
+Route::register("editPost", new DefaultRoute("post/<id>/edit", array(
         "controller" => "editPost",
         "action" => "action"
     ), array(
         "id" => "\\d+"
     ))
 );
-Route::register("viewPost", new DefaultRoute("view-post/<id>", array(
-        "controller" => "viewPost",
-        "action" => "action"
-    ), array(
-        "id" => "\\d+"
-    ))
-);
 
-Route::register("readPost", new DefaultRoute("read-post/<id>", array(
+Route::register("readPost", new DefaultRoute("post/<id>/read", array(
         "controller" => "readPost",
         "action" => "action"
     ), array(
@@ -65,7 +58,7 @@ Route::register("addComment", new DefaultRoute("post/<id>/comment", array(
 );
 
 
-Route::register("delete", new DefaultRoute("delete-post/<id>", array(
+Route::register("delete", new DefaultRoute("post/<id>/delete", array(
         "controller" => "delete",
         "action" => "action"
     ), array(
@@ -73,13 +66,13 @@ Route::register("delete", new DefaultRoute("delete-post/<id>", array(
     ))
 );
 
-Route::register("changePwd", new DefaultRoute("change-pwd", array(
+Route::register("changePwd", new DefaultRoute("change/pwd", array(
         "controller" => "changePwd",
         "action" => "action"
     ))
 );
 
-Route::register("changeUser", new DefaultRoute("change-user", array(
+Route::register("changeUser", new DefaultRoute("change/user", array(
         "controller" => "changeUser",
         "action" => "action"
     ))
