@@ -30,9 +30,7 @@ class ChangeUser implements Controller {
                 UserRepository::changeUsername($user);
                 $_SESSION['username'] = $user1;
             } else {
-                echo "<script language='javascript'>
-                     document.getElementById('error').innerHTML = 'Both entries must be the same.';
-                </script>";
+                alert('error', 'Both entries must be the same.');
             }
 
         }

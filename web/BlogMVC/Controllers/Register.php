@@ -55,7 +55,7 @@ class Register implements Controller {
                     $e->getMessage();
                 }
             } else {
-                echo "<script type='text/javascript'>document.getElementById('error').innerHTML = 'Error while submiting data.';</script>";
+                alert('display', 'Error while submitting data');
             }
 
         }

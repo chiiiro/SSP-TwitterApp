@@ -32,9 +32,7 @@ class ChangePwd implements Controller {
                 $user->setPassword($hash);
                 UserRepository::changePassword($user);
             } else {
-                echo "<script language='javascript'>
-                     document.getElementById('error').innerHTML = 'Both entries must be the same.';
-                </script>";
+                alert('error', 'Both entries must be the same.');
             }
 
         }

@@ -90,7 +90,7 @@ class ReadPost implements Controller {
                     echo $e->getMessage();
                 }
             } else {
-                echo "<script type='text/javascript'>document.getElementById('error').innerHTML = '$error';</script>";
+                alert('error', $error);
             }
 
         }

@@ -56,3 +56,14 @@ function post($v, $d = null) {
 function getRequestMethod() {
     return $_SERVER['REQUEST_METHOD'];
 }
+
+/**
+ * Prints provided error message in desired field.
+ * @param $elementId
+ * @param $errorMessage
+ */
+function alert($elementId, $errorMessage) {
+    echo "<script language='javascript'>
+                     document.getElementById('$elementId').innerHTML = '$errorMessage';
+                </script>";
+}

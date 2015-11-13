@@ -31,9 +31,7 @@ class Login implements Controller {
                 exit;
             } else {
                 $errorMessage = 'Wrong username or password. User does not exists!';
-                echo "<script language='javascript'>
-                     document.getElementById('display').innerHTML = '$errorMessage';
-                </script>";
+                alert('display', $errorMessage);
             }
         }
 
