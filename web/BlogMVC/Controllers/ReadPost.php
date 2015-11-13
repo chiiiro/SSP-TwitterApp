@@ -6,6 +6,7 @@ use Repository\CommentRepository;
 use Repository\PostRepository;
 use Models\Comment;
 use Repository\UserRepository;
+use templates\Main;
 
 class ReadPost implements Controller {
 
@@ -21,22 +22,13 @@ class ReadPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-
-
-        $username = null;
-
-        if(isset($_SESSION['loggedin'])) {
-            $username = $_SESSION['username'];
-        }
-
+        $username = getUsername();
 
         $post = PostRepository::getById($id);
 
         if($post == null) {
             redirect(\route\Route::get("error404")->generate());
         }
-
-
 
         $userid = $post['userid'];
         $user = UserRepository::getUsernameById($userid);
@@ -46,19 +38,22 @@ class ReadPost implements Controller {
         }
         $comments = CommentRepository::getAll($id);
 
+
+        $mainView = new Main();
+
         if(null === $username) {
-            $mainView = new \templates\Main2();
+
             $viewPostTemplate = new \templates\Viewpost();
             $viewPostTemplate->setPost($post)->setComments($comments);
             $mainView->setPageTitle('Post')->setBody((string) $viewPostTemplate);
-            echo $mainView;
+
         } else {
-            $mainView = new \templates\Main();
             $readTemplate = new \templates\Read();
             $readTemplate->setPost($post)->setComments($comments);
             $mainView->setPageTitle('User post')->setBody((string) $readTemplate);
-            echo $mainView;
         }
+
+        echo $mainView;
 
     }
 
@@ -73,12 +68,12 @@ class ReadPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $username = $_SESSION['username'];
+        $username = getUsername();
 
         $error = '';
-        if (isset($_POST['comment'])) {
+        if (post('comment')) {
 
-            $content = trim($_POST['comment']);
+            $content = trim(post('comment'));
 
             if($content === '') {
                 $error = "Empty comment!";

@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Repository\PostRepository;
+use Repository\UserRepository;
 
 class Delete implements Controller {
 
@@ -19,15 +20,16 @@ class Delete implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $username = $_SESSION['username'];
-
         $post = PostRepository::getById($id);
+
+        $username = getUsername();
+        $postUsername = UserRepository::getUsernameById($post['userid']);
 
         if($post == null) {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        if($post['username'] !== $username) {
+        if($postUsername !== $username) {
             redirect(\route\Route::get("error404")->generate());
         }
 

@@ -16,14 +16,14 @@ class AddPost implements Controller
         $content = NULL;
 
         // Check for page postback
-        if (isset($_POST['add'])) {
+        if (post('add')) {
 
             // Get user input from form
-            $title = $_POST['title'];
-            $description = $_POST['description'];
-            $content = $_POST['content'];
+            $title = post('title');
+            $description = post('description');
+            $content = post('content');
             $date = date('Y-m-d H:i:s');
-            $username = $_SESSION['username'];
+            $username = getUsername();
             $userid = UserRepository::getIdByUsername($username);
 
             $errors = null;
@@ -59,7 +59,7 @@ class AddPost implements Controller
                     $post->setUserid($userid);
                     PostRepository::insert($post);
                     redirect(\route\Route::get("userIndex")->generate());
-                } catch (PDOException $e) {
+                } catch (\PDOException $e) {
                     echo $e->getMessage();
                 }
             }

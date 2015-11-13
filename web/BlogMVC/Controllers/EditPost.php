@@ -21,7 +21,7 @@ class EditPost implements Controller {
             redirect(\route\Route::get("error404")->generate());
         }
 
-        $username = $_SESSION['username'];
+        $username = getUsername();
 
         $post = PostRepository::getById($id);
 
@@ -41,7 +41,7 @@ class EditPost implements Controller {
         $content = NULL;
 
 
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (getRequestMethod() == 'GET') {
 
             // Set form values
             $title = $post['posttitle'];
@@ -49,11 +49,12 @@ class EditPost implements Controller {
             $content = $post['postcont'];
         }
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (getRequestMethod() == 'POST') {
             // Get user input from form
-            $title = $_POST['title'];
-            $description = $_POST['description'];
-            $content = $_POST['content'];
+
+            $title = post('title');
+            $description = post('description');
+            $content = post('content');
             $date = date('Y-m-d');
 
             $errors = null;
@@ -89,7 +90,7 @@ class EditPost implements Controller {
                     $post->setCreated($date);
                     PostRepository::update($post);
                     redirect(\route\Route::get("userIndex")->generate());;
-                } catch (PDOException $e) {
+                } catch (\PDOException $e) {
                     echo $e->getMessage();
                 }
             }

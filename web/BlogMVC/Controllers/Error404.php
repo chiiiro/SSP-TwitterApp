@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Controllers\Controller;
+use templates\Main2;
 
 class Error404 implements Controller {
 
@@ -12,6 +13,7 @@ class Error404 implements Controller {
         $errorView = new \templates\Error404();
         $mainView->setPageTitle('Error 404')->setBody((string) $errorView);
         echo $mainView;
+
     }
 
 }

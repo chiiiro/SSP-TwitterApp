@@ -3,12 +3,13 @@
 namespace Controllers;
 
 use Repository\UserRepository;
+use templates\Main;
 
 class Login implements Controller {
 
     public function action()
     {
-        $mainView = new \templates\Main2();
+        $mainView = new Main();
         $loginView = new \templates\Login();
         $mainView->setPageTitle('Login')->setBody((string) $loginView);
 
@@ -18,10 +19,10 @@ class Login implements Controller {
             redirect(\route\Route::get("userIndex")->generate());
         }
 
-        if (isset($_POST['login'])) {
+        if (post('login')) {
 
-            $username = trim($_POST['username']);
-            $password = trim($_POST['password']);
+            $username = trim(post('username'));
+            $password = trim(post('password'));
 
             $hash = hash_password($password);
 

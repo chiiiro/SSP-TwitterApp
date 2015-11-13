@@ -9,7 +9,10 @@ class UserIndex implements Controller {
 
     public function action() {
 
-        $username = $_SESSION['username'];
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("error404")->generate());
+        }
+        $username = getUsername();
         $id = UserRepository::getIdByUsername($username);
 
         $posts = PostRepository::getAllById($id);

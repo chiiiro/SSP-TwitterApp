@@ -4,12 +4,13 @@ namespace Controllers;
 
 use Repository\UserRepository;
 use Models\User;
-use templates\Main2;
+use templates\Main;
 
 class Register implements Controller {
+
     public function action()
     {
-        $mainView = new Main2();
+        $mainView = new Main();
         $registerView = new \templates\Register();
         $mainView->setPageTitle('Register')->setBody((string) $registerView);
 
@@ -17,14 +18,14 @@ class Register implements Controller {
 
         $error = '';
 
-        if(isset($_POST['register'])) {
+        if(post('register')) {
 
-            $username = trim($_POST['username']);
+            $username = trim(post('username'));
 
-            $password = trim($_POST['password']);
+            $password = trim(post('password'));
             $hash = hash_password($password);
 
-            $email = $_POST['email'];
+            $email = post('email');
 
             if(!ctype_alnum($username)) {
                 $error .= 'Username should be alpha numeric characters only.';
