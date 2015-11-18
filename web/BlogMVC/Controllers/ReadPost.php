@@ -33,15 +33,12 @@ class ReadPost implements Controller {
         $userid = $post['userid'];
         $user = UserRepository::getUsernameById($userid);
 
-        if($username !== null && $user !== $username) {
-            redirect(\route\Route::get("error404")->generate());
-        }
         $comments = CommentRepository::getAll($id);
 
 
         $mainView = new Main();
 
-        if(null === $username) {
+        if(null === $username || $user !== $username) {
 
             $viewPostTemplate = new \templates\Viewpost();
             $viewPostTemplate->setPost($post)->setComments($comments);
@@ -69,6 +66,7 @@ class ReadPost implements Controller {
         }
 
         $username = getUsername();
+        $userid = UserRepository::getIdByUsername($username);
 
         $error = '';
         if (post('comment')) {
@@ -84,7 +82,11 @@ class ReadPost implements Controller {
                     $comment = new Comment();
                     $comment->setPostid($id);
                     $comment->setContent(htmlentities($content));
+                    $comment->setUserid($userid);
                     CommentRepository::insertComment($comment);
+                    if($userid == null) {
+                        $username = 'guest';
+                    }
                     echo json_encode(['message' => 'success', 'comment' => $comment->getContent(), 'user' => $username]);
                 } catch (\PDOException $e) {
                     echo $e->getMessage();

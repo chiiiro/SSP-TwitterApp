@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\User;
 use Repository\UserRepository;
+use route\Route;
 use templates\Main;
 
 class ChangePwd implements Controller {
@@ -16,6 +17,9 @@ class ChangePwd implements Controller {
         $mainView->setPageTitle('Change password')->setBody((string)$pwdView);
         echo $mainView;
 
+        if(!isLoggedIn()) {
+            redirect(Route::get("error404")->generate());
+        }
         $username = $_SESSION['username'];
         $userid = UserRepository::getIdByUsername($username);
 

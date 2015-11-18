@@ -29,14 +29,20 @@ class Main extends AbstractView {
             <style>
                 body {
                     background-color: aliceblue;
-                    /*background-image: url("includes/pictures/clouds.jpg");*/
-                    /*background-size: cover;*/
-                    /*background-repeat: no-repeat;*/
                 }
             </style>
 
-            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+            <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<!--            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
             <script>
+                $(document).ready(function() {
+                    startTime();
+                    $('#txt').on('click', function() {
+                        alert('Vrijeme prikazano u 24-satnom formatu.');
+                    });
+                });
+
                 function startTime() {
                     var today = new Date();
                     var h = today.getHours();

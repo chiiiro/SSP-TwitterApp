@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\User;
 use Repository\UserRepository;
+use route\Route;
 use templates\Main;
 
 class ChangeUser implements Controller {
@@ -16,6 +17,9 @@ class ChangeUser implements Controller {
         $mainView->setPageTitle('Change username')->setBody((string)$userView);
         echo $mainView;
 
+        if(!isLoggedIn()) {
+            redirect(Route::get("error404")->generate());
+        }
         $username = getUsername();
         $userid = UserRepository::getIdByUsername($username);
 

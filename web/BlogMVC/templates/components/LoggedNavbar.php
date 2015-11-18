@@ -23,21 +23,18 @@ class LoggedNavbar extends AbstractView {
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
+
+                        <li><a type="button" id="txt" role="button" class="btn btn-link""></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo \route\Route::get("changeUser")->generate(); ?>">Change username</a></li>
+                                <li><a href="<?php echo \route\Route::get("changePwd")->generate(); ?>">Change password</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="<?php echo \route\Route::get("logout")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
                     </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="<?php echo \route\Route::get("changePwd")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Change password</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="<?php echo \route\Route::get("changeUser")->generate(); ?>" role="button" class="btn btn-link""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Change username</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a type="button" id="txt" role="button" class="btn btn-link""></a></li>
-                    </ul>
-
 
                 </div>
 

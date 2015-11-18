@@ -5,12 +5,18 @@ namespace Controllers;
 use Repository\PostRepository;
 use Models\Post;
 use Repository\UserRepository;
+use route\Route;
 
 class AddPost implements Controller
 {
 
     public function action()
     {
+
+        if(!isLoggedIn()) {
+            redirect(Route::get("error404")->generate());
+        }
+
         $title = NULL;
         $description = NULL;
         $content = NULL;

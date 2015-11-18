@@ -7,6 +7,7 @@ class Comment {
     private $commid;
     private $postid;
     private $content;
+    private $userid;
 
     /**
      * @return mixed
@@ -54,6 +55,22 @@ class Comment {
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    /**
+     * @param mixed $userid
+     */
+    public function setUserid($userid)
+    {
+        $this->userid = $userid;
     }
 
 }

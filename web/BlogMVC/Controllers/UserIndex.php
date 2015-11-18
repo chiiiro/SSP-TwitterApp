@@ -12,10 +12,8 @@ class UserIndex implements Controller {
         if(!isLoggedIn()) {
             redirect(\route\Route::get("error404")->generate());
         }
-        $username = getUsername();
-        $id = UserRepository::getIdByUsername($username);
 
-        $posts = PostRepository::getAllById($id);
+        $posts = PostRepository::getAll();
 
         $mainView = new \templates\Main();
         $userIndexView = new \templates\UserIndex();

@@ -71,4 +71,5 @@ class UserRepository {
         $query = $db->prepare('UPDATE blog_members SET username = ? WHERE memberid = ?');
         $query->execute([$user->getUsername(), $user->getId()]);
     }
+
 }

@@ -20,10 +20,20 @@ private $posts;
 
     foreach ($this->posts as $post) {
         $username = UserRepository::getUsernameById($post['userid']);
+        $user = getUsername();
+
+        if(null === $user || $user !== $username) {
+            ?>
+            <div class="panel panel-danger">
+            <?php
+        } else {
+        ?>
+            <div class="panel panel-primary">
+        <?php
+        }
+
         ?>
 
-
-        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"><a
                         href="<?php echo \route\Route::get("readPost")->generate(array("id"=>$post['postid'])); ?>"><?php echo $post['posttitle'] ?></a></h3>
