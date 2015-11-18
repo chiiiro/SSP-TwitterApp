@@ -33,14 +33,11 @@ class Main extends AbstractView {
             </style>
 
             <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<!--            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
             <script>
                 $(document).ready(function() {
                     startTime();
-                    $('#txt').on('click', function() {
-                        alert('Vrijeme prikazano u 24-satnom formatu.');
-                    });
                 });
 
                 function startTime() {
@@ -62,7 +59,7 @@ class Main extends AbstractView {
 
         <head/>
 
-        <body onload="startTime()">
+        <body id="tijelo">
 
         <div>
 

@@ -83,3 +83,7 @@ Route::register("error404", new DefaultRoute("error/404", array(
         "action" => "action"
     ))
 );
+
+Route::register("showUsers", new DefaultRoute("users", array(
+    "controller" => "showUsers",
+    "action" => "action")));

@@ -45,6 +45,14 @@ class UserRepository {
         }
     }
 
+    public static function getAllUsers()
+    {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT * FROM blog_members");
+        $query->execute();
+        return $query;
+    }
+
     public static function getUsernameById($id) {
         $db = Database::getInstance();
         $query = $db->prepare('SELECT username FROM blog_members WHERE memberid = ?');
