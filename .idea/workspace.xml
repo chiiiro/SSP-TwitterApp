@@ -2,159 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376e61c4-692c-45e4-b020-2504facfcd4f" name="Default" comment="1 kontroler za citanje postova za logirane i ne logirane">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/TwitterApp/route/DefaultRoute.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/TwitterApp/route/Route.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Controllers/Index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Controllers/Login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Controllers/Logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Controllers/Menu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Controllers/Users.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/DB/connection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Models/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Style/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Style/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/AddPostView.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/HomepageView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/IndexView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/Login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/MenuView.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/UsersView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/Views/ViewpostView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/homepage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/inc/api.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/inc/func.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/inc/global.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/lib/html_library.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Blog/viewpost.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/add-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/add-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/edit-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/edit-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/menu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Controllers/users.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/DB/connection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/AddPostFooter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/AddPostHeader.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/AddUserFooter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/AddUserHeader.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/EditPostFooter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/EditPostHeader.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/EditUserFooter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/EditUserHeader.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/Views/ViewpostView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/classes/class.user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/includes/api.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/includes/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/includes/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/lib/html_library.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/style/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/style/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/BlogTutorial/viewpost.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Controllers/comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Controllers/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Controllers/login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Controllers/logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Views/index_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Views/komentari_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/Views/login_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/comments.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/global.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Login/lib/html_library.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Controllers/comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Controllers/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Controllers/login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Controllers/logout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Controllers/register.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/DB/connection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/AbstractDBModel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/Comment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/DBModel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/NotFoundException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Model/Person.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Views/index_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Views/komentari_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Views/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Views/login_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/Views/register_view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/inc/api.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/inc/func.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/inc/global.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/LoginWithDB/lib/html_library.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/answers.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/libraryproba.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/parser_pitanja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/pitanja.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/prikaz.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Quiz/prikazOdgovora.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Razredi/karta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Razredi/spil.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Slike/most.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Slike/rain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/dodajbrisi.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/dohvatslike.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/galerija.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/lib/html_library.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/obrazac.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/posalji.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/BlogMVC/includes/libraries/database.class.php" afterPath="$PROJECT_DIR$/web/BlogMVC/includes/libraries/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/assets/images/clouds.jpg" afterPath="$PROJECT_DIR$/web/BlogMVC/assets/images/clouds.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Views/AbstractView.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Views/AbstractView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/AddPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/AddUpdate.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/AddUpdate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/ChangePwd.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ChangePwd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/ChangePwd.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/ChangePwd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/ChangeUser.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ChangeUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/ChangeUser.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/ChangeUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/assets/js/Clock.js" afterPath="$PROJECT_DIR$/web/BlogMVC/assets/js/Clock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Models/Comment.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Models/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Repository/CommentRepository.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Repository/CommentRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Controller.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/dispatcher/DefaultDispatcher.php" afterPath="$PROJECT_DIR$/web/BlogMVC/dispatcher/DefaultDispatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/route/DefaultRoute.php" afterPath="$PROJECT_DIR$/web/BlogMVC/route/DefaultRoute.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/dispatcher/Dispatcher.php" afterPath="$PROJECT_DIR$/web/BlogMVC/dispatcher/Dispatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/EditPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Error404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Error404.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Error404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Index.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Index.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/components/LoggedNavbar.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/components/LoggedNavbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Login.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Login.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/assets/js/LoginValidation.js" afterPath="$PROJECT_DIR$/web/BlogMVC/assets/js/LoginValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Logout.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Main.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/components/MainNavbar.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/components/MainNavbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Models/Post.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Models/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/components/Post.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/components/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Repository/PostRepository.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Repository/PostRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Read.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Read.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/ReadPost.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ReadPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/Register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Register.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/assets/js/RegisterValidation.js" afterPath="$PROJECT_DIR$/web/BlogMVC/assets/js/RegisterValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/route/Route.php" afterPath="$PROJECT_DIR$/web/BlogMVC/route/Route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/ShowUsers.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/ShowUsers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/ShowUsers.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/ShowUsers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Models/User.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Controllers/UserIndex.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Controllers/UserIndex.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/UserIndex.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/UserIndex.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Repository/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/Views/View.php" afterPath="$PROJECT_DIR$/web/BlogMVC/Views/View.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/templates/Viewpost.php" afterPath="$PROJECT_DIR$/web/BlogMVC/templates/Viewpost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/includes/config.php" afterPath="$PROJECT_DIR$/web/BlogMVC/includes/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/includes/functions/functions.php" afterPath="$PROJECT_DIR$/web/BlogMVC/includes/functions/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/index.php" afterPath="$PROJECT_DIR$/web/BlogMVC/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/BlogMVC/includes/route.php" afterPath="$PROJECT_DIR$/web/BlogMVC/includes/route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
     </list>
     <list id="2c0bc368-6032-4517-ba30-6ebe323ad8be" name="Failed commit: Default" comment="blog s kontrolerima i templatima" />
     <list id="03200250-a1da-47af-ba68-4209bdb80761" name="Failed commit: Failed commit: Default" comment="temp commit" />
@@ -796,9 +644,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920793" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
