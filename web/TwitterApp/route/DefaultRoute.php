@@ -10,7 +10,7 @@ class DefaultRoute extends Route {
     private $params = array();
 
     public function __construct($route, array $defaults = array(), array $regex = array()) {
-        $basePath = "/BlogMVC/";
+        $basePath = "/TwitterApp/";
         $this->route = $basePath . $route;
         $this->defaults = $defaults;
         $this->regex = $regex;

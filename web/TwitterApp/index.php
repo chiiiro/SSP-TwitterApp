@@ -6,5 +6,6 @@ try {
     \dispatcher\DefaultDispatcher::instance()->dispatch();
 }
 catch (Exception $e) {
+
     redirect(\route\Route::get("error404")->generate());
 }
