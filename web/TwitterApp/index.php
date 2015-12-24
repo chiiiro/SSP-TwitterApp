@@ -7,5 +7,5 @@ try {
 }
 catch (Exception $e) {
 
-    redirect(\route\Route::get("error404")->generate());
+    redirect(\route\Route::get("errorPage")->generate());
 }
