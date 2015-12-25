@@ -21,27 +21,20 @@ class Register extends AbstractView
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <label for="first-name">Name:</label>
-                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter first name">
+                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter first name" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
-                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Enter last name">
+                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Enter last name" required>
                     </div>
                 </div>
-
-<!--                <div class="form-group">-->
-<!--                    <div class="col-md-4 col-md-offset-4">-->
-<!--                        <label for="date-of-birth">Date of birth:</label>-->
-<!--                        <input type="date" class="form-control" id="date-of-birth" value="--><?php //echo date('Y-m-d'); ?><!--">-->
-<!--                    </div>-->
-<!--                </div>-->
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <label for="first-name">Username:</label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
                     </div>
                 </div>
 
@@ -62,7 +55,7 @@ class Register extends AbstractView
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
                     </div>
                 </div>
 

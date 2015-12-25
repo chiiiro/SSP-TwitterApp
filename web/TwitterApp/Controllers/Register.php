@@ -31,6 +31,24 @@ class Register implements Controller {
             $email = trim(post('email'));
             $userSecurityNumber = (int) trim(post('security'));
 
+            //server-side validation
+            $error = false;
+            if(!ctype_alpha($firstName) || strlen($firstName) < 3 || strlen($firstName) > 25) {
+                $error = true;
+            }
+
+            if(!ctype_alpha($lastName) || strlen($lastName) < 3 || strlen($lastName) > 25) {
+                $error = true;
+            }
+
+            if(!ctype_alnum($username) || strlen($username) < 4 || strlen($lastName) > 25) {
+                $error = true;
+            }
+
+            if(!ctype_alnum($password) || strlen($password) < 4 || strlen($password) > 25) {
+                $error = true;
+            }
+
             if($password != $confirmedPassword) {
                 ?>
 
@@ -49,7 +67,7 @@ class Register implements Controller {
                 </script>
 
                 <?php
-            } else {
+            } else if(!$error){
 
                 $user = new User();
                 $user->setFirstName($firstName);

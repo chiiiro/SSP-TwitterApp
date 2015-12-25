@@ -2,6 +2,8 @@
 
 namespace templates;
 
+use templates\components\IndexNavbar;
+use templates\components\UserNavbar;
 use Views\AbstractView;
 
 class Main extends AbstractView {
@@ -24,10 +26,25 @@ class Main extends AbstractView {
               crossorigin="anonymous">
 
         <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <head/>
 
     <body>
+
+    <div class="container">
+
+        <?php
+        if (!isLoggedIn()) {
+            $indexNavbar = new IndexNavbar();
+            echo $indexNavbar;
+        } else {
+            $userNavbar = new UserNavbar();
+            echo $userNavbar;
+        }
+        ?>
+
+    </div>
 
     <?php echo $this->pageBody ?>
 

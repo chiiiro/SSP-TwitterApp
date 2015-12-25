@@ -9,11 +9,14 @@ class Index extends \Views\AbstractView {
 
         ?>
 
+
+        <div class="container">
         <div class="jumbotron">
             <div class="container">
                         <h1 align="center">Welcome to TwitterApp!</h1>
                         <p align="center">This is a simple Twitter application which is used for learning.</p>
             </div>
+        </div>
         </div>
 
         <div class="container">
