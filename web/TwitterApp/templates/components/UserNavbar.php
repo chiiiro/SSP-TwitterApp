@@ -29,8 +29,8 @@ class UserNavbar extends AbstractView
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Upload profile picture</a></li>
-                                <li><a href="#">Change username</a></li>
-                                <li><a href="#">Change password</a></li>
+                                <li><a href="<?php echo \route\Route::get("changeUsername")->generate(); ?>">Change username</a></li>
+                                <li><a href="<?php echo \route\Route::get("changePassword")->generate(); ?>">Change password</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo \route\Route::get("logout")->generate(); ?>">Log Out</a></li>
                             </ul>

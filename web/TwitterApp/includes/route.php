@@ -22,3 +22,11 @@ Route::register("twitterWall", new DefaultRoute("wall", array(
 Route::register("logout", new DefaultRoute("logout", array(
     "controller" => "index",
     "action" => "logout")));
+
+Route::register("changePassword", new DefaultRoute("settings/password", array(
+    "controller" => "settings",
+    "action" => "changePassword")));
+
+Route::register("changeUsername", new DefaultRoute("settings/username", array(
+    "controller" => "settings",
+    "action" => "changeUsername")));

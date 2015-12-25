@@ -54,4 +54,39 @@ class UserRepository {
         }
     }
 
+    public static function getAllUsers()
+    {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT * FROM blog_members");
+        $query->execute();
+        return $query;
+    }
+
+//    public static function getUsernameById($id) {
+//        $db = Database::getInstance();
+//        $query = $db->prepare('SELECT username FROM blog_members WHERE memberid = ?');
+//        $query->execute([$id]);
+//        return $query->fetch()['username'];
+//    }
+
+//    public static function getIdByUsername($username) {
+//        $db = Database::getInstance();
+//        $query = $db->prepare('SELECT userid FROM users WHERE username = ?');
+//        $query->execute([$username]);
+//        return $query->fetch()['userid'];
+//    }
+
+    public static function changePassword($username, $password) {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE users SET password = ? WHERE username = ?');
+        $query->execute([$password, $username]);
+    }
+
+    public static function changeUsername($oldUsername, $newUsername)
+    {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE users SET username = ? WHERE username = ?');
+        $query->execute([$newUsername, $oldUsername]);
+    }
+
 }

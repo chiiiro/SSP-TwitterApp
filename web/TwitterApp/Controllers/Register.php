@@ -49,6 +49,10 @@ class Register implements Controller {
                 $error = true;
             }
 
+            if(!ctype_alnum($confirmedPassword) || strlen($confirmedPassword) < 4 || strlen($confirmedPassword) > 25) {
+                $error = true;
+            }
+
             if($password != $confirmedPassword) {
                 ?>
 

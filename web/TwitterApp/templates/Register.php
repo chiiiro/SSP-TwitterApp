@@ -62,7 +62,7 @@ class Register extends AbstractView
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <label for="security">Please enter number between 1113 and 1207.</label>
-                        <input type="text" class="form-control" name="security" id="security" placeholder="Enter numbers">
+                        <input type="text" class="form-control" name="security" id="security" placeholder="Enter number">
                         <div style="color: red" id="registerError"></div>
                     </div>
                 </div>
