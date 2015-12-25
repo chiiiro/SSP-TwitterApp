@@ -23,6 +23,8 @@ class Main extends AbstractView {
               integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
               crossorigin="anonymous">
 
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
     <head/>
 
     <body>

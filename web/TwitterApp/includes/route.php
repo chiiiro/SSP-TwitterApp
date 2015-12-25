@@ -10,3 +10,15 @@ Route::register("index", new DefaultRoute("index", array(
 Route::register("errorPage", new DefaultRoute("error/404", array(
     "controller" => "errorPage",
     "action" => "action")));
+
+Route::register("register", new DefaultRoute("register", array(
+    "controller" => "register",
+    "action" => "action")));
+
+Route::register("twitterWall", new DefaultRoute("wall", array(
+    "controller" => "twitterWall",
+    "action" => "action")));
+
+Route::register("logout", new DefaultRoute("logout", array(
+    "controller" => "index",
+    "action" => "logout")));
