@@ -89,4 +89,17 @@ class UserRepository {
         $query->execute([$newUsername, $oldUsername]);
     }
 
+    public static function getProfilePicture($username) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT image FROM users WHERE username = ?');
+        $query->execute([$username]);
+        return $query->fetch()['image'];
+    }
+
+    public static function setProfilePicture($username) {
+        $db = Database::getInstance();
+        $query = $db->prepare("UPDATE users SET image = ? WHERE username = ?");
+        $query->execute([$_FILES['file']['name'], $username]);
+    }
+
 }

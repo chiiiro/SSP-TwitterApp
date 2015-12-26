@@ -6,12 +6,27 @@ use Repository\UserRepository;
 use templates\ChangePassword;
 use templates\ChangeUsername;
 use templates\Main;
+use templates\UploadProfilePicture;
 
 class Settings implements Controller {
 
+    //uploads profile picture
     public function action()
     {
-        // TODO: Implement action() method.
+
+        $main = new Main();
+        $main->setPageTitle("Change profile picture");
+        $profilePic = new UploadProfilePicture();
+        $main->setBody($profilePic);
+        echo $main;
+
+        $username = $_SESSION['username'];
+
+        if(post('submit')) {
+            move_uploaded_file($_FILES['file']['tmp_name'],"assets/images/profile/".$_FILES['file']['name']);
+            UserRepository::setProfilePicture($username);
+        }
+
     }
 
     public function changePassword() {

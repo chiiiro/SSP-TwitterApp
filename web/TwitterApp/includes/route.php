@@ -30,3 +30,7 @@ Route::register("changePassword", new DefaultRoute("settings/password", array(
 Route::register("changeUsername", new DefaultRoute("settings/username", array(
     "controller" => "settings",
     "action" => "changeUsername")));
+
+Route::register("changeProfilePicture", new DefaultRoute("settings/picture", array(
+    "controller" => "settings",
+    "action" => "action")));
