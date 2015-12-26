@@ -43,15 +43,10 @@ class Settings implements Controller {
             }
 
             if($userSecurityNumber < 1113 || $userSecurityNumber > 1207) {
-                ?>
+                $error = true;
+            }
 
-                <script>
-                    document.getElementById("securityError").innerHTML =
-                        "Please re-enter security number.";
-                </script>
-
-                <?php
-            } else if($password === $confirmedPassword && !$error) {
+            if($password === $confirmedPassword && !$error) {
                 $hashedPassword = hash_password($password);
                 UserRepository::changePassword($username, $hashedPassword);
             }
@@ -74,6 +69,7 @@ class Settings implements Controller {
         if(post('change-username')) {
             $newUsername = post('first');
             $confirmNewUsername = post('second');
+            $userSecurityNumber = post('security');
 
             $error = false;
 
@@ -82,6 +78,10 @@ class Settings implements Controller {
             }
 
             if(!ctype_alnum($confirmNewUsername) || strlen($confirmNewUsername) < 4 || strlen($confirmNewUsername) > 25) {
+                $error = true;
+            }
+
+            if($userSecurityNumber < 1113 || $userSecurityNumber > 1207) {
                 $error = true;
             }
 

@@ -10,6 +10,8 @@ class ChangeUsername extends AbstractView {
     {
         ?>
 
+        <script src="../assets/js/changeUsernameValidation.js"></script>
+
         <div class="container">
 
             <form class="form-horizontal" id="change-username-form" role="form" method="post" action="">
@@ -29,6 +31,7 @@ class ChangeUsername extends AbstractView {
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <input type="text" class="form-control" name="second" id="second" placeholder="Confirm new username" required>
+                        <div style="color: red" id="usernameError"></div>
                     </div>
                 </div>
 

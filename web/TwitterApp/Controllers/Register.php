@@ -22,12 +22,12 @@ class Register implements Controller {
 
         if(post('register')) {
 
-            $firstName = trim(post('first-name'));
-            $lastName = trim(post('last-name'));
+            $firstName = trim(post('fname'));
+            $lastName = trim(post('lname'));
             $username = trim(post('username'));
             $password = trim(post('password'));
             $hashedPassword = hash_password($password);
-            $confirmedPassword = trim(post('confirm-password'));
+            $confirmedPassword = trim(post('cpassword'));
             $email = trim(post('email'));
             $userSecurityNumber = (int) trim(post('security'));
 
@@ -53,25 +53,11 @@ class Register implements Controller {
                 $error = true;
             }
 
-            if($password != $confirmedPassword) {
-                ?>
+            if($userSecurityNumber < 1113 || $userSecurityNumber > 1207) {
+                $error = true;
+            }
 
-                <script>
-                    document.getElementById("passwordCheck").innerHTML =
-                        "Passwords doesn't match.";
-                </script>
-
-                <?php
-            } else if($userSecurityNumber < 1113 || $userSecurityNumber > 1207) {
-                ?>
-
-                <script>
-                    document.getElementById("registerError").innerHTML =
-                        "Please re-enter security number.";
-                </script>
-
-                <?php
-            } else if(!$error){
+            if($password === $confirmedPassword && !$error){
 
                 $user = new User();
                 $user->setFirstName($firstName);
