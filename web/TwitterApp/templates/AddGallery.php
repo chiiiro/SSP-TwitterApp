@@ -12,6 +12,8 @@ class AddGallery extends AbstractView
 
         ?>
 
+        <script src="/TwitterApp/assets/js/addGalleryValidation.js"></script>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -27,6 +29,7 @@ class AddGallery extends AbstractView
                             <div class="col-md-9">
                                 <input type="text" class="form-control" id="galleryTitle" name="galleryTitle"
                                        placeholder="Enter gallery title">
+                                <div style="color: red" id="titleError"></div>
                             </div>
                         </div>
 
@@ -36,6 +39,7 @@ class AddGallery extends AbstractView
                             <div class="col-md-9">
                                 <input type="text" class="form-control" id="galleryTag" name="galleryTag"
                                        placeholder="Enter gallery tag">
+                                <div style="color: red" id="tagError"></div>
                             </div>
                         </div>
 
