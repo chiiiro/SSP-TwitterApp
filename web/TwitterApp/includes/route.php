@@ -34,3 +34,7 @@ Route::register("changeUsername", new DefaultRoute("settings/username", array(
 Route::register("changeProfilePicture", new DefaultRoute("settings/picture", array(
     "controller" => "settings",
     "action" => "action")));
+
+Route::register("addGallery", new DefaultRoute("gallery/add", array(
+    "controller" => "addGallery",
+    "action" => "action")));

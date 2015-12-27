@@ -10,6 +10,7 @@ class User {
     private $username;
     private $password;
     private $email;
+    private $image;
 
     /**
      * @return mixed
@@ -105,6 +106,22 @@ class User {
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 
 }

@@ -69,12 +69,12 @@ class UserRepository {
 //        return $query->fetch()['username'];
 //    }
 
-//    public static function getIdByUsername($username) {
-//        $db = Database::getInstance();
-//        $query = $db->prepare('SELECT userid FROM users WHERE username = ?');
-//        $query->execute([$username]);
-//        return $query->fetch()['userid'];
-//    }
+    public static function getIdByUsername($username) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT userid FROM users WHERE username = ?');
+        $query->execute([$username]);
+        return $query->fetch()['userid'];
+    }
 
     public static function changePassword($username, $password) {
         $db = Database::getInstance();

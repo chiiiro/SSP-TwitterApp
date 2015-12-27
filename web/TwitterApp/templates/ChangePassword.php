@@ -11,7 +11,7 @@ class ChangePassword extends AbstractView
     {
         ?>
 
-        <script src="../assets/js/changePasswordValidation.js"></script>
+        <script src="/TwitterApp/assets/js/changePasswordValidation.js"></script>
 
         <div class="container">
 

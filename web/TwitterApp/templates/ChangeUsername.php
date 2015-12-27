@@ -10,7 +10,7 @@ class ChangeUsername extends AbstractView {
     {
         ?>
 
-        <script src="../assets/js/changeUsernameValidation.js"></script>
+        <script src="TwitterApp/assets/js/changeUsernameValidation.js"></script>
 
         <div class="container">
 

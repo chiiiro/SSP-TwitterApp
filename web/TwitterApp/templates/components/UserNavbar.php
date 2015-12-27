@@ -24,15 +24,18 @@ class UserNavbar extends AbstractView
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <a href="<?php echo \route\Route::get("addGallery")->generate(); ?>">Add gallery</a>
+                        </li>
+                        <li>
                             <ul>
                                 <?php
 
                                 $image = UserRepository::getProfilePicture($_SESSION['username']);
 
                                 if($image == "") {
-                                    echo "<img width='50' height='50' src='../assets/images/profile/default.jpg' alt='Default Profile Pic'>";
+                                    echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/default.jpg' alt='Default Profile Pic'>";
                                 } else {
-                                    echo "<img width='50' height='50' src='../assets/images/profile/" . $image . "' alt='Default Profile Pic'>";
+                                    echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/" . $image . "' alt='Default Profile Pic'>";
                                 }
 
                                 ?>

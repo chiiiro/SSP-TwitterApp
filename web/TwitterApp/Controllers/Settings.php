@@ -14,6 +14,10 @@ class Settings implements Controller {
     public function action()
     {
 
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
         $main = new Main();
         $main->setPageTitle("Change profile picture");
         $profilePic = new UploadProfilePicture();
@@ -30,6 +34,11 @@ class Settings implements Controller {
     }
 
     public function changePassword() {
+
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
         $main = new Main();
         $main->setPageTitle("Password settings");
         $changePassword = new ChangePassword();
@@ -69,6 +78,11 @@ class Settings implements Controller {
     }
 
     public function changeUsername() {
+
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
         $main = new Main();
         $main->setPageTitle("Username settings");
         $changeUsername = new ChangeUsername();

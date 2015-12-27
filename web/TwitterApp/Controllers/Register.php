@@ -16,10 +16,6 @@ class Register implements Controller {
         $main->setBody($register);
         echo $main;
 
-        ?>
-
-        <?php
-
         if(post('register')) {
 
             $firstName = trim(post('fname'));
