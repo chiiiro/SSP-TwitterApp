@@ -33,7 +33,7 @@ class ViewGallery extends AbstractView {
                         <p>Photo Title: <?php echo $photo['title']; ?></p>
                         <p>Photo Tags: <?php echo $photo['tags']; ?></p>
                         <p>Created: <?php echo $photo['created']?></p>
-<!--                        <p><a href="--><?php //echo \route\Route::get("viewGallery")->generate(array("id"=>$photo['galleryid'])); ?><!--">View Gallery</a></p>-->
+                        <p><a href="<?php echo \route\Route::get("viewPhoto")->generate(array("id"=>$photo['photoid'])); ?>">View Photo</a></p>
                     </div>
 
                     <?php

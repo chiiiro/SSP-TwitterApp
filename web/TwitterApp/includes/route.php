@@ -58,3 +58,11 @@ Route::register("addPhoto", new DefaultRoute("photo/add/<galleryID>", array(
         "galleryID" => "\\d+"
     ))
 );
+
+Route::register("viewPhoto", new DefaultRoute("photo/<id>", array(
+        "controller" => "viewPhoto",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
