@@ -33,4 +33,10 @@ class GalleryRepository
         return $query->fetch();
     }
 
+    public static function setGalleryIcon($icon, $galleryID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE gallery SET icon = ? WHERE galleryid = ?');
+        $query->execute([$icon, $galleryID]);
+    }
+
 }

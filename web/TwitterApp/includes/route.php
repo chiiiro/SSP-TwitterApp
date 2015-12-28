@@ -66,3 +66,11 @@ Route::register("viewPhoto", new DefaultRoute("photo/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("setGalleryIcon", new DefaultRoute("icon/<id>", array(
+        "controller" => "viewPhoto",
+        "action" => "setGalleryIcon"
+    ), array(
+        "id" => "\\d+"
+    ))
+);

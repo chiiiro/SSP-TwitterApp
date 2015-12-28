@@ -23,8 +23,11 @@ class ViewGallery extends AbstractView {
                 </div>
 
                 <?php
-                foreach ($this->photos as $photo) {
 
+                $counter = 0;
+
+                foreach ($this->photos as $photo) {
+                        $counter++;
                     ?>
 
                     <div class="panel-body">
@@ -40,7 +43,18 @@ class ViewGallery extends AbstractView {
 
                 }
 
+                if($counter == 0) {
+                    ?>
+
+                    <div class="panel-body">
+                        <p>Gallery is empty. To add a photo click the button below.</p>
+                    </div>
+
+                    <?php
+                }
+
                 ?>
+
 
                 <div class="panel-footer">
                     <p><a href="<?php echo \route\Route::get("addPhoto")->generate(array("galleryID" => $this->galleryID)); ?>" class="btn btn-danger">Add Photo</a></p>

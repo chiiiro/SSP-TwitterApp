@@ -26,11 +26,28 @@ class ListGalleries extends AbstractView
                     ?>
 
                     <div class="panel-body">
-                        <p><?php echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/default.jpg' alt='Default Profile Pic'>"; ?></p>
+                        <?php
+                        if ($gallery['icon'] == null) {
+                            ?>
+                            <p><?php echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/default.jpg' alt='Default Gallery Pic'>"; ?></p>
+                            <?php
+                        } else {
+                            ?>
+
+                            <p><?php echo "<img width='50' height='50' src='/TwitterApp/assets/images/galleries/" . $gallery['title'] . '/' . $gallery['icon'] . "' alt='image'>"; ?></p>
+
+                            <?php
+                        }
+                        ?>
                         <p>Gallery Title: <?php echo $gallery['title']; ?></p>
+
                         <p>Gallery Tag: <?php echo $gallery['tag']; ?></p>
-                        <p>Created: <?php echo $gallery['created']?></p>
-                        <p><a href="<?php echo \route\Route::get("viewGallery")->generate(array("id"=>$gallery['galleryid'])); ?>">View Gallery</a></p>
+
+                        <p>Created: <?php echo $gallery['created'] ?></p>
+
+                        <p>
+                            <a href="<?php echo \route\Route::get("viewGallery")->generate(array("id" => $gallery['galleryid'])); ?>">View
+                                Gallery</a></p>
                     </div>
 
                     <?php
@@ -40,7 +57,8 @@ class ListGalleries extends AbstractView
                 ?>
 
                 <div class="panel-footer">
-                    <p><a href="<?php echo \route\Route::get("addGallery")->generate(); ?>" class="btn btn-danger">Create gallery</a></p>
+                    <p><a href="<?php echo \route\Route::get("addGallery")->generate(); ?>" class="btn btn-danger">Create
+                            gallery</a></p>
                 </div>
 
             </div>

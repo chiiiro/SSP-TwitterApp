@@ -15,18 +15,24 @@ class ViewPhoto extends AbstractView
         ?>
         <div class="container">
 
-            <div class="panel panel-info" id="comments">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Photo</h3>
-                </div>
-
-                <div class="panel-body">
+<!--            <div class="panel panel-info" id="comments">-->
+<!--                <div class="panel-heading">-->
+<!--                    <h3 class="panel-title">Photo</h3>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="panel-body">-->
 
                     <p><?php echo "<img src='/TwitterApp/assets/images/galleries/" . $this->title . '/' . $this->photo['image'] . "' alt='image'>"; ?></p>
 
-                </div>
-
-            </div>
+<!--                </div>-->
+<!---->
+<!--                <div class="panel-footer">-->
+<!---->
+                    <p><a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>" class="btn btn-danger">Set As Gallery Icon</a></p>
+<!---->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
         </div>
 
         <?php

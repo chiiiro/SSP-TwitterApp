@@ -31,4 +31,11 @@ class PhotoRepository
         return $query->fetch();
     }
 
+    public static function getGalleryID($photoID) {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT galleryid FROM photo WHERE photoid = ?");
+        $query->execute([$photoID]);
+        return $query->fetch()['galleryid'];
+    }
+
 }

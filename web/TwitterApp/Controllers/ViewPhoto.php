@@ -38,4 +38,26 @@ class ViewPhoto implements Controller {
         echo $main->setBody($body)->setPageTitle("View Photo");
     }
 
+    public function setGalleryIcon() {
+
+        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
+
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
+        $photo = PhotoRepository::getPhotoByID($id);
+        $galleryID = PhotoRepository::getGalleryID($id);
+        $icon = $photo['image'];
+
+        try {
+            GalleryRepository::setGalleryIcon($icon, $galleryID);
+            redirect(\route\Route::get("listGalleries")->generate());
+        } catch (\PDOException $e) {
+            $e->getMessage();
+        }
+
+
+    }
+
 }
