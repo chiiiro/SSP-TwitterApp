@@ -23,14 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             return;
         }
-
-        if (parseInt(this.security.value) < 1113 || parseInt(this.security.value) > 1207) {
-            document.getElementById("securityError").innerHTML =
-                "Please re-enter security number.";
-            this.security.focus();
-            e.preventDefault();
-            return;
-        }
     };
 
     var myForm = document.getElementById("create-gallery-form");

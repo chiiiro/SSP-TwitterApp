@@ -16,7 +16,7 @@ class AddGallery implements Controller {
         }
 
         $main = new Main();
-        $main->setPageTitle("Add gallery");
+        $main->setPageTitle("Create gallery");
         $body = new \templates\AddGallery();
         $main->setBody($body);
         echo $main;
@@ -32,11 +32,11 @@ class AddGallery implements Controller {
 
             $error = false;
 
-            if(!ctype_alnum($title) || strlen($title) < 4 || strlen($title) > 25) {
+            if(strlen($title) < 4 || strlen($title) > 25) {
                 $error = true;
             }
 
-            if(!ctype_alnum($tag) || strlen($tag) < 3 || strlen($tag) > 25) {
+            if(strlen($tag) < 3 || strlen($tag) > 25) {
                 $error = true;
             }
 
@@ -49,6 +49,7 @@ class AddGallery implements Controller {
 
                 try {
                     GalleryRepository::addGallery($gallery);
+                    redirect(\route\Route::get("listGalleries")->generate());
                 } catch (\PDOException $e) {
                     $e->getMessage();
                 }

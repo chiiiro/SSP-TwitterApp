@@ -38,3 +38,23 @@ Route::register("changeProfilePicture", new DefaultRoute("settings/picture", arr
 Route::register("addGallery", new DefaultRoute("gallery/add", array(
     "controller" => "addGallery",
     "action" => "action")));
+
+Route::register("listGalleries", new DefaultRoute("galleries", array(
+    "controller" => "listGalleries",
+    "action" => "action")));
+
+Route::register("viewGallery", new DefaultRoute("gallery/<id>", array(
+        "controller" => "viewGallery",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("addPhoto", new DefaultRoute("photo/add/<galleryID>", array(
+    "controller" => "addPhoto",
+    "action" => "action"
+    ), array(
+        "galleryID" => "\\d+"
+    ))
+);

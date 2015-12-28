@@ -57,7 +57,7 @@ class UserRepository {
     public static function getAllUsers()
     {
         $db = Database::getInstance();
-        $query = $db->prepare("SELECT * FROM blog_members");
+        $query = $db->prepare("SELECT * FROM users");
         $query->execute();
         return $query;
     }

@@ -17,7 +17,7 @@ class AddGallery extends AbstractView
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <form class="form-horizontal" role="form" id="create-gallery-form" method="post" action="">
+                    <form class="form-horizontal" role="form" id="create-gallery-form" method="post" action="<?php \route\Route::get("addGallery")->generate(); ?>">
                         <div class="form-group">
                             <h3 class="col-md-6 col-md-offset-3">
                                 Create gallery

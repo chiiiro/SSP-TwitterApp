@@ -24,7 +24,7 @@ class UserNavbar extends AbstractView
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="<?php echo \route\Route::get("addGallery")->generate(); ?>">Add gallery</a>
+                            <a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a>
                         </li>
                         <li>
                             <ul>
