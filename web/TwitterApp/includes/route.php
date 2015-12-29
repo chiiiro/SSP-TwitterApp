@@ -23,9 +23,9 @@ Route::register("twitterWall", new DefaultRoute("wall/<id>", array(
     ))
 );
 
-Route::register("searchResult", new DefaultRoute("search", array(
-        "controller" => "twitterWall",
-        "action" => "searchResult"
+Route::register("searchBar", new DefaultRoute("search", array(
+        "controller" => "searchBar",
+        "action" => "action"
     ))
 );
 

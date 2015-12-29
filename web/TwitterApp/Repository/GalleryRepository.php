@@ -39,4 +39,11 @@ class GalleryRepository
         $query->execute([$icon, $galleryID]);
     }
 
+    public static function searchGalleries($str) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM gallery WHERE tag LIKE ?');
+        $query->execute(['%' . $str . '%']);
+        return $query->fetchAll();
+    }
+
 }

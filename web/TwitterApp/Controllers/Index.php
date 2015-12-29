@@ -12,10 +12,8 @@ class Index implements \Controllers\Controller {
 
     {
 
-        $userid = UserRepository::getIdByUsername($_SESSION['username']);
-
         if(isLoggedIn()) {
-            redirect(\route\Route::get("twitterWall")->generate(array("id" => $userid)));
+            redirect(\route\Route::get("twitterWall")->generate(array("id" => UserRepository::getIdByUsername($_SESSION['username']))));
         }
 
         $main = new Main();
@@ -39,7 +37,7 @@ class Index implements \Controllers\Controller {
 
 
             if (UserRepository::login($username, $hashedPassword)) {
-                redirect(\route\Route::get("twitterWall")->generate(array("id" => $userid)));
+                redirect(\route\Route::get("twitterWall")->generate(array("id" => UserRepository::getIdByUsername($_SESSION['username']))));
                 exit;
             } else {
                 ?>

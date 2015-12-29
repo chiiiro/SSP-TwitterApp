@@ -52,13 +52,13 @@ class Main extends AbstractView
 
         <div class="container">
 
-            <div class="panel panel-info" id="comments">
+
                 <div class="panel-body">
                     <div class="col-md-6">
                         <div class="entry"></div>
                     </div>
                 </div>
-            </div>
+
         </div>
 
         <?php echo $this->pageBody ?>

@@ -27,7 +27,7 @@ class UserNavbar extends AbstractView
                     $(function(){
                         $('#input').keyup(function(){
                             var search = $('#input').val();
-                            $.post("<?php echo \route\Route::get("searchResult")->generate(array("id" => $this->userid))?>",{"search":search},function(data){
+                            $.post("<?php echo \route\Route::get("searchBar")->generate()?>",{"search":search},function(data){
                                 $('.entry').html(data);
                             });
                         });
