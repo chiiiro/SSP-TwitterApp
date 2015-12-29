@@ -12,6 +12,12 @@ class Index implements \Controllers\Controller {
 
     {
 
+        $userid = UserRepository::getIdByUsername($_SESSION['username']);
+
+        if(isLoggedIn()) {
+            redirect(\route\Route::get("twitterWall")->generate(array("id" => $userid)));
+        }
+
         $main = new Main();
         $main->setPageTitle("Twitter App");
         $body = new \templates\Index();
@@ -30,8 +36,10 @@ class Index implements \Controllers\Controller {
 
             $hashedPassword = hash_password($password);
 
+
+
             if (UserRepository::login($username, $hashedPassword)) {
-                redirect(\route\Route::get("twitterWall")->generate());
+                redirect(\route\Route::get("twitterWall")->generate(array("id" => $userid)));
                 exit;
             } else {
                 ?>

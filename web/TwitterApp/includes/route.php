@@ -15,9 +15,20 @@ Route::register("register", new DefaultRoute("register", array(
     "controller" => "register",
     "action" => "action")));
 
-Route::register("twitterWall", new DefaultRoute("wall", array(
+Route::register("twitterWall", new DefaultRoute("wall/<id>", array(
     "controller" => "twitterWall",
-    "action" => "action")));
+    "action" => "action"
+    ), array(
+        "galleryID" => "\\d+"
+    ))
+);
+
+Route::register("searchResult", new DefaultRoute("search", array(
+        "controller" => "twitterWall",
+        "action" => "searchResult"
+    ))
+);
+
 
 Route::register("logout", new DefaultRoute("logout", array(
     "controller" => "index",

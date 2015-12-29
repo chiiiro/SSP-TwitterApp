@@ -8,24 +8,47 @@ use Repository\UserRepository;
 class UserNavbar extends AbstractView
 {
 
+    private $userid;
+
     protected function outputHTML()
     {
+
         ?>
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="<?php echo \route\Route::get("twitterWall")->generate(); ?>"><span
+                    <a class="navbar-brand" href="<?php echo \route\Route::get("twitterWall")->generate(array("id" => $this->userid)); ?>"><span
                             class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
                 </div>
 
+                <script>
+                    $(function(){
+                        $('#input').keyup(function(){
+                            var search = $('#input').val();
+                            $.post("<?php echo \route\Route::get("searchResult")->generate(array("id" => $this->userid))?>",{"search":search},function(data){
+                                $('.entry').html(data);
+                            });
+                        });
+                    });
+                </script>
+
 
                 <div class="collapse navbar-collapse">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a></li>
+                    </ul>
+
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" name="search" id="input" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a>
-                        </li>
                         <li>
                             <ul>
                                 <?php
@@ -62,6 +85,23 @@ class UserNavbar extends AbstractView
         </nav>
 
         <?php
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    /**
+     * @param mixed $userid
+     */
+    public function setUserid($userid)
+    {
+        $this->userid = $userid;
+        return $this;
     }
 
 }

@@ -62,6 +62,13 @@ class UserRepository {
         return $query;
     }
 
+    public static function getUserByID($id) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM users WHERE userid = ?');
+        $query->execute([$id]);
+        return $query->fetch();
+    }
+
 //    public static function getUsernameById($id) {
 //        $db = Database::getInstance();
 //        $query = $db->prepare('SELECT username FROM blog_members WHERE memberid = ?');
@@ -100,6 +107,13 @@ class UserRepository {
         $db = Database::getInstance();
         $query = $db->prepare("UPDATE users SET image = ? WHERE username = ?");
         $query->execute([$_FILES['file']['name'], $username]);
+    }
+
+    public static function searchUsers($str) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM users WHERE username LIKE ?');
+        $query->execute(['%' . $str . '%']);
+        return $query->fetchAll();
     }
 
 }

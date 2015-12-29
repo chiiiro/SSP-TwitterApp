@@ -2,11 +2,13 @@
 
 namespace templates;
 
+use Repository\UserRepository;
 use templates\components\IndexNavbar;
 use templates\components\UserNavbar;
 use Views\AbstractView;
 
-class Main extends AbstractView {
+class Main extends AbstractView
+{
 
     private $pageTitle;
     private $pageBody;
@@ -18,41 +20,54 @@ class Main extends AbstractView {
         <!DOCTYPE HTML>
         <html>
 
-    <head>
-        <title><?php echo $this->pageTitle ?></title>
-        <meta charset="utf-8">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-              crossorigin="anonymous">
+        <head>
+            <title><?php echo $this->pageTitle ?></title>
+            <meta charset="utf-8">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+                  crossorigin="anonymous">
 
-        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+            <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <head/>
+        <head/>
 
-    <body>
+        <body>
 
-    <div class="container">
+        <div class="container">
+
+            <?php
+            if (!isLoggedIn()) {
+                $indexNavbar = new IndexNavbar();
+                echo $indexNavbar;
+            } else {
+                $userid = UserRepository::getIdByUsername($_SESSION['username']);
+                $userNavbar = new UserNavbar();
+                $userNavbar->setUserid($userid);
+                echo $userNavbar;
+            }
+            ?>
+
+        </div>
+
+        <div class="container">
+
+            <div class="panel panel-info" id="comments">
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <div class="entry"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php echo $this->pageBody ?>
+
+        </body>
+
+        </html>
 
         <?php
-        if (!isLoggedIn()) {
-            $indexNavbar = new IndexNavbar();
-            echo $indexNavbar;
-        } else {
-            $userNavbar = new UserNavbar();
-            echo $userNavbar;
-        }
-        ?>
-
-    </div>
-
-    <?php echo $this->pageBody ?>
-
-    </body>
-
-    </html>
-
-    <?php
     }
 
     /**
@@ -72,7 +87,6 @@ class Main extends AbstractView {
         $this->pageBody = $pageBody;
         return $this;
     }
-
 
 
 }
