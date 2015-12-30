@@ -8,6 +8,10 @@ use Models\Gallery;
 class GalleryRepository
 {
 
+    /**
+     * Creates gallery and saves it to database.
+     * @param Gallery $gallery
+     */
     public static function addGallery(Gallery $gallery)
     {
 
@@ -17,6 +21,10 @@ class GalleryRepository
 
     }
 
+    /**
+     * Getts all galleries from database.
+     * @return \PDOStatement
+     */
     public static function listGalleries()
     {
         $db = Database::getInstance();
@@ -25,6 +33,11 @@ class GalleryRepository
         return $query;
     }
 
+    /**
+     * Returns gallery with provided id.
+     * @param $id
+     * @return mixed
+     */
     public static function getByID($id)
     {
         $db = Database::getInstance();
@@ -33,12 +46,22 @@ class GalleryRepository
         return $query->fetch();
     }
 
+    /**
+     * Sets gallery icon.
+     * @param $icon
+     * @param $galleryID
+     */
     public static function setGalleryIcon($icon, $galleryID) {
         $db = Database::getInstance();
         $query = $db->prepare('UPDATE gallery SET icon = ? WHERE galleryid = ?');
         $query->execute([$icon, $galleryID]);
     }
 
+    /**
+     * Searches gallery tags which contain provided string.
+     * @param $str
+     * @return array
+     */
     public static function searchGalleries($str) {
         $db = Database::getInstance();
         $query = $db->prepare('SELECT * FROM gallery WHERE tag LIKE ?');

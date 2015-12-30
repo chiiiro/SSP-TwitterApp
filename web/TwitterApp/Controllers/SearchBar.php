@@ -8,9 +8,11 @@ use Repository\UserRepository;
 
 class SearchBar implements Controller {
 
+    /**
+     * Method lists users, galleries and images that match provided string.
+     */
     public function action()
     {
-        $data = '';
         if(post('search')) {
             $str = post('search');
             $str = preg_replace("#[^0-9a-z]#i","",$str);
@@ -52,7 +54,6 @@ class SearchBar implements Controller {
             }
 
             echo "</br>";
-            echo $data;
         }
     }
 

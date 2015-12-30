@@ -9,6 +9,10 @@ use Repository\GalleryRepository;
 
 class AddPhoto implements Controller {
 
+    /**
+     * Function adds photo to gallery.
+     * Photo has user id, title, list of tags, date of creation and name of chosen picture.
+     */
     public function action()
     {
 

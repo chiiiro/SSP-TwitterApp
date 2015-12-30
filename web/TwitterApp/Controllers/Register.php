@@ -8,6 +8,11 @@ use templates\Main;
 
 class Register implements Controller {
 
+    /**
+     * Function is used for registering new users.
+     * It checks entered data, register new user and redirects to user's twitter wall.
+     * User must enter security number to prevent robot attacks.
+     */
     public function action()
     {
         $main = new Main();

@@ -11,6 +11,9 @@ use templates\UploadProfilePicture;
 class Settings implements Controller {
 
     //uploads profile picture
+    /**
+     * Uploads user's profile picture.
+     */
     public function action()
     {
 
@@ -33,6 +36,10 @@ class Settings implements Controller {
 
     }
 
+    /**
+     * Changes user's password after validation of entered data.
+     * User must enter security number to prevent robot attacks.
+     */
     public function changePassword() {
 
         if(!isLoggedIn()) {
@@ -77,6 +84,10 @@ class Settings implements Controller {
         }
     }
 
+    /**
+     * Changes user's username.
+     * User must enter security number to prevent robot attacks.
+     */
     public function changeUsername() {
 
         if(!isLoggedIn()) {

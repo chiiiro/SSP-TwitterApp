@@ -8,6 +8,10 @@ use templates\Main;
 
 class ViewGallery implements Controller {
 
+    /**
+     * Opens selected gallery, shows gallery icon, title and date of creation.
+     * Also provides option of adding a new photo to gallery.
+     */
     public function action()
     {
         if(!isLoggedIn()) {

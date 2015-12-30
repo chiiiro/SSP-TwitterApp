@@ -9,6 +9,9 @@ use Repository\GalleryRepository;
 
 class ListGalleries implements Controller {
 
+    /**
+     * Function lists all galleries stored in database.
+     */
     public function action()
     {
 

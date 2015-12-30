@@ -8,6 +8,9 @@ use templates\Main;
 
 class ViewPhoto implements Controller {
 
+    /**
+     * Opens selected photo.
+     */
     public function action()
     {
 
@@ -38,6 +41,9 @@ class ViewPhoto implements Controller {
         echo $main->setBody($body)->setPageTitle("View Photo");
     }
 
+    /**
+     * Sets selected photo as gallery icon.
+     */
     public function setGalleryIcon() {
 
         $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");

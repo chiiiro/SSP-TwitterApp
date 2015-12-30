@@ -9,6 +9,11 @@ use templates\Main;
 
 class AddGallery implements Controller {
 
+    /**
+     * Function creates new gallery and saves it to database.
+     * Gallery has user id, title, tag and date of creation.
+     * Title and tag are entered by user.
+     */
     public function action()
     {
         if(!isLoggedIn()) {
@@ -30,6 +35,7 @@ class AddGallery implements Controller {
             $tag = trim(post('galleryTag'));
             $dateOfCreation = date('Y-m-d H:i:s');
 
+            //server side validation of data
             $error = false;
 
             if(strlen($title) < 4 || strlen($title) > 25) {

@@ -7,7 +7,11 @@ use templates\Main;
 
 class Index implements \Controllers\Controller {
 
-    //renderira glavnu stranicu i obavlja logiranje korisnika
+    /**
+     * Function renders main page and implements user login behaviour.
+     * If user is already logged in, he will be redirected to his twitter wall.
+     * If user doesn't exist or entered data is wrong, warning message will show.
+     */
     public function action()
 
     {

@@ -2,6 +2,11 @@
 
 namespace models;
 
+/**
+ * Class Gallery
+ * @package models
+ * Gallery contains gallery id, user id, title, tag and date of creation.
+ */
 class Gallery {
 
     private $id;

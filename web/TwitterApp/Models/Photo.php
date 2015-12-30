@@ -2,6 +2,11 @@
 
 namespace Models;
 
+/**
+ * Class Photo
+ * @package Models
+ * Photo contains photo id, gallery id, title, list of tags, date of creation and name of picture.
+ */
 class Photo {
 
     private $photoid;

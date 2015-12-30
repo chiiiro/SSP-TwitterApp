@@ -6,7 +6,7 @@ use includes\libraries\Database;
 use Models\User;
 
 class UserRepository {
-
+    
     public static function isLoggedIn() {
         return(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true);
     }

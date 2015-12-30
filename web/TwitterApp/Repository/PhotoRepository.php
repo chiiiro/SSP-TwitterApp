@@ -8,6 +8,10 @@ use Models\Photo;
 class PhotoRepository
 {
 
+    /**
+     * Adds photo to database. Photo is inside gallery with galleryid.
+     * @param Photo $photo
+     */
     public static function addPhoto(Photo $photo)
     {
         $db = Database::getInstance();
@@ -15,6 +19,11 @@ class PhotoRepository
         $query->execute([$photo->getGalleryid(), $photo->getTitle(), $photo->getTags(), $photo->getCreated(), $photo->getImage()]);
     }
 
+    /**
+     * Getts all photos in gallery with provided id.
+     * @param $galleryID
+     * @return \PDOStatement
+     */
     public static function getPhotosByGalleryID($galleryID)
     {
         $db = Database::getInstance();
@@ -23,6 +32,11 @@ class PhotoRepository
         return $query;
     }
 
+    /**
+     * Getts photo with provided id.
+     * @param $ID
+     * @return mixed
+     */
     public static function getPhotoByID($ID)
     {
         $db = Database::getInstance();
@@ -31,6 +45,11 @@ class PhotoRepository
         return $query->fetch();
     }
 
+    /**
+     * Getts gallery id for provided photo id.
+     * @param $photoID
+     * @return mixed
+     */
     public static function getGalleryID($photoID) {
         $db = Database::getInstance();
         $query = $db->prepare("SELECT galleryid FROM photo WHERE photoid = ?");
@@ -38,6 +57,11 @@ class PhotoRepository
         return $query->fetch()['galleryid'];
     }
 
+    /**
+     * Looks for photos which contain tag that matches provided string.
+     * @param $str
+     * @return array
+     */
     public static function searchPhotos($str) {
         $db = Database::getInstance();
         $query = $db->prepare('SELECT * FROM photo WHERE tags LIKE ?');

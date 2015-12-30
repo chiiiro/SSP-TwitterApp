@@ -2,6 +2,11 @@
 
 namespace Models;
 
+/**
+ * Class User
+ * @package Models
+ * User contains of id, first name, last name, username, password, email address and name of profile picture.
+ */
 class User {
 
     private $id;

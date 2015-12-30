@@ -8,24 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     var checkForm = function (e) {
-        if (!checkString(this.galleryTitle.value)) {
+        if (!checkString(this.title.value)) {
             document.getElementById("titleError").innerHTML =
                 "Title must contain at least 4 characters, which are only letters and numbers!";
-            this.galleryTitle.focus();
+            this.title.focus();
             e.preventDefault();
             return;
         }
 
-        if (!checkString(this.galleryTag.value)) {
+        if (!checkString(this.tags.value)) {
             document.getElementById("tagError").innerHTML =
-                "Gallery tag must contain at least 4 characters, which are only letters and numbers!";
-            this.galleryTag.focus();
+                "List of tags must contain at least 4 characters, which are only letters and numbers!";
+            this.tags.focus();
             e.preventDefault();
             return;
         }
     };
 
-    var myForm = document.getElementById("create-gallery-form");
+    var myForm = document.getElementById("upload-photo");
     myForm.addEventListener("submit", checkForm, true);
 
 }, false);
