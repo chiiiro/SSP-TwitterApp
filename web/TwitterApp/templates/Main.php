@@ -32,7 +32,23 @@ class Main extends AbstractView
 
         <head/>
 
-        <body>
+        <?php
+
+            //postavljanje pozadinske slike
+            if(isLoggedIn()) {
+                $user = UserRepository::getUserByUsername($_SESSION['username']);
+
+                if($user['background'] == null) {
+                    echo "<body>";
+                } else {
+                    echo "<body background='/TwitterApp/assets/images/galleries/". $user['background'] . "'>";
+                }
+            } else {
+                echo "<body>";
+            }
+
+
+        ?>
 
         <div class="container">
 

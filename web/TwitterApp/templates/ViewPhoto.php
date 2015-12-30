@@ -28,7 +28,10 @@ class ViewPhoto extends AbstractView
 <!---->
 <!--                <div class="panel-footer">-->
 <!---->
-                    <p><a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>" class="btn btn-danger">Set As Gallery Icon</a></p>
+                    <p>
+                        <a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>" class="btn btn-danger">Set As Gallery Icon</a>
+                        <a href="<?php echo \route\Route::get("setUserBackground")->generate(array("id" => $this->photo['photoid'])); ?>" class="btn btn-danger">Set As Background</a>
+                    </p>
 <!---->
 <!--                </div>-->
 <!---->

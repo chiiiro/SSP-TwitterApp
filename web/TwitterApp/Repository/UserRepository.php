@@ -6,7 +6,7 @@ use includes\libraries\Database;
 use Models\User;
 
 class UserRepository {
-    
+
     public static function isLoggedIn() {
         return(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true);
     }
@@ -69,6 +69,13 @@ class UserRepository {
         return $query->fetch();
     }
 
+    public static function getUserByUsername($username) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM users WHERE username = ?');
+        $query->execute([$username]);
+        return $query->fetch();
+    }
+
 //    public static function getUsernameById($id) {
 //        $db = Database::getInstance();
 //        $query = $db->prepare('SELECT username FROM blog_members WHERE memberid = ?');
@@ -114,6 +121,12 @@ class UserRepository {
         $query = $db->prepare('SELECT * FROM users WHERE username LIKE ?');
         $query->execute(['%' . $str . '%']);
         return $query->fetchAll();
+    }
+
+    public static function setBackground($image, $userid) {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE users SET background = ? WHERE userid = ?');
+        $query->execute([$image, $userid]);
     }
 
 }

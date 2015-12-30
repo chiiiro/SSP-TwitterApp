@@ -85,3 +85,11 @@ Route::register("setGalleryIcon", new DefaultRoute("icon/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("setUserBackground", new DefaultRoute("background/<id>", array(
+        "controller" => "viewPhoto",
+        "action" => "setUserBackground"
+    ), array(
+        "id" => "\\d+"
+    ))
+);

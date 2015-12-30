@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Repository\GalleryRepository;
 use Repository\PhotoRepository;
+use Repository\UserRepository;
 use templates\Main;
 
 class ViewPhoto implements Controller {
@@ -63,7 +64,28 @@ class ViewPhoto implements Controller {
             $e->getMessage();
         }
 
+    }
 
+    public function setUserBackground() {
+        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
+
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
+        $photo = PhotoRepository::getPhotoByID($id);
+        $galleryID = PhotoRepository::getGalleryID($id);
+        $gallery = GalleryRepository::getByID($galleryID);
+        $background = $gallery['title'] . '/' . $photo['image'];
+
+        $userid = UserRepository::getIdByUsername($_SESSION['username']);
+
+        try {
+            UserRepository::setBackground($background, $userid);
+            redirect(\route\Route::get("viewPhoto")->generate(array("id" => $photo['photoid'])));
+        } catch (\PDOException $e) {
+            $e->getMessage();
+        }
     }
 
 }
