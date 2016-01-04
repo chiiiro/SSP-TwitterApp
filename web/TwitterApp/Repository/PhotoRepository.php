@@ -69,4 +69,11 @@ class PhotoRepository
         return $query->fetchAll();
     }
 
+    public static function advancedPhotoSearch($str) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM photo WHERE tags LIKE ?');
+        $query->execute(['%' . $str . '%']);
+        return $query->fetchAll();
+    }
+
 }

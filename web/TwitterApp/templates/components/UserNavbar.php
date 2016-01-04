@@ -45,7 +45,7 @@ class UserNavbar extends AbstractView
                         <div class="form-group">
                             <input type="text" name="search" id="input" class="form-control" placeholder="Search">
                         </div>
-                        <button type="submit" class="btn btn-default">Search</button>
+                        <button type="submit" name="search" class="btn btn-default">Search</button>
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
