@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Repository\UserRepository;
+use route\Route;
 use templates\ChangePassword;
 use templates\ChangeUsername;
 use templates\Main;
@@ -10,7 +11,6 @@ use templates\UploadProfilePicture;
 
 class Settings implements Controller {
 
-    //uploads profile picture
     /**
      * Uploads user's profile picture.
      */
@@ -51,10 +51,6 @@ class Settings implements Controller {
         $changePassword = new ChangePassword();
         $main->setBody($changePassword);
         echo $main;
-
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
 
         $username = getUsername();
 
@@ -100,10 +96,6 @@ class Settings implements Controller {
         $main->setBody($changeUsername);
         echo $main;
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
         $oldUsername = getUsername();
 
         if(post('change-username')) {
@@ -130,6 +122,28 @@ class Settings implements Controller {
                 $_SESSION['username'] = $newUsername;
             }
         }
+    }
+
+    /**
+     * Changes visibility of a user.
+     */
+    public function changeVisibility() {
+        if(!isLoggedIn()) {
+            redirect(\route\Route::get("errorPage")->generate());
+        }
+
+        $userid = UserRepository::getIdByUsername($_SESSION['username']);
+        $user = UserRepository::getUserByID($userid);
+
+        if($user['visibility'] == 1) {
+            UserRepository::hideFromUsersList($userid);
+            redirect(Route::get("listUsers")->generate());
+        } else {
+            UserRepository::showInUsersList($userid);
+            redirect(Route::get("listUsers")->generate());
+        }
+
+
     }
 
 }

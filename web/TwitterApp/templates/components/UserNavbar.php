@@ -39,13 +39,13 @@ class UserNavbar extends AbstractView
 
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a></li>
+                        <li><a href="<?php echo \route\Route::get("listUsers")->generate(); ?>">Users</a></li>
                     </ul>
 
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <input type="text" name="search" id="input" class="form-control" placeholder="Search">
                         </div>
-                        <button type="submit" name="search" class="btn btn-default">Search</button>
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -73,6 +73,21 @@ class UserNavbar extends AbstractView
                                 <li><a href="<?php echo \route\Route::get("changeProfilePicture")->generate(); ?>">Upload profile picture</a></li>
                                 <li><a href="<?php echo \route\Route::get("changeUsername")->generate(); ?>">Change username</a></li>
                                 <li><a href="<?php echo \route\Route::get("changePassword")->generate(); ?>">Change password</a></li>
+
+                                <?php
+                                $user = UserRepository::getUserByID($this->userid);
+                                if($user['visibility'] == 1) {
+                                    ?>
+                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Hide from users list</a></li>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Show in users list</a></li>
+                                    <?php
+                                }
+                                ?>
+
+
                                 <li class="divider"></li>
                                 <li><a href="<?php echo \route\Route::get("logout")->generate(); ?>">Log Out</a></li>
                             </ul>

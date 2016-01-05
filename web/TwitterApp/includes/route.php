@@ -16,8 +16,8 @@ Route::register("register", new DefaultRoute("register", array(
     "action" => "action")));
 
 Route::register("twitterWall", new DefaultRoute("wall/<id>", array(
-    "controller" => "twitterWall",
-    "action" => "action"
+        "controller" => "twitterWall",
+        "action" => "action"
     ), array(
         "galleryID" => "\\d+"
     ))
@@ -34,6 +34,10 @@ Route::register("logout", new DefaultRoute("logout", array(
     "controller" => "index",
     "action" => "logout")));
 
+Route::register("changeProfilePicture", new DefaultRoute("settings/picture", array(
+    "controller" => "settings",
+    "action" => "action")));
+
 Route::register("changePassword", new DefaultRoute("settings/password", array(
     "controller" => "settings",
     "action" => "changePassword")));
@@ -42,9 +46,9 @@ Route::register("changeUsername", new DefaultRoute("settings/username", array(
     "controller" => "settings",
     "action" => "changeUsername")));
 
-Route::register("changeProfilePicture", new DefaultRoute("settings/picture", array(
+Route::register("changeVisibility", new DefaultRoute("settings/visibility", array(
     "controller" => "settings",
-    "action" => "action")));
+    "action" => "changeVisibility")));
 
 Route::register("addGallery", new DefaultRoute("gallery/add", array(
     "controller" => "addGallery",
@@ -63,8 +67,8 @@ Route::register("viewGallery", new DefaultRoute("gallery/<id>", array(
 );
 
 Route::register("addPhoto", new DefaultRoute("photo/add/<galleryID>", array(
-    "controller" => "addPhoto",
-    "action" => "action"
+        "controller" => "addPhoto",
+        "action" => "action"
     ), array(
         "galleryID" => "\\d+"
     ))
@@ -89,6 +93,18 @@ Route::register("setGalleryIcon", new DefaultRoute("icon/<id>", array(
 Route::register("setUserBackground", new DefaultRoute("background/<id>", array(
         "controller" => "viewPhoto",
         "action" => "setUserBackground"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("listUsers", new DefaultRoute("users", array(
+    "controller" => "listUsers",
+    "action" => "action")));
+
+Route::register("userProfile", new DefaultRoute("profile/<id>", array(
+        "controller" => "userProfile",
+        "action" => "action"
     ), array(
         "id" => "\\d+"
     ))
