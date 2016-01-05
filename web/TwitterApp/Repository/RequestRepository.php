@@ -44,4 +44,11 @@ class RequestRepository {
         $query->execute([$profileID, $myID]);
     }
 
+    public static function checksNewRequests($myID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM requests WHERE toid = ?');
+        $query->execute([$myID]);
+        return $query;
+    }
+
 }

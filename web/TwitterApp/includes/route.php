@@ -153,3 +153,11 @@ Route::register("unfriend", new DefaultRoute("unfriend/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("showRequests", new DefaultRoute("requests", array(
+    "controller" => "listUsers",
+    "action" => "showRequests")));
+
+Route::register("showFriends", new DefaultRoute("friends", array(
+    "controller" => "listUsers",
+    "action" => "showFriends")));

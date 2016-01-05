@@ -19,15 +19,16 @@ class UserNavbar extends AbstractView
             <div class="container-fluid">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="<?php echo \route\Route::get("twitterWall")->generate(array("id" => $this->userid)); ?>"><span
+                    <a class="navbar-brand"
+                       href="<?php echo \route\Route::get("twitterWall")->generate(array("id" => $this->userid)); ?>"><span
                             class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
                 </div>
 
                 <script>
-                    $(function(){
-                        $('#input').keyup(function(){
+                    $(function () {
+                        $('#input').keyup(function () {
                             var search = $('#input').val();
-                            $.post("<?php echo \route\Route::get("searchBar")->generate()?>",{"search":search},function(data){
+                            $.post("<?php echo \route\Route::get("searchBar")->generate()?>", {"search": search}, function (data) {
                                 $('.entry').html(data);
                             });
                         });
@@ -38,8 +39,21 @@ class UserNavbar extends AbstractView
                 <div class="collapse navbar-collapse">
 
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a></li>
-                        <li><a href="<?php echo \route\Route::get("listUsers")->generate(); ?>">Users</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">Menu
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="<?php echo \route\Route::get("listGalleries")->generate(); ?>">Galleries</a>
+                                </li>
+                                <li><a href="<?php echo \route\Route::get("listUsers")->generate(); ?>">Users</a></li>
+                                <li><a href="<?php echo \route\Route::get("showFriends")->generate(); ?>">Friends</a></li>
+                                <li><a href="<?php echo \route\Route::get("showRequests")->generate(); ?>">Requests</a></li>
+                            </ul>
+                        </li>
+
+
                     </ul>
 
                     <form class="navbar-form navbar-left" role="search">
@@ -55,7 +69,7 @@ class UserNavbar extends AbstractView
 
                                 $image = UserRepository::getProfilePicture($_SESSION['username']);
 
-                                if($image == "") {
+                                if ($image == "") {
                                     echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/default.jpg' alt='Default Profile Pic'>";
                                 } else {
                                     echo "<img width='50' height='50' src='/TwitterApp/assets/images/profile/" . $image . "' alt='Default Profile Pic'>";
@@ -70,19 +84,24 @@ class UserNavbar extends AbstractView
                                                                                 aria-hidden="true"></span> Settings
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?php echo \route\Route::get("changeProfilePicture")->generate(); ?>">Upload profile picture</a></li>
-                                <li><a href="<?php echo \route\Route::get("changeUsername")->generate(); ?>">Change username</a></li>
-                                <li><a href="<?php echo \route\Route::get("changePassword")->generate(); ?>">Change password</a></li>
+                                <li><a href="<?php echo \route\Route::get("changeProfilePicture")->generate(); ?>">Upload
+                                        profile picture</a></li>
+                                <li><a href="<?php echo \route\Route::get("changeUsername")->generate(); ?>">Change
+                                        username</a></li>
+                                <li><a href="<?php echo \route\Route::get("changePassword")->generate(); ?>">Change
+                                        password</a></li>
 
                                 <?php
                                 $user = UserRepository::getUserByID($this->userid);
-                                if($user['visibility'] == 1) {
+                                if ($user['visibility'] == 1) {
                                     ?>
-                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Hide from users list</a></li>
+                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Hide
+                                            from users list</a></li>
                                     <?php
                                 } else {
                                     ?>
-                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Show in users list</a></li>
+                                    <li><a href="<?php echo \route\Route::get("changeVisibility")->generate(); ?>">Show
+                                            in users list</a></li>
                                     <?php
                                 }
                                 ?>
