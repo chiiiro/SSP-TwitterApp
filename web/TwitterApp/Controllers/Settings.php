@@ -17,9 +17,7 @@ class Settings implements Controller {
     public function action()
     {
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $main = new Main();
         $main->setPageTitle("Change profile picture");
@@ -42,9 +40,7 @@ class Settings implements Controller {
      */
     public function changePassword() {
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $main = new Main();
         $main->setPageTitle("Password settings");
@@ -86,9 +82,7 @@ class Settings implements Controller {
      */
     public function changeUsername() {
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $main = new Main();
         $main->setPageTitle("Username settings");
@@ -128,9 +122,7 @@ class Settings implements Controller {
      * Changes visibility of a user.
      */
     public function changeVisibility() {
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $userid = UserRepository::getIdByUsername($_SESSION['username']);
         $user = UserRepository::getUserByID($userid);

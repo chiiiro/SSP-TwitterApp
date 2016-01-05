@@ -11,6 +11,10 @@ Route::register("errorPage", new DefaultRoute("error/404", array(
     "controller" => "errorPage",
     "action" => "action")));
 
+Route::register("unauthorizedAccess", new DefaultRoute("access/denied", array(
+    "controller" => "unauthorizedAccess",
+    "action" => "action")));
+
 Route::register("register", new DefaultRoute("register", array(
     "controller" => "register",
     "action" => "action")));
@@ -105,6 +109,46 @@ Route::register("listUsers", new DefaultRoute("users", array(
 Route::register("userProfile", new DefaultRoute("profile/<id>", array(
         "controller" => "userProfile",
         "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("sendFriendRequest", new DefaultRoute("request/send/<id>", array(
+        "controller" => "userProfile",
+        "action" => "sendFriendRequest"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("cancelRequest", new DefaultRoute("request/cancel/<id>", array(
+        "controller" => "userProfile",
+        "action" => "cancelRequest"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("acceptRequest", new DefaultRoute("request/accept/<id>", array(
+        "controller" => "userProfile",
+        "action" => "acceptRequest"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("deleteRequest", new DefaultRoute("request/delete/<id>", array(
+        "controller" => "userProfile",
+        "action" => "deleteRequest"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("unfriend", new DefaultRoute("unfriend/<id>", array(
+        "controller" => "userProfile",
+        "action" => "unfriend"
     ), array(
         "id" => "\\d+"
     ))

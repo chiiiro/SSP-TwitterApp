@@ -2,31 +2,21 @@
 
 namespace Controllers;
 
+use Repository\FriendRepository;
+use Repository\RequestRepository;
 use Repository\UserRepository;
+use route\Route;
 use templates\Main;
 
 class UserProfile implements Controller {
 
     public function action()
     {
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
 
-        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
-
-        if(null === $id) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
-        if(intval($id) < 1) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
+        $id = getIdFromURL();
         $user = UserRepository::getUserByID($id);
-        if($user == null) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+
+        checkRequestURL($id, $user);
 
         $main = new Main();
         $body = new \templates\UserProfile();
@@ -35,7 +25,68 @@ class UserProfile implements Controller {
         $main->setPageTitle("User Profile")->setBody($body);
         echo $main;
 
+    }
 
+    public function sendFriendRequest() {
+
+        $profileID = getIdFromURL();
+        $user = UserRepository::getUserByID($profileID);
+        checkRequestURL($profileID, $user);
+
+        $myID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        RequestRepository::sendFriendRequest($myID, $profileID);
+        redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+
+    }
+
+    public function cancelRequest() {
+
+        $profileID = getIdFromURL();
+        $user = UserRepository::getUserByID($profileID);
+        checkRequestURL($profileID, $user);
+
+        $myID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        RequestRepository::cancelRequest($myID, $profileID);
+        redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+    }
+
+    public function acceptRequest() {
+
+        $profileID = getIdFromURL();
+        $user = UserRepository::getUserByID($profileID);
+        checkRequestURL($profileID, $user);
+
+        $myID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        RequestRepository::acceptRequest($myID, $profileID);
+        RequestRepository::deleteRequest($myID, $profileID);
+        redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+    }
+
+    public function deleteRequest() {
+
+        $profileID = getIdFromURL();
+        $user = UserRepository::getUserByID($profileID);
+        checkRequestURL($profileID, $user);
+
+        $myID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        RequestRepository::deleteRequest($myID, $profileID);
+        redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+    }
+
+    public function unfriend() {
+
+        $profileID = getIdFromURL();
+        $user = UserRepository::getUserByID($profileID);
+        checkRequestURL($profileID, $user);
+
+        $myID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        FriendRepository::unfriend($myID, $profileID);
+        redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
     }
 
 }

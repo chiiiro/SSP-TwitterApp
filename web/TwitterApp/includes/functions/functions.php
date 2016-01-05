@@ -58,12 +58,37 @@ function getRequestMethod() {
 }
 
 /**
- * Prints provided error message in desired field.
- * @param $elementId
- * @param $errorMessage
+ * Getts id from URL link.
+ * @return mixed
  */
-function alert($elementId, $errorMessage) {
-    echo "<script language='javascript'>
-                     document.getElementById('$elementId').innerHTML = '$errorMessage';
-                </script>";
+function getIdFromURL() {
+    return \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
+}
+
+/**
+ * Checks if id is numerical and if user with provided id exists.
+ * @param $id
+ * @param $user
+ */
+function checkRequestURL($id, $user) {
+    checkUnauthorizedAccess();
+
+    if(null === $id) {
+        redirect(\route\Route::get("errorPage")->generate());
+    }
+
+    if(intval($id) < 1) {
+        redirect(\route\Route::get("errorPage")->generate());
+    }
+
+    if($user == null) {
+        redirect(\route\Route::get("errorPage")->generate());
+    }
+
+}
+
+function checkUnauthorizedAccess() {
+    if(!isLoggedIn()) {
+        redirect(\route\Route::get("unauthorizedAccess")->generate());
+    }
 }

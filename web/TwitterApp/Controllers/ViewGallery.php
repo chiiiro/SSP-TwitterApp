@@ -14,9 +14,7 @@ class ViewGallery implements Controller {
      */
     public function action()
     {
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
 

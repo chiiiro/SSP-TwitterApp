@@ -20,4 +20,28 @@ class RequestRepository {
         return $query->fetch()['id'];
     }
 
+    public static function sendFriendRequest($myID, $profileID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('INSERT INTO requests (fromid, toid) VALUES (?, ?)');
+        $query->execute([$myID, $profileID]);
+    }
+
+    public static function cancelRequest($myID, $profileID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('DELETE FROM requests WHERE (fromid = ? AND toid = ?)');
+        $query->execute([$myID, $profileID]);
+    }
+
+    public static function acceptRequest($myID, $profileID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('INSERT INTO friends (user1, user2) VALUES (?, ?)');
+        $query->execute([$myID, $profileID]);
+    }
+
+    public static function deleteRequest($myID, $profileID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('DELETE FROM requests WHERE (fromid = ? AND toid = ?)');
+        $query->execute([$profileID, $myID]);
+    }
+
 }

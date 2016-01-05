@@ -15,9 +15,7 @@ class ListGalleries implements Controller {
     public function action()
     {
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $main = new Main();
         $body = new \templates\ListGalleries();

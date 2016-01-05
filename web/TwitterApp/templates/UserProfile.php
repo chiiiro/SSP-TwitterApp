@@ -44,7 +44,7 @@ class UserProfile extends AbstractView
                         //ako su prijatelji ponuditi opciju Unfriend
                         if ($friendsID != null) {
                             ?>
-                            <p><a href="#" class="btn btn-danger">Unfriend</a></p>
+                            <p><a href="<?php echo \route\Route::get("unfriend")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Unfriend</a></p>
                             <?php
                             //ako nisu prijatleji ponuditi opcije za prihvaćanje, odbijanje, uklanjanje zahtjeva
                             //i slanje zahtjeva ovisno o situaciji
@@ -54,16 +54,16 @@ class UserProfile extends AbstractView
 
                             if ($getRequestID != null) {
                                 ?>
-                                <p><a href="#" class="btn btn-success">Accept</a> | <a href="#" class="btn btn-danger">Ignore</a>
+                                <p><a href="<?php echo \route\Route::get("acceptRequest")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-success">Accept</a> | <a href="<?php echo \route\Route::get("deleteRequest")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Delete</a>
                                 </p>
                                 <?php
                             } else if ($fromRequestID != null) {
                                 ?>
-                                <a href="#" class="btn btn-danger">Cancel Request</a>
+                                <a href="<?php echo \route\Route::get("cancelRequest")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Cancel Request</a>
                                 <?php
                             } else {
                                 ?>
-                                <a href="#" class="btn btn-info">Send Request</a>
+                                <a href="<?php echo \route\Route::get("sendFriendRequest")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-info">Send Friend Request</a>
                                 <?php
                             }
                         }

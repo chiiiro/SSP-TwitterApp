@@ -38,11 +38,6 @@ class UserRepository {
             redirect(\route\Route::get("index")->generate());
         } else {
 
-            var_dump($user->getFirstName());
-            var_dump($user->getLastName());
-            var_dump($user->getUsername());
-            var_dump($user->getPassword());
-            var_dump($user->getEmail());
             ?>
 
             <script>

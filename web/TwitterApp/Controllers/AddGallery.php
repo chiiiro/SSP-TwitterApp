@@ -16,9 +16,7 @@ class AddGallery implements Controller {
      */
     public function action()
     {
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkUnauthorizedAccess();
 
         $main = new Main();
         $main->setPageTitle("Create gallery");

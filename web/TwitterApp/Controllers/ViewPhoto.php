@@ -15,7 +15,7 @@ class ViewPhoto implements Controller {
     public function action()
     {
 
-        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
+        $id = getIdFromURL();
 
         if(null === $id) {
             redirect(\route\Route::get("errorPage")->generate());
@@ -47,11 +47,8 @@ class ViewPhoto implements Controller {
      */
     public function setGalleryIcon() {
 
-        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
-
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        $id = getIdFromURL();
+        checkUnauthorizedAccess();
 
         $photo = PhotoRepository::getPhotoByID($id);
         $galleryID = PhotoRepository::getGalleryID($id);
@@ -67,11 +64,9 @@ class ViewPhoto implements Controller {
     }
 
     public function setUserBackground() {
-        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        $id = getIdFromURL();
+        checkUnauthorizedAccess();
 
         $photo = PhotoRepository::getPhotoByID($id);
         $galleryID = PhotoRepository::getGalleryID($id);

@@ -10,25 +10,10 @@ class TwitterWall implements Controller {
     public function action()
     {
 
-        if(!isLoggedIn()) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
-        $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
-
-        if(null === $id) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
-        if(intval($id) < 1) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
+        $id = getIdFromURL();
         $user = UserRepository::getUserByID($id);
 
-        if($user == null) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkRequestURL($id, $user);
 
         $main = new Main();
         $main->setPageTitle("TwitterApp");
