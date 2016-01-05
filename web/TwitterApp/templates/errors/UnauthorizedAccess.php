@@ -1,6 +1,6 @@
 <?php
 
-namespace templates;
+namespace templates\errors;
 
 use Views\AbstractView;
 

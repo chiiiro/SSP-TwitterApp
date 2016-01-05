@@ -11,7 +11,7 @@ class ErrorPage implements  Controller {
      */
     public function action()
     {
-        $body = new \templates\ErrorPage();
+        $body = new \templates\errors\ErrorPage();
         echo $body;
     }
 
