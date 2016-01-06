@@ -35,6 +35,7 @@ class Messages implements Controller {
             $message->setSenderID($senderID);
             $message->setRecipientID($recipientID);
             $message->setContent($content);
+            $message->setCreated(date('Y-m-d H:i:s'));
 
             try {
                 //slanje poruke

@@ -182,3 +182,11 @@ Route::register("readMessage", new DefaultRoute("message/read/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("sortMessages", new DefaultRoute("messages/sort/<order>", array(
+    "controller" => "sortMessages",
+    "action" => "action"
+    ), array(
+        "order" => "newest|oldest|unread|read"
+    ))
+);

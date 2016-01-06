@@ -9,6 +9,7 @@ class Message {
     private $recipientID;
     private $content;
     private $read;
+    private $created;
 
     /**
      * @return mixed
@@ -88,5 +89,21 @@ class Message {
     public function setRead($read)
     {
         $this->read = $read;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * @param mixed $created
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
     }
 }

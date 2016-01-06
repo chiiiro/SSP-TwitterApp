@@ -65,6 +65,10 @@ function getIdFromURL() {
     return \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("id");
 }
 
+function getSortingOrderFromURL() {
+    return \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("order");
+}
+
 /**
  * Checks if id is numerical and if user with provided id exists.
  * @param $id
