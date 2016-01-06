@@ -2,6 +2,7 @@
 
 namespace templates;
 
+use Repository\MessageRepository;
 use Repository\UserRepository;
 use templates\components\IndexNavbar;
 use templates\components\UserNavbar;
@@ -58,6 +59,8 @@ class Main extends AbstractView
                 echo $indexNavbar;
             } else {
                 $userid = UserRepository::getIdByUsername($_SESSION['username']);
+
+                //prikaži alatnu traku
                 $userNavbar = new UserNavbar();
                 $userNavbar->setUserid($userid);
                 echo $userNavbar;

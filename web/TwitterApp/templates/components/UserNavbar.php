@@ -2,6 +2,7 @@
 
 namespace templates\components;
 
+use Repository\MessageRepository;
 use Views\AbstractView;
 use Repository\UserRepository;
 
@@ -49,9 +50,19 @@ class UserNavbar extends AbstractView
                                 </li>
                                 <li><a href="<?php echo \route\Route::get("listUsers")->generate(); ?>">Users</a></li>
                                 <li><a href="<?php echo \route\Route::get("showFriends")->generate(); ?>">Friends</a></li>
-                                <li><a href="<?php echo \route\Route::get("showRequests")->generate(); ?>">Requests</a></li>
-                                <li><a href="<?php echo \route\Route::get("showMessages")->generate(); ?>">Messages</a></li>
                             </ul>
+                        <li>
+                            <?php
+                                $color = newRequestNotification();
+                            ?>
+                            <a style="color: <?php echo $color?>" href="<?php echo \route\Route::get("showRequests")->generate(); ?>">Requests</a>
+                        </li>
+                        <li>
+                            <?php
+                            $color = newMessageNotification();
+                            ?>
+                            <a style="color: <?php echo $color?>" href="<?php echo \route\Route::get("showMessages")->generate(); ?>">Messages</a>
+                        </li>
                         </li>
 
 

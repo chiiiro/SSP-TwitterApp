@@ -28,7 +28,7 @@ class ShowMessages extends AbstractView
 
                         ?>
                         <p style="color: red"><a
-                                href="<?php echo \route\Route::get("readMessage")->generate(array("id" => $message['id'])); ?>">From: <?php echo $user['username']; ?> </a><?php if ($message['read'] == 0) {
+                                href="<?php echo \route\Route::get("readMessage")->generate(array("id" => $message['id'])); ?>">From: <?php echo $user['username']; ?> </a><?php if ($message['readflag'] == 0) {
                                 echo " Unread";
                             } ?></p>
                         <?php
