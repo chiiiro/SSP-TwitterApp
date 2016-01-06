@@ -50,6 +50,7 @@ class UserNavbar extends AbstractView
                                 <li><a href="<?php echo \route\Route::get("listUsers")->generate(); ?>">Users</a></li>
                                 <li><a href="<?php echo \route\Route::get("showFriends")->generate(); ?>">Friends</a></li>
                                 <li><a href="<?php echo \route\Route::get("showRequests")->generate(); ?>">Requests</a></li>
+                                <li><a href="<?php echo \route\Route::get("showMessages")->generate(); ?>">Messages</a></li>
                             </ul>
                         </li>
 

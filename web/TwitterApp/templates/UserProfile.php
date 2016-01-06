@@ -44,9 +44,10 @@ class UserProfile extends AbstractView
                         //ako su prijatelji ponuditi opciju Unfriend
                         if ($friendsID != null) {
                             ?>
-                            <p><a href="<?php echo \route\Route::get("unfriend")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Unfriend</a></p>
+                            <p><a href="<?php echo \route\Route::get("sendMessage")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-info">Send Message</a>
+                                <a href="<?php echo \route\Route::get("unfriend")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Unfriend</a></p>
                             <?php
-                            //ako nisu prijatleji ponuditi opcije za prihvaćanje, odbijanje, uklanjanje zahtjeva
+                            //ako nisu prijatelji ponuditi opcije za prihvaćanje, odbijanje, uklanjanje
                             //i slanje zahtjeva ovisno o situaciji
                         } else {
                             $getRequestID = RequestRepository::getRequest($this->user['userid'], $userid);

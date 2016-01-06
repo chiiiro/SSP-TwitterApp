@@ -33,12 +33,10 @@ class Index implements \Controllers\Controller {
 
         if (post('login')) {
 
-            $username = trim(post('username'));
-            $password = trim(post('password'));
+            $username = htmlentities(trim(post('username')));
+            $password = htmlentities(trim(post('password')));
 
             $hashedPassword = hash_password($password);
-
-
 
             if (UserRepository::login($username, $hashedPassword)) {
                 redirect(\route\Route::get("twitterWall")->generate(array("id" => UserRepository::getIdByUsername($_SESSION['username']))));

@@ -23,9 +23,9 @@ class Register implements Controller {
 
         if(post('register')) {
 
-            $firstName = trim(post('fname'));
-            $lastName = trim(post('lname'));
-            $username = trim(post('username'));
+            $firstName = htmlentities(trim(post('fname')));
+            $lastName = htmlentities(trim(post('lname')));
+            $username = htmlentities(trim(post('username')));
             $password = trim(post('password'));
             $hashedPassword = hash_password($password);
             $confirmedPassword = trim(post('cpassword'));

@@ -104,7 +104,8 @@ Route::register("setUserBackground", new DefaultRoute("background/<id>", array(
 
 Route::register("listUsers", new DefaultRoute("users", array(
     "controller" => "listUsers",
-    "action" => "action")));
+    "action" => "action"
+    )));
 
 Route::register("userProfile", new DefaultRoute("profile/<id>", array(
         "controller" => "userProfile",
@@ -161,3 +162,23 @@ Route::register("showRequests", new DefaultRoute("requests", array(
 Route::register("showFriends", new DefaultRoute("friends", array(
     "controller" => "listUsers",
     "action" => "showFriends")));
+
+Route::register("sendMessage", new DefaultRoute("message/send/<id>", array(
+        "controller" => "messages",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("showMessages", new DefaultRoute("messages", array(
+    "controller" => "messages",
+    "action" => "showMessages")));
+
+Route::register("readMessage", new DefaultRoute("message/read/<id>", array(
+        "controller" => "messages",
+        "action" => "readMessage"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
