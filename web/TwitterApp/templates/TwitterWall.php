@@ -55,6 +55,7 @@ class TwitterWall extends AbstractView
                 $counter++;
                 $user = UserRepository::getUserByID($tweet['fromid']);
                 ?>
+
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-info" id="comments">
                         <div class="panel-heading">

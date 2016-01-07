@@ -210,3 +210,11 @@ Route::register("viewTweet", new DefaultRoute("tweet/<id>", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("postTweetComment", new DefaultRoute("tweet/<id>/comment", array(
+        "controller" => "viewTweet",
+        "action" => "postTweetComment"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
