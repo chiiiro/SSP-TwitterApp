@@ -70,13 +70,11 @@ function getSortingOrderFromURL() {
 }
 
 /**
- * Checks if id is numerical and if user with provided id exists.
+ * Checks if id in URL is not null or not integer.
+ * If it is, then redirects to error page.
  * @param $id
- * @param $user
  */
-function checkRequestURL($id, $user) {
-    checkUnauthorizedAccess();
-
+function checkIntValueOfId($id) {
     if(null === $id) {
         redirect(\route\Route::get("errorPage")->generate());
     }
@@ -84,6 +82,16 @@ function checkRequestURL($id, $user) {
     if(intval($id) < 1) {
         redirect(\route\Route::get("errorPage")->generate());
     }
+}
+
+/**
+ * Checks if id is numerical and if user with provided id exists.
+ * @param $id
+ * @param $user
+ */
+function checkRequestURL($id, $user) {
+    checkUnauthorizedAccess();
+    checkIntValueOfId($id);
 
     if($user == null) {
         redirect(\route\Route::get("errorPage")->generate());
@@ -128,4 +136,21 @@ function newRequestNotification() {
         $color = "red";
     }
     return $color;
+}
+
+function checkPostTweet() {
+    $toid = getIdFromURL();
+    $currentID = \Repository\UserRepository::getIdByUsername($_SESSION['username']);
+
+    checkIntValueOfId($toid);
+
+    if($toid != $currentID) {
+        $friends = \Repository\FriendRepository::isFriend($toid, $currentID);
+
+        if($friends == null) {
+            redirect(\route\Route::get("notFriends")->generate());
+        }
+    }
+
+
 }

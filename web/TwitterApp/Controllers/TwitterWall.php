@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+use Models\Tweet;
+use Repository\TweetRepository;
 use Repository\UserRepository;
 use templates\Main;
 
@@ -15,11 +17,38 @@ class TwitterWall implements Controller {
 
         checkRequestURL($id, $user);
 
+        $tweets = TweetRepository::getMyTweets($id);
+
         $main = new Main();
-        $main->setPageTitle("TwitterApp");
         $body = new \templates\TwitterWall();
-        $main->setBody($body);
-        echo $main;
+        $body->setTweets($tweets);
+        echo $main->setPageTitle("TwitterApp")->setBody($body);
+
+    }
+
+    public function postTweet() {
+        checkUnauthorizedAccess();
+        checkPostTweet();
+
+        if(post('tweet')) {
+            $fromid = UserRepository::getIdByUsername($_SESSION['username']);
+            $toid = getIdFromURL();
+            $content = htmlentities(trim(post('content')));
+            $tag = htmlentities(trim(post('tag')));
+
+            $tweet = new Tweet();
+            $tweet->setFromid($fromid);
+            $tweet->setToid($toid);
+            $tweet->setContent($content);
+            $tweet->setTag($tag);
+
+            try {
+                TweetRepository::postTweet($tweet);
+                redirect(\route\Route::get("twitterWall")->generate(array("id" => $toid)));
+            } catch (\PDOException $e) {
+                $e->getMessage();
+            }
+        }
 
     }
 

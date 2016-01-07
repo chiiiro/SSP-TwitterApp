@@ -11,8 +11,12 @@ Route::register("errorPage", new DefaultRoute("error/404", array(
     "controller" => "errorPage",
     "action" => "action")));
 
-Route::register("unauthorizedAccess", new DefaultRoute("access/denied", array(
+Route::register("unauthorizedAccess", new DefaultRoute("error/access/denied", array(
     "controller" => "unauthorizedAccess",
+    "action" => "action")));
+
+Route::register("notFriends", new DefaultRoute("error/friends", array(
+    "controller" => "notFriends",
     "action" => "action")));
 
 Route::register("register", new DefaultRoute("register", array(
@@ -188,5 +192,13 @@ Route::register("sortMessages", new DefaultRoute("messages/sort/<order>", array(
     "action" => "action"
     ), array(
         "order" => "newest|oldest|unread|read"
+    ))
+);
+
+Route::register("postTweet", new DefaultRoute("tweet/post/<id>", array(
+    "controller" => "twitterWall",
+    "action" => "postTweet"
+), array(
+    "id" => "\\d+"
     ))
 );
