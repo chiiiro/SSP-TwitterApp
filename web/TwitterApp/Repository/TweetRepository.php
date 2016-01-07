@@ -20,4 +20,11 @@ class TweetRepository {
         $query->execute([$tweet->getFromid(),$tweet->getToid(), $tweet->getContent(), $tweet->getTag()]);
     }
 
+    public static function getTweetById($id) {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT * FROM tweets WHERE tweetid = ?");
+        $query->execute([$id]);
+        return $query->fetch();
+    }
+
 }

@@ -66,6 +66,13 @@ class TwitterWall extends AbstractView
                                 <?php echo $tweet['content'] ?>
                             </div>
                         </div>
+
+                        <div class="panel-footer">
+                            <div>
+                                <a href="<?php echo \route\Route::get("viewTweet")->generate(array("id" => $tweet['tweetid'])); ?>">View
+                                    Tweet</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <?php
