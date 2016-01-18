@@ -2,6 +2,7 @@
 
 namespace templates;
 
+use Repository\TweetRepository;
 use Repository\UserRepository;
 use Views\AbstractView;
 
@@ -12,10 +13,18 @@ class TwitterWall extends AbstractView
 
     protected function outputHTML()
     {
-        //forma za dodavanje novih tweetova
+
         ?>
 
         <div class="container">
+
+        <?php
+
+        //provjera da li su prijatelji ili da li je to sam korisnik
+        if(checkPermissionToTweet()) {
+
+            //forma za dodavanje novih tweetova
+            ?>
 
             <form class="form-horizontal" id="tweet-form" role="form" method="post" action="<?php echo \route\Route::get("postTweet")->generate(array("id" => getIdFromURL())); ?>">
 
@@ -48,18 +57,27 @@ class TwitterWall extends AbstractView
 
             <?php
 
+        }
+
+
             $counter = 0;
 
             //prikaži sve tweetove na korisnikovom zidu
             foreach ($this->tweets as $tweet) {
                 $counter++;
                 $user = UserRepository::getUserByID($tweet['fromid']);
+                $numberOfComments = TweetRepository::getNumberOfComments($tweet['tweetid']);
+                $value = "Comments";
+                if($numberOfComments == 1) {
+                    $value = "Comment";
+                }
+
                 ?>
 
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-info" id="comments">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><?php echo $user['username'] ?></h3>
+                            <h3 class="panel-title">Posted by: <?php echo $user['username'] ?></h3>
                         </div>
 
                         <div class="panel-body">
@@ -70,8 +88,7 @@ class TwitterWall extends AbstractView
 
                         <div class="panel-footer">
                             <div>
-                                <a href="<?php echo \route\Route::get("viewTweet")->generate(array("id" => $tweet['tweetid'])); ?>">View
-                                    Tweet</a>
+                                <a href="<?php echo \route\Route::get("viewTweet")->generate(array("id" => $tweet['tweetid'])); ?>"><?php echo $numberOfComments . ' ' . $value?></a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +105,7 @@ class TwitterWall extends AbstractView
                             <h3 class="panel-title">Tweets</h3>
                         </div>
                         <div class="panel-body">
-                            There are no tweets to show. Feel free to submit new tweet.
+                            There are no tweets to show.
                         </div>
                     </div>
                 </div>

@@ -27,4 +27,11 @@ class TweetRepository {
         return $query->fetch();
     }
 
+    public static function getNumberOfComments($id) {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT COUNT(tweetid) AS n FROM tweetcomments WHERE tweetid = ?");
+        $query->execute([$id]);
+        return $query->fetch()['n'];
+    }
+
 }

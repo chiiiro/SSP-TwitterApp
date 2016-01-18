@@ -2,10 +2,10 @@
 
 namespace Models;
 
-class Comment {
+class PhotoComment {
 
     private $commid;
-    private $tweetid;
+    private $photoid;
     private $userid;
     private $content;
 
@@ -28,17 +28,17 @@ class Comment {
     /**
      * @return mixed
      */
-    public function getTweetid()
+    public function getPhotoid()
     {
-        return $this->tweetid;
+        return $this->photoid;
     }
 
     /**
-     * @param mixed $tweetid
+     * @param mixed $photoid
      */
-    public function setTweetid($tweetid)
+    public function setPhotoid($photoid)
     {
-        $this->tweetid = $tweetid;
+        $this->photoid = $photoid;
     }
 
     /**

@@ -218,3 +218,11 @@ Route::register("postTweetComment", new DefaultRoute("tweet/<id>/comment", array
         "id" => "\\d+"
     ))
 );
+
+Route::register("postPhotoComment", new DefaultRoute("photo/<id>/comment", array(
+        "controller" => "viewPhoto",
+        "action" => "postPhotoComment"
+    ), array(
+        "id" => "\\d+"
+    ))
+);

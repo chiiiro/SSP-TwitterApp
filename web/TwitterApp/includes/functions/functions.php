@@ -154,3 +154,39 @@ function checkPostTweet() {
 
 
 }
+
+function checkPermissionToTweet() {
+    $toid = getIdFromURL();
+    $currentID = \Repository\UserRepository::getIdByUsername($_SESSION['username']);
+
+    checkIntValueOfId($toid);
+
+    if($toid != $currentID) {
+        $friends = \Repository\FriendRepository::isFriend($toid, $currentID);
+
+        if($friends == null) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function checkPermissionToCommentTweet() {
+    $tweetid = getIdFromURL();
+    $tweet = \Repository\TweetRepository::getTweetById($tweetid);
+    $fromID = $tweet['fromid'];
+    $toid = $tweet['toid'];
+    $currentID = \Repository\UserRepository::getIdByUsername($_SESSION['username']);
+
+    checkIntValueOfId($tweetid);
+
+    if($toid != $currentID) {
+        if(\Repository\FriendRepository::isFriend($currentID, $tweet['toid']) == null) {
+            return false;
+        }
+    }
+
+
+    return true;
+}

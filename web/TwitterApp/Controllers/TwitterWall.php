@@ -28,7 +28,6 @@ class TwitterWall implements Controller {
 
     public function postTweet() {
         checkUnauthorizedAccess();
-        checkPostTweet();
 
         if(post('tweet')) {
             $fromid = UserRepository::getIdByUsername($_SESSION['username']);

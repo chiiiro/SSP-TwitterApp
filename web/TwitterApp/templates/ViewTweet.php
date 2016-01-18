@@ -71,29 +71,35 @@ class ViewTweet extends AbstractView
             </div>
         </div>
 
-        <form class="form-horizontal" id="comment-form" role="form" method="post" action="<?php echo \route\Route::get("postTweetComment")->generate(array("id" => $this->tweet['tweetid'])); ?>">
+        <?php
+            if(checkPermissionToCommentTweet()) {
+                ?>
+                <form class="form-horizontal" id="comment-form" role="form" method="post" action="<?php echo \route\Route::get("postTweetComment")->generate(array("id" => $this->tweet['tweetid'])); ?>">
 
-            <div class="form-group">
-                <div class="col-md-4 col-md-offset-4">
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
                         <textarea class="form-control" rows="3" name="comment" id="comment"
                                   placeholder="Enter comment..." required></textarea>
-                </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <div class="col-md-4 col-md-offset-4">
-                    <div style="color: green" id="success"></div>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div style="color: green" id="success"></div>
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <div class="col-md-4 col-md-offset-4">
-                    <input type="submit" class="btn btn-info btn-block" name="postComment" id="postComment"
-                           value="Post Comment">
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
+                            <input type="submit" class="btn btn-info btn-block" name="postComment" id="postComment"
+                                   value="Post Comment">
+                        </div>
+                    </div>
 
-        </form>
+                </form>
+                <?php
+            }
+        ?>
 
         <?php
     }

@@ -2,7 +2,9 @@
 
 namespace Controllers;
 
+use Models\PhotoComment;
 use Repository\GalleryRepository;
+use Repository\PhotoCommentRepository;
 use Repository\PhotoRepository;
 use Repository\UserRepository;
 use templates\Main;
@@ -16,16 +18,10 @@ class ViewPhoto implements Controller {
     {
 
         $id = getIdFromURL();
-
-        if(null === $id) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
-        if(intval($id) < 1) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkIntValueOfId($id);
 
         $photo = PhotoRepository::getPhotoByID($id);
+        $comments = PhotoCommentRepository::getPhotoComments($id);
 
         if($photo == null) {
             redirect(\route\Route::get("errorPage")->generate());
@@ -37,7 +33,7 @@ class ViewPhoto implements Controller {
 
         $main = new Main();
         $body = new \templates\ViewPhoto();
-        $body->setPhoto($photo)->setTitle($galleryTitle);
+        $body->setPhoto($photo)->setTitle($galleryTitle)->setComments($comments);
 
         echo $main->setBody($body)->setPageTitle("View Photo");
     }
@@ -80,6 +76,32 @@ class ViewPhoto implements Controller {
             redirect(\route\Route::get("viewPhoto")->generate(array("id" => $photo['photoid'])));
         } catch (\PDOException $e) {
             $e->getMessage();
+        }
+    }
+
+    public function postPhotoComment()
+    {
+        checkUnauthorizedAccess();
+        $id = getIdFromURL();
+        checkIntValueOfId($id);
+
+        if (post('postComment')) {
+            $photoID = $id;
+            $userid = UserRepository::getIdByUsername($_SESSION['username']);
+            $content = htmlentities(trim(post('comment')));
+
+            $comment = new PhotoComment();
+            $comment->setPhotoid($photoID);
+            $comment->setUserid($userid);
+            $comment->setContent($content);
+
+            try {
+                PhotoCommentRepository::postComment($comment);
+//                json_encode(['message' => 'success', 'comment' => $comment->getContent()]);
+                redirect(\route\Route::get("viewPhoto")->generate(array("id" => $photoID)));
+            } catch (\PDOException $e) {
+                $e->getMessage();
+            }
         }
     }
 
