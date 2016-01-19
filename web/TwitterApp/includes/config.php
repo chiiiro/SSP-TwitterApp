@@ -27,7 +27,6 @@ require_once(FUNCTION_PATH.'permissions.php');
 require_once(FUNCTION_PATH.'notifications.php');
 require_once(FUNCTION_PATH.'writing.php');
 require_once(LIB_PATH.'database.php');
-require_once "route.php";
 
 spl_autoload_register(function($className) {
     $fileName = "./" . str_replace("\\", "/", $className) . ".php";
@@ -37,3 +36,5 @@ spl_autoload_register(function($className) {
     require_once $fileName;
     return true;
 });
+
+require_once "route.php";

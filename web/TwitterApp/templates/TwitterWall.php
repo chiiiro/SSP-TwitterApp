@@ -62,7 +62,7 @@ class TwitterWall extends AbstractView
         } else {
             ?>
             <div class="col-md-4 col-md-offset-1">
-                <p>To post tweet on this wall you need to became friends.</p>
+                <p>To post tweet on this wall you need to become friends.</p>
                 <hr>
             </div>
 

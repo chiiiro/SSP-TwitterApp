@@ -28,7 +28,6 @@ class ViewTweet implements Controller {
         checkUnauthorizedAccess();
         $id = getIdFromURL();
         checkIntValueOfId($id);
-        checkPermissionToCommentTweet();
 
         if(post('postComment')) {
             $tweetid = $id;

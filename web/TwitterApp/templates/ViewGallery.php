@@ -4,7 +4,8 @@ namespace templates;
 
 use Views\AbstractView;
 
-class ViewGallery extends AbstractView {
+class ViewGallery extends AbstractView
+{
 
     private $galleryID;
     private $gallery;
@@ -17,49 +18,70 @@ class ViewGallery extends AbstractView {
 
         <div class="container">
 
-            <div class="panel panel-info" id="comments">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Gallery</h3>
+        <div class="panel panel-info" id="comments">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gallery</h3>
+            </div>
+
+            <?php
+
+            $counter = 0;
+
+            foreach ($this->photos as $photo) {
+                $counter++;
+                ?>
+
+                <div class="panel-body">
+
+                    <p><?php echo "<img width='100' height='100' src='/TwitterApp/assets/images/galleries/" . $this->gallery['title'] . '/' . $photo['image'] . "' alt='image'>"; ?></p>
+
+                    <p>Photo Title: <?php echo $photo['title']; ?></p>
+
+                    <p>Photo Tags: <?php echo $photo['tags']; ?></p>
+
+                    <p>Created: <?php echo $photo['created'] ?></p>
+
+                    <p>
+                        <a href="<?php echo \route\Route::get("viewPhoto")->generate(array("id" => $photo['photoid'])); ?>">View
+                            Photo</a></p>
                 </div>
 
                 <?php
 
-                $counter = 0;
+            }
 
-                foreach ($this->photos as $photo) {
-                        $counter++;
-                    ?>
-
-                    <div class="panel-body">
-
-                        <p><?php echo "<img width='100' height='100' src='/TwitterApp/assets/images/galleries/" . $this->gallery['title'] . '/' . $photo['image'] . "' alt='image'>"; ?></p>
-                        <p>Photo Title: <?php echo $photo['title']; ?></p>
-                        <p>Photo Tags: <?php echo $photo['tags']; ?></p>
-                        <p>Created: <?php echo $photo['created']?></p>
-                        <p><a href="<?php echo \route\Route::get("viewPhoto")->generate(array("id"=>$photo['photoid'])); ?>">View Photo</a></p>
-                    </div>
-
-                    <?php
-
-                }
-
-                if($counter == 0) {
-                    ?>
-
-                    <div class="panel-body">
-                        <p>Gallery is empty. To add a photo click the button below.</p>
-                    </div>
-
-                    <?php
-                }
-
+            if ($counter == 0) {
                 ?>
 
+                <div class="panel-body">
+                    <p>Gallery is empty. To add a photo click the button below.</p>
+                </div>
 
+                <?php
+            }
+
+            ?>
+
+            <?php
+            if (checkPermissionToAddPhotoToGallery($this->gallery)) {
+                ?>
                 <div class="panel-footer">
-                    <p><a href="<?php echo \route\Route::get("addPhoto")->generate(array("galleryID" => $this->galleryID)); ?>" class="btn btn-danger">Add Photo</a></p>
+                    <p>
+                        <a href="<?php echo \route\Route::get("addPhoto")->generate(array("galleryID" => $this->galleryID)); ?>"
+                           class="btn btn-danger">Add Photo</a></p>
+                </div>
+                <?php
+            } else {
+                ?>
+                <div class="panel-footer">
+                    <p style='color: red'>Adding photos is enabled only for user who created the gallery.</p>
+                </div>
 
-            </div>
+                <?php
+            }
+            ?>
+
+
         </div>
 
 

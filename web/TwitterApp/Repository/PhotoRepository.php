@@ -76,4 +76,10 @@ class PhotoRepository
         return $query->fetchAll();
     }
 
+    public static function editPhotoTags($tags, $photoID) {
+        $db = Database::getInstance();
+        $query = $db->prepare('UPDATE photo SET tags = ? WHERE photoid = ?');
+        $query->execute([$tags, $photoID]);
+    }
+
 }

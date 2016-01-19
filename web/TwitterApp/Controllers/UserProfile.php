@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Repository\FriendRepository;
 use Repository\RequestRepository;
+use Repository\ResctrictionRepository;
 use Repository\UserRepository;
 use route\Route;
 use templates\Main;
@@ -87,6 +88,31 @@ class UserProfile implements Controller {
 
         FriendRepository::unfriend($myID, $profileID);
         redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+    }
+
+    public function blockUser() {
+        $profileID = getIdFromURL();
+        $activeUserID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        try {
+            ResctrictionRepository::addResctriction($activeUserID, $profileID);
+            redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+        } catch (\PDOException $e) {
+            $e->getMessage();
+        }
+
+    }
+
+    public function unblockUser() {
+        $profileID = getIdFromURL();
+        $activeUserID = UserRepository::getIdByUsername($_SESSION['username']);
+
+        try {
+            ResctrictionRepository::removeRestriction($activeUserID, $profileID);
+            redirect(Route::get("userProfile")->generate(array("id" => $profileID)));
+        } catch (\PDOException $e) {
+            $e->getMessage();
+        }
     }
 
 }

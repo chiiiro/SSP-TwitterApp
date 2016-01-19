@@ -4,6 +4,7 @@ namespace templates;
 
 use Repository\FriendRepository;
 use Repository\RequestRepository;
+use Repository\ResctrictionRepository;
 use Repository\UserRepository;
 use Views\AbstractView;
 
@@ -45,7 +46,19 @@ class UserProfile extends AbstractView
                         if ($friendsID != null) {
                             ?>
                             <p><a href="<?php echo \route\Route::get("sendMessage")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-info">Send Message</a>
-                                <a href="<?php echo \route\Route::get("unfriend")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Unfriend</a></p>
+                                <a href="<?php echo \route\Route::get("unfriend")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-danger">Unfriend</a>
+                                <?php
+                                    $restrictionID = ResctrictionRepository::isBlocked($userid, $this->user['userid']);
+                                if($restrictionID == null) {
+                                    ?>
+                                    <a href="<?php echo \route\Route::get("blockUser")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-warning">Block user</a></p>
+                                    <?php
+                                } else {
+                                    ?>
+                                        <a href="<?php echo \route\Route::get("unblockUser")->generate(array("id" => $this->user['userid'])); ?>" class="btn btn-warning">Unblock user</a></p>
+                                    <?php
+                                }
+                                ?>
                             <?php
                             //ako nisu prijatelji ponuditi opcije za prihvaćanje, odbijanje, uklanjanje
                             //i slanje zahtjeva ovisno o situaciji

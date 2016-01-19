@@ -159,6 +159,22 @@ Route::register("unfriend", new DefaultRoute("unfriend/<id>", array(
     ))
 );
 
+Route::register("blockUser", new DefaultRoute("block/<id>", array(
+        "controller" => "userProfile",
+        "action" => "blockUser"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("unblockUser", new DefaultRoute("unblock/<id>", array(
+        "controller" => "userProfile",
+        "action" => "unblockUser"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
 Route::register("showRequests", new DefaultRoute("requests", array(
     "controller" => "listUsers",
     "action" => "showRequests")));
@@ -222,6 +238,14 @@ Route::register("postTweetComment", new DefaultRoute("tweet/<id>/comment", array
 Route::register("postPhotoComment", new DefaultRoute("photo/<id>/comment", array(
         "controller" => "viewPhoto",
         "action" => "postPhotoComment"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("editPhotoTags", new DefaultRoute("photo/<id>/edit", array(
+        "controller" => "viewPhoto",
+        "action" => "editPhotoTags"
     ), array(
         "id" => "\\d+"
     ))

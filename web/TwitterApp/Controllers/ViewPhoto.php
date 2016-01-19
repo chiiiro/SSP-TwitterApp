@@ -105,4 +105,20 @@ class ViewPhoto implements Controller {
         }
     }
 
+    public function editPhotoTags() {
+        checkUnauthorizedAccess();
+        $id = getIdFromURL();
+        checkIntValueOfId($id);
+
+        if(post('postTags')) {
+            $tags = post('tags');
+            try {
+                PhotoRepository::editPhotoTags($tags, $id);
+                redirect(\route\Route::get("viewPhoto")->generate(array("id" => $id)));
+            } catch (\PDOException $e) {
+                $e->getMessage();
+            }
+        }
+    }
+
 }

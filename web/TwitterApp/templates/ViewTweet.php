@@ -26,7 +26,7 @@ class ViewTweet extends AbstractView
                     <div class="panel-body">
                         <label>Content</label>
 
-                        <p><?php echo $this->tweet['content']; ?></p>
+                        <p><?php echo parseText($this->tweet['content']); ?></p>
                         <?php
                         if ($this->tweet['image'] != null) {
                             ?>
@@ -97,6 +97,12 @@ class ViewTweet extends AbstractView
                     </div>
 
                 </form>
+                <?php
+            } else {
+                ?>
+                <div class="col-md-4 col-md-offset-2">
+                <p style='color: red'>To comment this tweet you must be friends with user who created it.</p>
+                </div>
                 <?php
             }
         ?>
