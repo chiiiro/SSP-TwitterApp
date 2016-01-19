@@ -250,3 +250,11 @@ Route::register("editPhotoTags", new DefaultRoute("photo/<id>/edit", array(
         "id" => "\\d+"
     ))
 );
+
+Route::register("rssFeed", new DefaultRoute("feed/rss/photo/<id>", array(
+        "controller" => "rssFeed",
+        "action" => "photoCommentsRss"
+    ), array(
+        "id" => "\\d+"
+    ))
+);

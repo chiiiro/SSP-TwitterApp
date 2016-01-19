@@ -17,16 +17,8 @@ class AddPhoto implements Controller {
     {
 
         checkUnauthorizedAccess();
-
         $id = \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("galleryID");
-
-        if(null === $id) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
-
-        if(intval($id) < 1) {
-            redirect(\route\Route::get("errorPage")->generate());
-        }
+        checkIntValueOfId($id);
 
         $gallery = GalleryRepository::getByID($id);
 

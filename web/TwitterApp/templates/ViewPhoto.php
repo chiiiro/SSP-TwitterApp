@@ -3,6 +3,7 @@
 namespace templates;
 
 use Repository\UserRepository;
+use route\Route;
 use Views\AbstractView;
 
 class ViewPhoto extends AbstractView
@@ -38,7 +39,6 @@ class ViewPhoto extends AbstractView
 
         <div class="container">
 
-
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Set As...
@@ -48,7 +48,11 @@ class ViewPhoto extends AbstractView
                     <li><a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Gallery Icon</a></li>
                     <li><a href="<?php echo \route\Route::get("setUserBackground")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Background</a></li>
                 </ul>
+
+                <a href="<?php echo Route::get("rssFeed")->generate(array("id" => $this->photo['photoid']))?>" class="btn btn-info">RSS Feed</a>
             </div>
+
+
 
             <br>
 

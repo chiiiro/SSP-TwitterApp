@@ -39,6 +39,7 @@ class TwitterWall implements Controller {
             $tweet->setFromid($fromid);
             $tweet->setToid($toid);
             $tweet->setContent($content);
+//            $tweet->setImage($_FILES['file']['tmp_name']);
             $tweet->setTag($tag);
 
             try {

@@ -26,7 +26,8 @@ class TwitterWall extends AbstractView
             //forma za dodavanje novih tweetova
             ?>
 
-            <form class="form-horizontal" id="tweet-form" role="form" method="post" action="<?php echo \route\Route::get("postTweet")->generate(array("id" => getIdFromURL())); ?>">
+            <form class="form-horizontal" id="tweet-form" role="form" method="post"
+                  action="<?php echo \route\Route::get("postTweet")->generate(array("id" => getIdFromURL())); ?>">
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
@@ -47,6 +48,13 @@ class TwitterWall extends AbstractView
                     </div>
 
                     <br>
+
+<!--                    <div class="col-md-4 col-md-offset-4">-->
+<!--                        <input-->
+<!--                            type="file" class="form-control" name="file" id="file">-->
+<!--                    </div>-->
+<!---->
+<!--                    <br>-->
 
                     <div class="col-md-4 col-md-offset-4">
                         <input type="submit" class="btn btn-info btn-block" name="tweet" id="tweet" value="Tweet">
