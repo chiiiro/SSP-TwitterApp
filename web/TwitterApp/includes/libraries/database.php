@@ -11,9 +11,9 @@ class Database
     {
         if (null === self::$db) {
             try {
-                self::$db = new \PDO("pgsql:dbname=learning;host=localhost;user=iciric;password=iciric12345");
+                self::$db = new \PDO("pgsql:dbname=" . DBNAME . ";host=". HOST . ";user=" . USER . ";password=" . PASSWORD . "");
                 self::$db->exec("SET NAMES utf8");
-            } catch (PDOException $e) {
+            } catch (\PDOException $e) {
                 var_dump($e);
                 die();
             }
