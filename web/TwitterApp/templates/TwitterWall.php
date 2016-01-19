@@ -82,7 +82,9 @@ class TwitterWall extends AbstractView
 
                         <div class="panel-body">
                             <div>
-                                <?php echo $tweet['content'] ?>
+                                <?php
+                                    echo parseText($tweet['content']);
+                                ?>
                             </div>
                         </div>
 

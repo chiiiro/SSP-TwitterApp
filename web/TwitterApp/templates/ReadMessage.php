@@ -25,7 +25,7 @@ class ReadMessage extends AbstractView
 
                 <div class="panel-body">
                     <p>From: <?php echo $user['username']?></p>
-                    <p>Content: <?php echo $this->message['content']?></p>
+                    <p>Content: <?php echo parseText($this->message['content'])?></p>
                     <p><a href="<?php echo \route\Route::get("sendMessage")->generate(array("id" => $user['userid'])); ?>" class="btn btn-info">Reply</a></p>
                 </div>
             </div>

@@ -61,7 +61,7 @@ class ViewTweet extends AbstractView
                             } else {
                                 foreach ($this->comments as $comment) {
                                     $user = UserRepository::getUserByID($comment['userid']);
-                                    echo "<p>" . $user['username'] . ": " . $comment['content'] . "</p>";
+                                    echo "<p>" . $user['username'] . ": " . parseText($comment['content']) . "</p>";
                                 }
                             }
                             ?>
