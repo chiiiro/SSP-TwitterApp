@@ -30,13 +30,13 @@ class Index extends \Views\AbstractView {
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
                         <div style="color: red" id="loginError"></div>
                     </div>
                 </div>

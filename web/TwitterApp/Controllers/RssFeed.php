@@ -18,11 +18,8 @@ class RssFeed implements Controller {
     public function photoCommentsRss() {
 
         checkUnauthorizedAccess();
-
-
         $photoID = getIdFromURL();
         checkIntValueOfId($photoID);
-
         $photo = PhotoRepository::getPhotoByID($photoID);
 
         if($photo == null) {
@@ -31,56 +28,32 @@ class RssFeed implements Controller {
 
         $photoComments = PhotoCommentRepository::getPhotoComments($photoID);
 
-        header('Content-Type: application/xml');
+        $title = "Tweet";
+        $link = "http://localhost:8080/TwitterApp/tweet/" . $photoID;
+        $description = "List of all comments for selected tweet.";
 
-        echo '<?xml version="1.0" encoding="ISO-8859-1"?>
-            <rss version="2.0">
-                <channel>
-                    <title>Tweet</title>
-                    <description>List of all comments for selected tweet.</description>
-                    <link>http://localhost:8080/TwitterApp/tweet/' . $photoID  . '</link>';
-
-        foreach ($photoComments as $comment) {
-            echo '<item><title>Komentar</title><description>' . $comment['content'] . '</description></item>';
-        }
-
-
-        echo '</channel></rss>';
+        generateCommentsRss($title, $link, $description, $photoComments);
 
     }
 
     public function tweetCommentsRss() {
+
         checkUnauthorizedAccess();
         $tweetID = getIdFromURL();
         checkIntValueOfId($tweetID);
-
         $tweetComments = TweetCommentRepository::getTweetComments($tweetID);
 
-//        header("Content-Type: application/rss+xml; charset=UTF-8");
-        header('Content-Type: text/xml');
+        $title = "Tweet";
+        $link = "http://localhost:8080/TwitterApp/tweet/" . $tweetID;
+        $description = "List of all comments for selected tweet.";
 
-        $xml = new \SimpleXMLElement('<rss/>');
-        $xml->addAttribute("version", "2.0");
-
-        $channel = $xml->addChild("channel");
-
-        $channel->addChild("title", "Tweet");
-        $channel->addChild("link", "http://localhost:8080/TwitterApp/tweet/" . $tweetID);
-        $channel->addChild("description", "List of all comments for selected tweet.");
-
-        foreach($tweetComments as $comment) {
-            $item = $channel->addChild("item");
-            $item->addChild("title", "Komentar");
-            $item->addChild("description", $comment['content']);
-        }
-
-        echo $xml->asXML();
+        generateCommentsRss($title, $link, $description, $tweetComments);
 
     }
 
     public function galleryRssFeed() {
-        checkUnauthorizedAccess();
 
+        checkUnauthorizedAccess();
         $galleryID = getIdFromURL();
         checkIntValueOfId($galleryID);
         $gallery = GalleryRepository::getByID($galleryID);
@@ -91,25 +64,11 @@ class RssFeed implements Controller {
 
         $photos = PhotoRepository::getPhotosByGalleryID($galleryID);
 
-        header('Content-Type: text/xml');
+        $title = $gallery['title'];
+        $link = "http://localhost:8080/TwitterApp/gallery/" . $galleryID;
+        $description = "Images in selected gallery.";
 
-        $xml = new \SimpleXMLElement('<rss/>');
-        $xml->addAttribute("version", "2.0");
-
-        $channel = $xml->addChild("channel");
-
-        $channel->addChild("title", $gallery['title']);
-        $channel->addChild("link", "http://localhost:8080/TwitterApp/gallery/" . $galleryID);
-        $channel->addChild("description", "Images in selected gallery.");
-
-        foreach ($photos as $photo) {
-            $item = $channel->addChild("item");
-            $item->addChild("title", $photo['title']);
-            $item->addChild("description", $photo['tags']);
-            $item->addChild("guid", "http://localhost:8080/TwitterApp/photo/" . $photo['photoid']);
-        }
-
-        echo $xml->asXML();
+        generateGalleryRss($title, $link, $description, $photos);
     }
 
 }

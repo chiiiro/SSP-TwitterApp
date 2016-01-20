@@ -2,30 +2,13 @@
 
 namespace Models;
 
-class Tweet {
+class Tweet extends Model {
 
-    private $tweetid;
     private $fromid;
     private $toid;
     private $content;
     private $image;
     private $tag;
-
-    /**
-     * @return mixed
-     */
-    public function getTweetid()
-    {
-        return $this->tweetid;
-    }
-
-    /**
-     * @param mixed $tweetid
-     */
-    public function setTweetid($tweetid)
-    {
-        $this->tweetid = $tweetid;
-    }
 
     /**
      * @return mixed

@@ -2,28 +2,11 @@
 
 namespace Models;
 
-class TweetComment {
+class TweetComment extends Model {
 
-    private $commid;
     private $tweetid;
     private $userid;
     private $content;
-
-    /**
-     * @return mixed
-     */
-    public function getCommid()
-    {
-        return $this->commid;
-    }
-
-    /**
-     * @param mixed $commid
-     */
-    public function setCommid($commid)
-    {
-        $this->commid = $commid;
-    }
 
     /**
      * @return mixed

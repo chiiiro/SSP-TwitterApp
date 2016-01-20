@@ -7,29 +7,12 @@ namespace models;
  * @package models
  * Gallery contains gallery id, user id, title, tag and date of creation.
  */
-class Gallery {
+class Gallery extends Model {
 
-    private $id;
     private $userID;
     private $title;
     private $tag;
     private $created;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

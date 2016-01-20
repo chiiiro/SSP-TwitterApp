@@ -7,31 +7,14 @@ namespace Models;
  * @package Models
  * User contains of id, first name, last name, username, password, email address and name of profile picture.
  */
-class User {
+class User extends Model {
 
-    private $id;
     private $firstName;
     private $lastName;
     private $username;
     private $password;
     private $email;
     private $image;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

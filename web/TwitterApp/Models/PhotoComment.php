@@ -2,28 +2,11 @@
 
 namespace Models;
 
-class PhotoComment {
+class PhotoComment extends Model {
 
-    private $commid;
     private $photoid;
     private $userid;
     private $content;
-
-    /**
-     * @return mixed
-     */
-    public function getCommid()
-    {
-        return $this->commid;
-    }
-
-    /**
-     * @param mixed $commid
-     */
-    public function setCommid($commid)
-    {
-        $this->commid = $commid;
-    }
 
     /**
      * @return mixed

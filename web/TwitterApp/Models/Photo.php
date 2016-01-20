@@ -7,30 +7,13 @@ namespace Models;
  * @package Models
  * Photo contains photo id, gallery id, title, list of tags, date of creation and name of picture.
  */
-class Photo {
+class Photo extends Model {
 
-    private $photoid;
     private $galleryid;
     private $title;
     private $tags;
     private $created;
     private $image;
-
-    /**
-     * @return mixed
-     */
-    public function getPhotoid()
-    {
-        return $this->photoid;
-    }
-
-    /**
-     * @param mixed $photoid
-     */
-    public function setPhotoid($photoid)
-    {
-        $this->photoid = $photoid;
-    }
 
     /**
      * @return mixed

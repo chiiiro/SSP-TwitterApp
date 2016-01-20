@@ -8,9 +8,8 @@
  */
 function parseText($text) {
     //reaplaces :) and :( in text with emoticons
-    $chars = array(":)", ":(");
-    $icons = array("<img src='/TwitterApp/assets/smileys/happy.jpg' width='20' height='15' alt='happy'>",
-        "<img src='/TwitterApp/assets/smileys/sad.png' width='19' height='14' alt='sad'>");
+    $chars = array(HAPPY, SAD);
+    $icons = array(HAPPY_ICON, SAD_ICON);
     $new_str = str_replace($chars, $icons, $text);
 
     //replaces //**text**// with italic and bold text
@@ -18,7 +17,7 @@ function parseText($text) {
     $allText = array();
 
     //find all //**text**//
-    if (preg_match_all('#[\/][\/][*][*][a-zA-Z0-9]+[*][*][\/][\/]#', $text, $matches)) {
+    if (preg_match_all(BOLD_ITALIC, $text, $matches)) {
         foreach($matches[0] as $match) {
             array_push($allText, $match);
         }
@@ -50,7 +49,7 @@ function parseText($text) {
     $boldText = array();
 
     //finds all **text**
-    if (preg_match_all('/[*]+[^*]+[*]+/', $text, $matches)) {
+    if (preg_match_all(BOLD, $text, $matches)) {
         foreach($matches[0] as $match) {
             array_push($boldText, $match);
         }
@@ -81,7 +80,7 @@ function parseText($text) {
     $italicText = array();
 
     //finds all //text//
-    if (preg_match_all('#[/]+[^/]+[/]+#', $text, $matches)) {
+    if (preg_match_all(ITALIC, $text, $matches)) {
         foreach($matches[0] as $match) {
             array_push($italicText, $match);
         }

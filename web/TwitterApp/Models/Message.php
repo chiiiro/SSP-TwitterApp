@@ -2,30 +2,13 @@
 
 namespace Models;
 
-class Message {
+class Message extends Model {
 
-    private $id;
     private $senderID;
     private $recipientID;
     private $content;
     private $read;
     private $created;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
