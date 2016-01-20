@@ -2,6 +2,7 @@
 
 namespace templates;
 
+use route\Route;
 use Views\AbstractView;
 
 class ViewGallery extends AbstractView
@@ -20,7 +21,7 @@ class ViewGallery extends AbstractView
 
         <div class="panel panel-info" id="comments">
             <div class="panel-heading">
-                <h3 class="panel-title">Gallery</h3>
+                <h3 class="panel-title">Gallery <a href="<?php echo Route::get("galleryRssFeed")->generate(array("id" => $this->galleryID))?>" class="btn btn-info">RSS Feed</a></h3>
             </div>
 
             <?php

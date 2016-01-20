@@ -49,7 +49,7 @@ class ViewPhoto extends AbstractView
                     <li><a href="<?php echo \route\Route::get("setUserBackground")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Background</a></li>
                 </ul>
 
-                <a href="<?php echo Route::get("rssFeed")->generate(array("id" => $this->photo['photoid']))?>" class="btn btn-info">RSS Feed</a>
+                <a href="<?php echo Route::get("photoRssFeed")->generate(array("id" => $this->photo['photoid']))?>" class="btn btn-info">RSS Feed</a>
             </div>
 
 

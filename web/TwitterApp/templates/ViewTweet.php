@@ -3,6 +3,7 @@
 namespace templates;
 
 use Repository\UserRepository;
+use route\Route;
 use Views\AbstractView;
 
 class ViewTweet extends AbstractView
@@ -21,7 +22,7 @@ class ViewTweet extends AbstractView
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-info" id="comments">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Tweet</h3>
+                        <h3 class="panel-title">Tweet <a href="<?php echo Route::get("tweetRssFeed")->generate(array("id" => $this->tweet['tweetid']))?>" class="btn btn-info">RSS Feed</a></h3>
                     </div>
                     <div class="panel-body">
                         <label>Content</label>

@@ -251,9 +251,25 @@ Route::register("editPhotoTags", new DefaultRoute("photo/<id>/edit", array(
     ))
 );
 
-Route::register("rssFeed", new DefaultRoute("feed/rss/photo/<id>", array(
+Route::register("photoRssFeed", new DefaultRoute("feed/rss/photo/<id>", array(
         "controller" => "rssFeed",
         "action" => "photoCommentsRss"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("tweetRssFeed", new DefaultRoute("feed/rss/tweet/<id>", array(
+        "controller" => "rssFeed",
+        "action" => "tweetCommentsRss"
+    ), array(
+        "id" => "\\d+"
+    ))
+);
+
+Route::register("galleryRssFeed", new DefaultRoute("feed/rss/gallery/<id>", array(
+        "controller" => "rssFeed",
+        "action" => "galleryRssFeed"
     ), array(
         "id" => "\\d+"
     ))
