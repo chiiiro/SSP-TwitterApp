@@ -15,8 +15,8 @@ class PhotoRepository
     public static function addPhoto(Photo $photo)
     {
         $db = Database::getInstance();
-        $query = $db->prepare('INSERT INTO photo (galleryid,title,tags,created,image) VALUES (?, ?, ?, ?, ?)');
-        $query->execute([$photo->getGalleryid(), $photo->getTitle(), $photo->getTags(), $photo->getCreated(), $photo->getImage()]);
+        $query = $db->prepare('INSERT INTO photo (galleryid,title,tags,created,image, path) VALUES (?, ?, ?, ?, ?, ?)');
+        $query->execute([$photo->getGalleryid(), $photo->getTitle(), $photo->getTags(), $photo->getCreated(), $photo->getImageName(), $photo->getImagePath()]);
     }
 
     /**

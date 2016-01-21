@@ -54,7 +54,7 @@ class ViewTweet extends AbstractView
                         <h3 class="panel-title">Tweet Comments</h3>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" id="displayComments">
                         <div>
                             <?php
                             if(count($this->comments) == 0) {

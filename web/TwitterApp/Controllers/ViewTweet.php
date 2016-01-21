@@ -31,7 +31,8 @@ class ViewTweet implements Controller {
 
         if(post('postComment')) {
             $tweetid = $id;
-            $userid = UserRepository::getIdByUsername($_SESSION['username']);
+            $username = $_SESSION['username'];
+            $userid = UserRepository::getIdByUsername($username);
             $content = htmlentities(trim(post('comment')));
 
             $comment = new TweetComment();
@@ -41,7 +42,7 @@ class ViewTweet implements Controller {
 
             try {
                 TweetCommentRepository::postComment($comment);
-//                echo json_encode(['message' => 'success', 'comment' => $comment->getContent()]);
+//                echo json_encode(['message' => 'success', 'comment' => $comment->getContent(), 'user' => $username]);
                 redirect(\route\Route::get("viewTweet")->generate(array("id" => $tweetid)));
             } catch (\PDOException $e) {
                 $e->getMessage();

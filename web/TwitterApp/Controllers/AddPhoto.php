@@ -47,23 +47,27 @@ class AddPhoto implements Controller {
             }
 
             if(!$error) {
+                $dir = $gallery['title'];
+                $path = 'assets/images/galleries/' . $dir;
+                $localPath = $path . "/" . $_FILES['file']['name'];
+                $completePath = "/TwitterApp/" . $path . "/" . $_FILES['file']['name'];
+
                 $photo = new Photo();
                 $photo->setGalleryid($id);
                 $photo->setTitle($title);
                 $photo->setTags($tags);
                 $photo->setCreated(date('Y-m-d H:i:s'));
-                $photo->setImage($_FILES['file']['name']);
+                $photo->setImageName($_FILES['file']['name']);
+                $photo->setImagePath($completePath);
 
                 try {
-                    PhotoRepository::addPhoto($photo);
 
-                    $dir = $gallery['title'];
-                    $path = 'assets/images/galleries/' . $dir;
+                    PhotoRepository::addPhoto($photo);
 
                     if (!file_exists($path)) {
                         mkdir($path);
                     }
-                    move_uploaded_file($_FILES['file']['tmp_name'], $path . "/" . $_FILES['file']['name']);
+                    move_uploaded_file($_FILES['file']['tmp_name'], $localPath);
 
                     redirect(\route\Route::get("viewGallery")->generate(array("id" => $id)));
                 } catch(\PDOException $e) {

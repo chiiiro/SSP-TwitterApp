@@ -13,7 +13,8 @@ class Photo extends Model {
     private $title;
     private $tags;
     private $created;
-    private $image;
+    private $imageName;
+    private $imagePath;
 
     /**
      * @return mixed
@@ -82,17 +83,33 @@ class Photo extends Model {
     /**
      * @return mixed
      */
-    public function getImage()
+    public function getImageName()
     {
-        return $this->image;
+        return $this->imageName;
     }
 
     /**
-     * @param mixed $image
+     * @param mixed $imageName
      */
-    public function setImage($image)
+    public function setImageName($imageName)
     {
-        $this->image = $image;
+        $this->imageName = $imageName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagePath()
+    {
+        return $this->imagePath;
+    }
+
+    /**
+     * @param mixed $imagePath
+     */
+    public function setImagePath($imagePath)
+    {
+        $this->imagePath = $imagePath;
     }
 
 }

@@ -34,7 +34,7 @@ class ViewGallery extends AbstractView
 
                 <div class="panel-body">
 
-                    <p><?php echo "<img width='100' height='100' src='/TwitterApp/assets/images/galleries/" . $this->gallery['title'] . '/' . $photo['image'] . "' alt='image'>"; ?></p>
+                    <p><?php echo "<img width='100' height='100' src='" . $photo['path'] . "' alt='image'>"; ?></p>
 
                     <p>Photo Title: <?php echo $photo['title']; ?></p>
 

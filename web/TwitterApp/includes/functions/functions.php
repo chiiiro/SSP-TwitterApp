@@ -72,3 +72,23 @@ function getIdFromURL() {
 function getSortingOrderFromURL() {
     return \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam("order");
 }
+
+function getParamFromURL($param) {
+    return \dispatcher\DefaultDispatcher::instance()->getMatched()->getParam($param);
+}
+
+function startsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    return (substr($haystack, 0, $length) === $needle);
+}
+
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+
+    return (substr($haystack, -$length) === $needle);
+}

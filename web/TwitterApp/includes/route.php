@@ -274,3 +274,12 @@ Route::register("galleryRssFeed", new DefaultRoute("feed/rss/gallery/<id>", arra
         "id" => "\\d+"
     ))
 );
+
+Route::register("imageFilter", new DefaultRoute("photo/<id>/filter/<filter>", array(
+        "controller" => "imageFilters",
+        "action" => "action"
+    ), array(
+        "id" => "\\d+",
+        "filter" => "blackwhite|sepia|brightness|blur"
+    ))
+);

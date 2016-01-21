@@ -15,6 +15,7 @@ class ViewPhoto extends AbstractView
 
     protected function outputHTML()
     {
+
         ?>
 
         <script>
@@ -39,26 +40,51 @@ class ViewPhoto extends AbstractView
 
         <div class="container">
 
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Set As...
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Gallery Icon</a></li>
-                    <li><a href="<?php echo \route\Route::get("setUserBackground")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Background</a></li>
-                </ul>
+            <ul class="nav nav-pills">
+                <li class="dropdown">
 
-                <a href="<?php echo Route::get("photoRssFeed")->generate(array("id" => $this->photo['photoid']))?>" class="btn btn-info">RSS Feed</a>
-            </div>
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Set As...
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="<?php echo \route\Route::get("setGalleryIcon")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Gallery Icon</a></li>
+                        <li><a href="<?php echo \route\Route::get("setUserBackground")->generate(array("id" => $this->photo['photoid'])); ?>">Set As Background</a></li>
+                    </ul>
 
+                </li>
 
+                <li>
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Filters
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href="<?php echo \route\Route::get("imageFilter")->generate(array("id" => $this->photo['photoid'], "filter" => "blackwhite")); ?>">Black and white</a></li>
+                        <li><a href="<?php echo \route\Route::get("imageFilter")->generate(array("id" => $this->photo['photoid'], "filter" => "sepia")); ?>">Sepia</a></li>
+                        <li><a href="<?php echo \route\Route::get("imageFilter")->generate(array("id" => $this->photo['photoid'], "filter" => "blur")); ?>">Blur</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <form class="form-inline" role="form" method="post" action="<?php echo \route\Route::get("imageFilter")->generate(array("id" => $this->photo['photoid'], "filter" => "brightness")); ?>" id="brightnessForm">
+                        <div class="form-group">
+                            <input placeholder="Brightness strength" type="number" class="form-control" id="number" name="number">
+                            <button type="submit" name="setBrightness" id="setBrightness" class="btn btn-default">Set brightness</button>
+                        </div>
+                    </form>
+                </li>
+
+            </ul>
 
             <br>
 
-            <p><?php echo "<img width='1024' height='768' src='/TwitterApp/assets/images/galleries/" . $this->title . '/' . $this->photo['image'] . "' alt='image'>"; ?></p>
+            <p><?php echo "<img width='1024' height='768' src='" . $this->photo['path'] . "' alt='image'>"; ?></p>
 
-            <p><button class="btn btn-danger" id="editTags">Edit tags</button> <button class="btn btn-danger" id="commentPhoto">Comment photo</button> <button class="btn btn-default" id="closeEdit">Close</button></p>
+            <p><button class="btn btn-danger" id="editTags">Edit tags</button>
+                <button class="btn btn-danger" id="commentPhoto">Comment photo</button>
+                <a href="<?php echo Route::get("photoRssFeed")->generate(array("id" => $this->photo['photoid']))?>" class="btn btn-info">RSS Feed</a>
+                <button class="btn btn-default" id="closeEdit">Close</button></p>
 
             <div><h3>Photo tags</h3><p><?php echo $this->photo['tags']?></p></div>
 
