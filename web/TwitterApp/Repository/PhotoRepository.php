@@ -69,12 +69,12 @@ class PhotoRepository
         return $query->fetchAll();
     }
 
-    public static function advancedPhotoSearch($str) {
-        $db = Database::getInstance();
-        $query = $db->prepare('SELECT * FROM photo WHERE tags LIKE ?');
-        $query->execute(['%' . $str . '%']);
-        return $query->fetchAll();
-    }
+//    public static function advancedPhotoSearch($str) {
+//        $db = Database::getInstance();
+//        $query = $db->prepare('SELECT * FROM photo WHERE tags LIKE ?');
+//        $query->execute(['%' . $str . '%']);
+//        return $query->fetchAll();
+//    }
 
     public static function editPhotoTags($tags, $photoID) {
         $db = Database::getInstance();
@@ -86,6 +86,13 @@ class PhotoRepository
         $db = Database::getInstance();
         $query = $db->prepare('SELECT photo.image, photo.path FROM gallery JOIN photo ON gallery.galleryid = photo.galleryid WHERE gallery.galleryid = ?');
         $query->execute([$id]);
+        return $query;
+    }
+
+    public static function getAllPhotos() {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT * FROM photo');
+        $query->execute();
         return $query;
     }
 

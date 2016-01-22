@@ -63,16 +63,15 @@ class UserNavbar extends AbstractView
                             ?>
                             <a style="color: <?php echo $color?>" href="<?php echo \route\Route::get("showMessages")->generate(); ?>">Messages</a>
                         </li>
+                        <li>
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" name="search" id="input" class="form-control" placeholder="Search">
+                                </div>
+                            </form>
                         </li>
 
-
                     </ul>
-
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" name="search" id="input" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>

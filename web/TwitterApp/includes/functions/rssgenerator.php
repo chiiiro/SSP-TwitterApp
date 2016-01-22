@@ -39,7 +39,7 @@ function generateGalleryRss($title, $link, $description, $photos) {
         $item = $channel->addChild("item");
         $item->addChild("title", $photo['title']);
         $item->addChild("description", $photo['tags']);
-        $item->addChild("guid", "http://localhost:8080/TwitterApp/photo/" . $photo['photoid']);
+        $item->addChild("guid", "http://192.168.56.101/TwitterApp/photo/" . $photo['photoid']);
     }
 
     echo $xml->asXML();

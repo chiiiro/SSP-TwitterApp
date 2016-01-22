@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // JavaScript form validation
 
+    var checkName = function (str) {
+        return str.length < 3;
+    };
+
     var checkUsername = function (str) {
         var re = /^\w+.{4,}$/;
         return re.test(str);
@@ -14,17 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var checkForm = function (e) {
 
-        if (!checkUsername(this.fname.value)) {
+        if (!checkName(this.fname.value)) {
             document.getElementById("firstNameError").innerHTML =
-                "First name must have at least 5 characters, which are only letters and numbers!";
+                "First name must have at least 3 characters, which are only letters and numbers!";
             this.fname.focus();
             e.preventDefault();
             return;
         }
 
-        if (!checkUsername(this.lname.value)) {
+        if (!checkName(this.lname.value)) {
             document.getElementById("lastNameError").innerHTML =
-                "Last name must have at least 5 characters, which are only letters and numbers!";
+                "Last name must have at least 3 characters, which are only letters and numbers!";
             this.lname.focus();
             e.preventDefault();
             return;

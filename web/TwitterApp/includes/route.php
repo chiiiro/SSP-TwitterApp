@@ -37,6 +37,12 @@ Route::register("searchBar", new DefaultRoute("search", array(
     ))
 );
 
+Route::register("advancedSearch", new DefaultRoute("search/advanced", array(
+        "controller" => "searchBar",
+        "action" => "advancedSearch"
+    ))
+);
+
 
 Route::register("logout", new DefaultRoute("logout", array(
     "controller" => "index",

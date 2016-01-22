@@ -44,7 +44,7 @@ class RssFeed implements Controller {
         $tweetComments = TweetCommentRepository::getTweetComments($tweetID);
 
         $title = "Tweet";
-        $link = "http://localhost:8080/TwitterApp/tweet/" . $tweetID;
+        $link = "http://192.168.56.101/TwitterApp/tweet/" . $tweetID;
         $description = "List of all comments for selected tweet.";
 
         generateCommentsRss($title, $link, $description, $tweetComments);
@@ -65,7 +65,7 @@ class RssFeed implements Controller {
         $photos = PhotoRepository::getPhotosByGalleryID($galleryID);
 
         $title = $gallery['title'];
-        $link = "http://localhost:8080/TwitterApp/gallery/" . $galleryID;
+        $link = "http://192.168.56.101/TwitterApp/gallery/" . $galleryID;
         $description = "Images in selected gallery.";
 
         generateGalleryRss($title, $link, $description, $photos);

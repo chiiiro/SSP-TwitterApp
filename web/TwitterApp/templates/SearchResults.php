@@ -14,7 +14,6 @@ class SearchResults extends AbstractView
     protected function outputHTML()
     {
         ?>
-
         <h3>Search results</h3>
 
         <?php
@@ -73,6 +72,7 @@ class SearchResults extends AbstractView
 
         ?>
         <br>
+
         <?php
 
     }
