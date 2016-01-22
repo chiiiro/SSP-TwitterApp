@@ -69,4 +69,12 @@ class GalleryRepository
         return $query->fetchAll();
     }
 
+    public static function getUserGalleries($userid)
+    {
+        $db = Database::getInstance();
+        $query = $db->prepare("SELECT * FROM gallery WHERE userid = ?");
+        $query->execute([$userid]);
+        return $query->fetchAll();
+    }
+
 }

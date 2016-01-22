@@ -27,6 +27,7 @@ class ViewPhoto implements Controller {
             redirect(\route\Route::get("errorPage")->generate());
         }
 
+
         $galleryID = $photo['galleryid'];
         $gallery = GalleryRepository::getByID($galleryID);
         $galleryTitle = $gallery['title'];

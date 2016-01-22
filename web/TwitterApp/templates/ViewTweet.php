@@ -33,7 +33,7 @@ class ViewTweet extends AbstractView
                             ?>
                             <hr>
                             <label>Image</label>
-                            <p><?php echo $this->tweet['image']; ?></p>
+                            <p><img src="<?php echo $this->tweet['image']; ?>" width="20%" height="20%"></p>
                             <?php
                         }
                         if ($this->tweet['tag'] != null) {

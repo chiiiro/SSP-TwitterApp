@@ -16,8 +16,8 @@ class TweetRepository {
 
     public static function postTweet(Tweet $tweet) {
         $db = Database::getInstance();
-        $query = $db->prepare('INSERT INTO tweets (fromid,toid,content,tag) VALUES (?, ?, ?, ?)');
-        $query->execute([$tweet->getFromid(),$tweet->getToid(), $tweet->getContent(), $tweet->getTag()]);
+        $query = $db->prepare('INSERT INTO tweets (fromid,toid,content,tag, image) VALUES (?, ?, ?, ?, ?)');
+        $query->execute([$tweet->getFromid(),$tweet->getToid(), $tweet->getContent(), $tweet->getTag(), $tweet->getImage()]);
     }
 
     public static function getTweetById($id) {

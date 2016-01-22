@@ -82,4 +82,11 @@ class PhotoRepository
         $query->execute([$tags, $photoID]);
     }
 
+    public static function getAllUserPhotos($id) {
+        $db = Database::getInstance();
+        $query = $db->prepare('SELECT photo.image, photo.path FROM gallery JOIN photo ON gallery.galleryid = photo.galleryid WHERE gallery.galleryid = ?');
+        $query->execute([$id]);
+        return $query;
+    }
+
 }

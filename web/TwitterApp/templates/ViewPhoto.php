@@ -18,25 +18,7 @@ class ViewPhoto extends AbstractView
 
         ?>
 
-        <script>
-            $(document).ready(function() {
-                $("#editPhotoTags").hide();
-                $("#comment-form").hide();
-
-                $("#editTags").click(function() {
-                    $("#editPhotoTags").show();
-                    $("#comment-form").hide();
-                });
-                $("#commentPhoto").click(function() {
-                    $("#editPhotoTags").hide();
-                    $("#comment-form").show();
-                });
-                $("#closeEdit").click(function() {
-                    $("#editPhotoTags").hide();
-                    $("#comment-form").hide();
-                });
-            });
-        </script>
+        <script src="/TwitterApp/assets/js/viewPhoto.js"></script>
 
         <div class="container">
 

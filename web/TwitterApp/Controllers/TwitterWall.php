@@ -3,6 +3,8 @@
 namespace Controllers;
 
 use Models\Tweet;
+use Repository\GalleryRepository;
+use Repository\PhotoRepository;
 use Repository\TweetRepository;
 use Repository\UserRepository;
 use templates\Main;
@@ -18,10 +20,20 @@ class TwitterWall implements Controller {
         checkRequestURL($id, $user);
 
         $tweets = TweetRepository::getMyTweets($id);
+        $userGalleries = GalleryRepository::getUserGalleries($id);
+
+        $userPhotos = array();
+
+        foreach($userGalleries as $gallery) {
+            $photos = PhotoRepository::getPhotosByGalleryID($gallery['galleryid']);
+            foreach($photos as $photo) {
+                array_push($userPhotos, $photo);
+            }
+        }
 
         $main = new Main();
         $body = new \templates\TwitterWall();
-        $body->setTweets($tweets);
+        $body->setTweets($tweets)->setUserPhotos($userPhotos);
         echo $main->setPageTitle("TwitterApp")->setBody($body);
 
     }
@@ -34,12 +46,13 @@ class TwitterWall implements Controller {
             $toid = getIdFromURL();
             $content = htmlentities(trim(post('content')));
             $tag = htmlentities(trim(post('tag')));
+            $photo = post('selectPhoto');
 
             $tweet = new Tweet();
             $tweet->setFromid($fromid);
             $tweet->setToid($toid);
             $tweet->setContent($content);
-//            $tweet->setImage($_FILES['file']['tmp_name']);
+            $tweet->setImage($photo);
             $tweet->setTag($tag);
 
             try {

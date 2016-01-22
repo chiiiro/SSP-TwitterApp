@@ -10,6 +10,7 @@ class TwitterWall extends AbstractView
 {
 
     private $tweets;
+    private $userPhotos;
 
     protected function outputHTML()
     {
@@ -26,36 +27,52 @@ class TwitterWall extends AbstractView
             //forma za dodavanje novih tweetova
             ?>
 
+            <script src="/TwitterApp/assets/js/postTweetForm.js"></script>
+
+            <div class="col-md-4 col-md-offset-4">
+                <button id="open" class="btn btn-success btn-block">Post tweet</button>
+            </div>
+
             <form class="form-horizontal" id="tweet-form" role="form" method="post"
                   action="<?php echo \route\Route::get("postTweet")->generate(array("id" => getIdFromURL())); ?>">
+
+                <br><br>
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <textarea class="form-control" rows="3" name="content" id="content"
                                   placeholder="What's happening?" required></textarea>
                     </div>
+                </div>
 
-                    <br>
-
+                <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <input type="text" class="form-control" name="tag" id="tag" placeholder="Enter tweet tag (optional)">
                     </div>
+                </div>
 
-                    <br>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-4">
+                        <select name="selectPhoto" id="sel1" class="form-control">
+                            <option value="">Select photo...</option>
+                            <?php
+                            foreach($this->userPhotos as $photo) {
+                                ?>
+                                <option value="<?php echo $photo['path'] ?>"><?php echo $photo['image']?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
 
+                <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <div style="color: green" id="success"></div>
                     </div>
+                </div>
 
-                    <br>
-
-<!--                    <div class="col-md-4 col-md-offset-4">-->
-<!--                        <input-->
-<!--                            type="file" class="form-control" name="file" id="file">-->
-<!--                    </div>-->
-<!---->
-<!--                    <br>-->
-
+                <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <input type="submit" class="btn btn-info btn-block" name="tweet" id="tweet" value="Tweet">
                     </div>
@@ -63,7 +80,7 @@ class TwitterWall extends AbstractView
 
             </form>
 
-            <hr>
+            <br><br>
 
             <?php
 
@@ -152,6 +169,24 @@ class TwitterWall extends AbstractView
     public function setTweets($tweets)
     {
         $this->tweets = $tweets;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserPhotos()
+    {
+        return $this->userPhotos;
+    }
+
+    /**
+     * @param mixed $userPhotos
+     */
+    public function setUserPhotos($userPhotos)
+    {
+        $this->userPhotos = $userPhotos;
+        return $this;
     }
 
 }
