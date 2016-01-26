@@ -54,8 +54,8 @@ class ViewTweet extends AbstractView
                         <h3 class="panel-title">Tweet Comments</h3>
                     </div>
 
-                    <div class="panel-body" id="displayComments">
-                        <div>
+                    <div class="panel-body">
+                        <div id="displayComments">
                             <?php
                             if(count($this->comments) == 0) {
                                 echo "There are no comments for this tweet.";
@@ -107,6 +107,23 @@ class ViewTweet extends AbstractView
                 <?php
             }
         ?>
+
+        <script type="text/javascript" >
+            $(document).ready(function() {
+                $('#postComment').on('click', function(e) {
+                    e.preventDefault();
+                    var comm = $('#comment').val();
+                    var url = "<?php echo Route::get('postTweetComment')->generate(array("id" => $this->tweet['tweetid']));?>";
+
+                    $.post(url, {'comment' : comm}, function(data) {
+                        a = JSON.parse(data);
+                        $('#displayComments').append('<p>' + a.user + ': ' + a.comment + '</p>');
+                        $('#comment').val('');
+                    })
+                });
+            });
+
+        </script>
 
         <?php
     }

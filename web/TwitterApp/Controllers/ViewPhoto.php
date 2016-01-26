@@ -86,8 +86,9 @@ class ViewPhoto implements Controller {
         $id = getIdFromURL();
         checkIntValueOfId($id);
 
-        if (post('postComment')) {
+        if (post('comment')) {
             $photoID = $id;
+            $username = $_SESSION['username'];
             $userid = UserRepository::getIdByUsername($_SESSION['username']);
             $content = htmlentities(trim(post('comment')));
 
@@ -98,8 +99,10 @@ class ViewPhoto implements Controller {
 
             try {
                 PhotoCommentRepository::postComment($comment);
-//                json_encode(['message' => 'success', 'comment' => $comment->getContent()]);
-                redirect(\route\Route::get("viewPhoto")->generate(array("id" => $photoID)));
+                echo json_encode([
+                    'comment' => parseText($comment->getContent()),
+                    'user' => $username
+                ]);
             } catch (\PDOException $e) {
                 $e->getMessage();
             }

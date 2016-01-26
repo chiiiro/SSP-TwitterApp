@@ -98,7 +98,7 @@ class ViewPhoto extends AbstractView
 
             </form>
 
-            <div>
+            <div id="displayComments">
                 <h3>Photo comments</h3>
                 <?php
                 if (count($this->comments) == 0) {
@@ -146,6 +146,24 @@ class ViewPhoto extends AbstractView
             </form>
 
         </div>
+
+        <script type="text/javascript" >
+            $(document).ready(function() {
+                $('#postComment').on('click', function(e) {
+                    e.preventDefault();
+                    var comm = $('#comment').val();
+                    var url = "<?php echo Route::get('postPhotoComment')->generate(array("id" => $this->photo['photoid']));?>";
+
+                    $.post(url, {'comment' : comm}, function(data) {
+                        a = JSON.parse(data);
+                        $('#displayComments').append('<p>' + a.user + ': ' + a.comment + '</p>');
+                        $('#comment').val('');
+                    })
+                });
+            });
+
+        </script>
+
 
         <?php
     }
